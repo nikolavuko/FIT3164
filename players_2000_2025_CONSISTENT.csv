@@ -1,0 +1,1133 @@
+player_id,name,name_norm,ioc,hand,height_cm,first_seen_date,last_seen_date
+11102392,Andre Agassi,andre agassi,USA,R,180.0,2000-01-17,2006-08-28
+44008742,Sjeng Schalken,sjeng schalken,NED,R,193.0,2000-01-17,2005-01-17
+77505174,Mariano Zabaleta,mariano zabaleta,ARG,R,183.0,2000-01-17,2008-01-14
+51113511,Todd Woodbridge,todd woodbridge,AUS,R,178.0,2000-01-17,2001-06-25
+90838898,Andrew Ilie,andrew ilie,AUS,R,180.0,2000-01-17,2003-01-13
+30999997,Jiri Novak,jiri novak,CZE,R,190.0,2000-01-17,2006-08-28
+66750014,Raemon Sluiter,raemon sluiter,NED,R,185.0,2000-01-17,2006-08-28
+94711021,Mark Philippoussis,mark philippoussis,AUS,R,196.0,2000-01-17,2006-08-28
+36968764,Richard Krajicek,richard krajicek,NED,R,196.0,2000-01-17,2003-01-13
+69597542,Nicolas Escude,nicolas escude,FRA,R,185.0,2000-01-17,2004-05-24
+42118974,Leander Paes,leander paes,IND,R,178.0,2000-01-17,2001-06-25
+64976992,Andreas Vinciguerra,andreas vinciguerra,SWE,L,180.0,2000-01-17,2003-08-25
+92116393,Fredrik Jonsson,fredrik jonsson,SWE,R,193.0,2000-01-17,2001-06-25
+816572,Hicham Arazi,hicham arazi,MAR,L,175.0,2000-01-17,2004-08-30
+6753030,Fernando Vicente,fernando vicente,ESP,R,180.0,2000-01-17,2007-06-25
+32289235,Todd Martin,todd martin,USA,R,198.0,2000-01-17,2004-08-30
+39156396,Pete Sampras,pete sampras,USA,R,185.0,2000-01-17,2002-08-26
+71243762,Mikael Tillstrom,mikael tillstrom,SWE,R,185.0,2000-01-17,2000-08-28
+87906222,Marc Rosset,marc rosset,SUI,R,201.0,2000-01-17,2003-06-23
+59777894,Wayne Black,wayne black,ZIM,R,170.0,2000-01-17,2001-06-25
+10242596,Franco Squillari,franco squillari,ARG,L,183.0,2000-01-17,2003-08-25
+6492519,Mark Woodforde,mark woodforde,AUS,L,188.0,2000-01-17,2000-06-26
+3524858,Slava Dosedel,slava dosedel,CZE,R,183.0,2000-01-17,2001-08-27
+32449599,Paradorn Srichaphan,paradorn srichaphan,THA,R,185.0,2000-01-17,2007-01-15
+1384846,Tim Henman,tim henman,GBR,R,185.0,2000-01-17,2007-08-27
+62023540,Rainer Schuettler,rainer schuettler,GER,R,180.0,2000-01-17,2011-06-20
+74966159,Michael Hill,michael hill,AUS,R,188.0,2000-01-17,2000-01-17
+9261669,Sebastien Grosjean,sebastien grosjean,FRA,R,175.0,2000-01-17,2010-01-18
+63906444,James Sekulov,james sekulov,AUS,R,180.0,2000-01-17,2000-01-17
+29147441,Chris Woodruff,chris woodruff,USA,R,188.0,2000-01-17,2001-08-27
+19949874,Axel Pretzsch,axel pretzsch,GER,R,185.0,2000-01-17,2002-01-14
+15281973,Richard Fromberg,richard fromberg,AUS,R,196.0,2000-01-17,2002-01-14
+67388472,Albert Portas,albert portas,ESP,R,188.0,2000-01-17,2006-06-26
+99777811,Adrian Voinea,adrian voinea,ROU,R,185.0,2000-01-17,2003-06-23
+57874866,Lleyton Hewitt,lleyton hewitt,AUS,R,180.0,2000-01-17,2016-01-18
+84272179,Alex Corretja,alex corretja,ESP,R,180.0,2000-01-17,2004-08-30
+56865819,Jonas Bjorkman,jonas bjorkman,SWE,R,183.0,2000-01-17,2008-06-23
+12574334,Jiri Vanek,jiri vanek,CZE,R,185.0,2000-01-17,2009-05-25
+42920977,Gianluca Pozzi,gianluca pozzi,ITA,L,180.0,2000-01-17,2001-08-27
+70734302,Magnus Norman,magnus norman,SWE,R,188.0,2000-01-17,2003-08-25
+25580944,Goran Ivanisevic,goran ivanisevic,CRO,L,193.0,2000-01-17,2004-06-21
+71402194,Francisco Clavet,francisco clavet,ESP,L,183.0,2000-01-17,2003-01-13
+86894981,Wayne Ferreira,wayne ferreira,RSA,R,185.0,2000-01-17,2004-08-30
+51837055,Thomas Johansson,thomas johansson,SWE,R,180.0,2000-01-17,2008-08-25
+58261720,Michael Llodra,michael llodra,FRA,L,190.0,2000-01-17,2014-08-25
+9233860,Karim Alami,karim alami,MAR,R,185.0,2000-01-17,2001-08-27
+33333651,Tomas Behrend,tomas behrend,GER,R,193.0,2000-01-17,2006-01-16
+72369183,Nicolas Kiefer,nicolas kiefer,GER,R,183.0,2000-01-17,2010-06-21
+3847585,Nicolas Lapentti,nicolas lapentti,ECU,R,188.0,2000-01-17,2010-05-24
+4261640,Arnaud Clement,arnaud clement,FRA,R,173.0,2000-01-17,2012-05-27
+97818851,Jan Kroslak,jan kroslak,SVK,R,188.0,2000-01-17,2000-01-17
+49178154,Roger Federer,roger federer,SUI,R,185.0,2000-01-17,2021-06-28
+87437430,Juan Carlos Ferrero,juan carlos ferrero,ESP,R,183.0,2000-01-17,2012-06-25
+83740900,Laurence Tieleman,laurence tieleman,ITA,R,180.0,2000-01-17,2000-06-26
+3967655,Younes El Aynaoui,younes el aynaoui,MAR,R,193.0,2000-01-17,2005-08-29
+77609510,Tommy Haas,tommy haas,GER,R,188.0,2000-01-17,2017-07-03
+16522696,Christophe Rochus,christophe rochus,BEL,R,170.0,2000-01-17,2010-01-18
+55685134,Kevin Ullyett,kevin ullyett,ZIM,R,178.0,2000-01-17,2000-01-17
+85526331,Antony Dupuis,antony dupuis,FRA,R,185.0,2000-01-17,2005-06-20
+81013241,Max Mirnyi,max mirnyi,BLR,R,196.0,2000-01-17,2007-08-27
+18003344,Stefan Koubek,stefan koubek,AUT,L,175.0,2000-01-17,2010-06-21
+32644605,Grant Stafford,grant stafford,RSA,R,188.0,2000-01-17,2000-01-17
+14676650,Daniel Vacek,daniel vacek,CZE,R,190.0,2000-01-17,2002-01-14
+7023329,Yevgeny Kafelnikov,yevgeny kafelnikov,RUS,R,190.0,2000-01-17,2003-08-25
+46730466,Karol Kucera,karol kucera,SVK,R,188.0,2000-01-17,2005-08-29
+66485216,Nicolas Massu,nicolas massu,CHI,R,183.0,2000-05-29,2010-06-21
+2159582,Jason Stoltenberg,jason stoltenberg,AUS,R,185.0,2000-01-17,2001-06-25
+91736267,Juan Ignacio Chela,juan ignacio chela,ARG,R,190.0,2000-05-29,2012-06-25
+6726252,Markus Hantschk,markus hantschk,GER,R,188.0,2000-05-29,2001-01-15
+74093576,Attila Savolt,attila savolt,HUN,R,183.0,2000-05-29,2003-05-26
+85625579,Albert Costa,albert costa,ESP,R,180.0,2000-01-17,2005-08-29
+15697539,Hernan Gumy,hernan gumy,ARG,R,188.0,2000-01-17,2000-08-28
+63396451,Gaston Gaudio,gaston gaudio,ARG,R,175.0,2000-01-17,2009-05-25
+56230696,Thomas Enqvist,thomas enqvist,SWE,R,190.0,2000-01-17,2005-06-20
+74493481,Fabrice Santoro,fabrice santoro,FRA,R,178.0,2000-01-17,2010-01-18
+4978971,Sargis Sargsian,sargis sargsian,ARM,R,180.0,2000-01-17,2005-06-20
+72102132,Andrei Medvedev,andrei medvedev,UKR,R,193.0,2000-01-17,2001-06-25
+17005584,Agustin Calleri,agustin calleri,ARG,R,183.0,2000-05-29,2009-06-22
+87917681,Dominik Hrbaty,dominik hrbaty,SVK,R,183.0,2000-01-17,2009-01-19
+50825699,Marat Safin,marat safin,RUS,R,193.0,2000-01-17,2009-08-31
+22518685,Andrea Gaudenzi,andrea gaudenzi,ITA,R,183.0,2000-01-17,2003-01-13
+59494736,Juan Balcells,juan balcells,ESP,R,190.0,2000-05-29,2003-01-13
+46515073,Patrick Rafter,patrick rafter,AUS,R,185.0,2000-05-29,2001-08-27
+98371983,Cedric Pioline,cedric pioline,FRA,R,188.0,2000-01-17,2002-06-24
+1972334,Gustavo Kuerten,gustavo kuerten,BRA,R,190.0,2000-01-17,2008-05-25
+56344783,Marcelo Charpentier,marcelo charpentier,ARG,L,180.0,2000-05-29,2000-05-29
+45848466,Michael Chang,michael chang,USA,R,175.0,2000-01-17,2003-08-25
+25837557,Guillermo Coria,guillermo coria,ARG,R,175.0,2000-05-29,2008-05-25
+96355938,Bohdan Ulihrach,bohdan ulihrach,CZE,R,188.0,2000-05-29,2007-06-25
+49024482,Christian Vinck,christian vinck,GER,L,183.0,2000-05-29,2001-01-15
+76020618,Ronald Agenor,ronald agenor,USA,R,180.0,2000-01-17,2000-06-26
+22862346,Federico Browne,federico browne,ARG,R,180.0,2000-05-29,2003-05-26
+7174028,Jan Michael Gambill,jan michael gambill,USA,R,190.0,2000-01-17,2005-08-29
+20863966,Orlin Stanoytchev,orlin stanoytchev,BUL,R,185.0,2000-01-17,2000-08-28
+90150231,Michel Kratochvil,michel kratochvil,SUI,R,185.0,2000-05-29,2003-06-23
+50026670,Werner Eschauer,werner eschauer,AUT,R,188.0,2000-05-29,2008-01-14
+83072391,Fernando Meligeni,fernando meligeni,BRA,L,180.0,2000-01-17,2003-01-13
+66161345,Mariano Puerta,mariano puerta,ARG,L,180.0,2000-01-17,2005-08-29
+54329250,Markus Hipfl,markus hipfl,AUT,R,178.0,2000-01-17,2002-06-24
+60388510,Paul Goldstein,paul goldstein,USA,R,178.0,2000-01-17,2007-08-27
+17360283,Justin Gimelstob,justin gimelstob,USA,R,196.0,2000-05-29,2007-08-27
+60358498,Alberto Martin,alberto martin,ESP,R,175.0,2000-01-17,2009-08-31
+44925353,Neville Godwin,neville godwin,RSA,R,173.0,2000-06-26,2002-06-24
+21628085,Harel Levy,harel levy,ISR,R,185.0,2000-05-29,2008-01-14
+97777316,Jeff Tarango,jeff tarango,USA,L,180.0,2000-01-17,2001-01-15
+6768670,Olivier Rochus,olivier rochus,BEL,R,168.0,2000-06-26,2013-06-24
+25480852,Alex Obrien,alex obrien,USA,R,185.0,2000-01-17,2001-01-15
+49993757,Byron Black,byron black,ZIM,R,175.0,2000-01-17,2002-01-14
+2432553,Vincent Spadea,vincent spadea,USA,R,183.0,2000-01-17,2009-06-22
+18606603,Andrei Pavel,andrei pavel,ROU,R,183.0,2000-05-29,2009-08-31
+65182531,Daniel Nestor,daniel nestor,CAN,L,190.0,2000-06-26,2001-06-25
+15797083,Martin Lee,martin lee,GBR,L,180.0,2000-06-26,2006-06-26
+8162410,Vladimir Voltchkov,vladimir voltchkov,BLR,R,180.0,2000-06-26,2004-05-24
+54256118,Magnus Gustafsson,magnus gustafsson,SWE,R,185.0,2000-05-29,2001-08-27
+80402364,Arvind Parmar,arvind parmar,GBR,R,193.0,2000-01-17,2004-06-21
+67111803,Alexander Popp,alexander popp,GER,R,201.0,2000-05-29,2005-08-29
+70639018,Justin Bower,justin bower,RSA,L,190.0,2000-06-26,2002-06-24
+26259214,Sebastien Lareau,sebastien lareau,CAN,R,183.0,2000-01-17,2000-08-28
+34290685,Arnaud Di Pasquale,arnaud di pasquale,FRA,R,185.0,2000-05-29,2004-08-30
+37367126,Martin Damm Sr,martin damm sr,CZE,R,188.0,2000-01-17,2002-01-14
+82205111,David Prinosil,david prinosil,GER,R,185.0,2000-05-29,2003-01-13
+99923760,Stephane Huet,stephane huet,FRA,L,180.0,2000-05-29,2001-06-25
+72009905,Jerome Golmard,jerome golmard,FRA,L,188.0,2000-01-17,2004-08-30
+33644704,Julien Boutter,julien boutter,FRA,R,190.0,2000-01-17,2004-06-21
+33954534,Marcelo Rios,marcelo rios,CHI,L,175.0,2000-05-29,2003-05-26
+82741393,Jens Knippschild,jens knippschild,GER,R,190.0,2000-01-17,2002-05-27
+48907240,Petr Kralert,petr kralert,CZE,R,188.0,2000-08-28,2000-08-28
+80252140,Hyung Taik Lee,hyung taik lee,KOR,R,180.0,2000-08-28,2008-08-25
+7897316,Fernando Gonzalez,fernando gonzalez,CHI,R,183.0,2000-08-28,2011-08-29
+43085331,Andre Sa,andre sa,BRA,R,185.0,2000-05-29,2004-06-21
+34277736,Cyril Saulnier,cyril saulnier,FRA,R,190.0,2000-01-17,2006-01-16
+44690618,Carlos Moya,carlos moya,ESP,R,190.0,2000-05-29,2010-01-18
+40629955,Greg Rusedski,greg rusedski,GBR,L,193.0,2000-05-29,2006-08-28
+95959630,Galo Blanco,galo blanco,ESP,R,173.0,2000-01-17,2004-06-21
+84892363,Xavier Malisse,xavier malisse,BEL,R,185.0,2000-08-28,2013-08-26
+10907646,Wayne Arthurs,wayne arthurs,AUS,L,190.0,2000-01-17,2007-06-25
+2628871,Lars Burgsmuller,lars burgsmuller,GER,R,183.0,2000-08-28,2006-01-16
+73075043,Alex Calatrava,alex calatrava,ESP,R,190.0,2001-01-15,2005-06-20
+78670323,Jan Siemerink,jan siemerink,NED,L,183.0,2000-01-17,2001-08-27
+17996753,Cecil Mamiit,cecil mamiit,PHI,R,173.0,2000-01-17,2004-01-19
+55420680,Mikhail Youzhny,mikhail youzhny,RUS,R,183.0,2001-01-15,2018-08-27
+36108295,Ivo Heuberger,ivo heuberger,SUI,R,188.0,2001-01-15,2004-08-30
+60154348,Nikolay Davydenko,nikolay davydenko,RUS,R,178.0,2001-01-15,2014-05-26
+5497639,Guillermo Canas,guillermo canas,ARG,R,185.0,2000-01-17,2009-06-22
+26349341,Michal Tabara,michal tabara,CZE,R,175.0,2000-01-17,2005-06-20
+72377421,Sergi Bruguera,sergi bruguera,ESP,R,188.0,2000-05-29,2001-08-27
+59799271,Michael Russell,michael russell,USA,R,173.0,2000-06-26,2015-01-19
+68006483,Kristian Pless,kristian pless,DEN,R,188.0,2001-05-28,2007-08-27
+81788658,Tommy Robredo,tommy robredo,ESP,R,180.0,2001-01-15,2018-08-27
+56801980,Jean Rene Lisnard,jean rene lisnard,MON,R,173.0,2000-05-29,2011-08-29
+58192616,Marcos Ondruska,marcos ondruska,RSA,R,183.0,2001-01-15,2001-05-28
+16727277,Jacobo Diaz,jacobo diaz,ESP,R,173.0,2000-01-17,2003-01-13
+37934933,Jose Acasuso,jose acasuso,ARG,R,190.0,2001-05-28,2010-01-18
+57056984,Andy Roddick,andy roddick,USA,R,188.0,2000-08-28,2012-08-27
+57729784,Jan Frode Andersen,jan frode andersen,NOR,L,190.0,2001-05-28,2001-05-28
+26350803,Andrei Stoliarov,andrei stoliarov,RUS,R,178.0,2001-01-15,2002-06-24
+680478,Albert Montanes,albert montanes,ESP,R,175.0,2001-05-28,2016-06-27
+91547776,Nicolas Coutelot,nicolas coutelot,FRA,R,185.0,2001-05-28,2003-05-26
+21858220,David Sanchez,david sanchez,ESP,R,183.0,2000-08-28,2005-05-23
+85647048,Magnus Larsson,magnus larsson,SWE,R,193.0,2001-05-28,2003-01-13
+73145045,Barry Cowan,barry cowan,GBR,L,188.0,2000-06-26,2002-06-24
+33051206,Bob Bryan,bob bryan,USA,L,193.0,2000-08-28,2001-08-27
+35237355,Davide Sanguinetti,davide sanguinetti,ITA,R,188.0,2000-01-17,2007-06-25
+70458109,German Puentes,german puentes,ESP,R,173.0,2001-01-15,2001-08-27
+45860684,Kenneth Carlsen,kenneth carlsen,DEN,L,190.0,2001-06-25,2006-05-29
+30443828,Felix Mantilla,felix mantilla,ESP,R,180.0,2000-01-17,2005-08-29
+94859806,Taylor Dent,taylor dent,USA,R,188.0,2000-06-26,2010-08-30
+57715761,Jamie Delgado,jamie delgado,GBR,R,178.0,2000-01-17,2006-06-26
+92571015,David Nalbandian,david nalbandian,ARG,R,180.0,2001-08-27,2012-06-25
+12391329,George Bastl,george bastl,SUI,R,183.0,2000-01-17,2006-08-28
+73946074,James Blake,james blake,USA,R,185.0,2001-08-27,2013-08-26
+63532,Bjorn Phau,bjorn phau,GER,R,175.0,2000-05-29,2013-01-14
+49000504,Jack Brasington,jack brasington,USA,R,188.0,2001-08-27,2003-01-13
+71776499,Ivan Ljubicic,ivan ljubicic,CRO,R,193.0,2000-01-17,2012-01-16
+7573096,Robby Ginepri,robby ginepri,USA,R,183.0,2001-08-27,2014-05-26
+46384894,Ramon Delgado,ramon delgado,PAR,R,185.0,2001-08-27,2010-06-21
+96563756,Jean Francois Bachelot,jean francois bachelot,FRA,R,183.0,2002-01-14,2002-06-24
+21745866,Alexandre Simoni,alexandre simoni,BRA,R,188.0,2001-08-27,2002-06-24
+11646943,Mardy Fish,mardy fish,USA,R,188.0,2000-08-28,2015-08-31
+39068304,Alex Kim,alex kim,USA,R,175.0,2000-08-28,2003-08-25
+21175254,Sebastien De Chaunac,sebastien de chaunac,FRA,R,183.0,2001-08-27,2009-01-19
+24250981,Feliciano Lopez,feliciano lopez,ESP,L,188.0,2001-05-28,2022-06-27
+98867272,Amir Hadad,amir hadad,ISR,R,183.0,2002-05-27,2002-05-27
+34432418,Jarkko Nieminen,jarkko nieminen,FIN,L,185.0,2002-01-14,2015-08-31
+61040486,Irakli Labadze,irakli labadze,GEO,L,188.0,2002-01-14,2006-06-26
+5002432,Paul Henri Mathieu,paul henri mathieu,FRA,R,185.0,2001-05-28,2017-05-29
+20340436,Oleg Ogorodov,oleg ogorodov,UZB,R,193.0,2002-05-27,2002-05-27
+12211658,Flavio Saretta,flavio saretta,BRA,R,183.0,2002-01-14,2006-08-28
+61793489,Gregory Carraz,gregory carraz,FRA,R,190.0,2002-06-24,2005-01-17
+25192861,Julian Knowle,julian knowle,AUT,L,188.0,2001-06-25,2004-06-21
+85192655,Jeff Morrison,jeff morrison,USA,R,185.0,2002-06-24,2006-08-28
+53816424,Jan Vacek,jan vacek,CZE,R,198.0,2001-06-25,2004-06-21
+56559222,Mario Ancic,mario ancic,CRO,R,196.0,2002-06-24,2009-01-19
+83240724,Scott Draper,scott draper,AUS,L,178.0,2000-01-17,2005-06-20
+52367675,Radek Stepanek,radek stepanek,CZE,R,185.0,2002-06-24,2017-01-16
+76279064,Alexander Waske,alexander waske,GER,R,188.0,2002-06-24,2007-08-27
+90715087,Nicolas Thomann,nicolas thomann,FRA,R,183.0,2001-05-28,2002-06-24
+15481577,Karol Beck,karol beck,SVK,R,180.0,2002-06-24,2012-08-27
+55147581,Noam Okun,noam okun,ISR,R,185.0,2000-01-17,2006-08-28
+30200466,Robin Soderling,robin soderling,SWE,R,193.0,2002-08-26,2011-06-20
+42602287,John Van Lottum,john van lottum,NED,R,185.0,2000-01-17,2004-06-21
+55534071,Dick Norman,dick norman,BEL,L,203.0,2002-08-26,2006-06-26
+42405698,Gaston Etlis,gaston etlis,ARG,R,185.0,2002-08-26,2002-08-26
+3466042,Jurgen Melzer,jurgen melzer,AUT,L,183.0,2000-06-26,2017-01-16
+58020859,Todd Larkham,todd larkham,AUS,R,178.0,2002-01-14,2004-01-19
+50960949,Vadim Kutsenko,vadim kutsenko,RUS,R,180.0,2003-01-13,2004-01-19
+43279243,Joseph Sirianni,joseph sirianni,AUS,R,175.0,2000-01-17,2008-01-14
+94012658,Jaymon Crabb,jaymon crabb,AUS,R,183.0,2002-01-14,2003-01-13
+10222613,Peter Luczak,peter luczak,AUS,R,183.0,2003-01-13,2011-01-17
+73704003,Renzo Furlan,renzo furlan,ITA,R,175.0,2003-01-13,2003-01-13
+57801506,Olivier Mutis,olivier mutis,FRA,R,175.0,2003-05-26,2005-01-17
+83718544,Julien Varlet,julien varlet,FRA,R,180.0,2002-05-27,2003-05-26
+6990702,Victor Hanescu,victor hanescu,ROU,R,198.0,2003-05-26,2014-06-23
+33667681,Luis Horna,luis horna,PER,R,180.0,2002-08-26,2008-08-25
+97771689,Martin Verkerk,martin verkerk,NED,R,196.0,2002-08-26,2007-05-28
+83716658,David Ferrer,david ferrer,ESP,R,175.0,2003-01-13,2018-08-27
+80497011,Marc Lopez,marc lopez,ESP,R,175.0,2003-05-26,2008-05-25
+74748450,Giorgio Galimberti,giorgio galimberti,ITA,R,180.0,2002-05-27,2005-08-29
+39371802,Ivo Karlovic,ivo karlovic,CRO,R,208.0,2003-06-23,2021-08-30
+88325317,Paul Baccanello,paul baccanello,AUS,R,183.0,2003-06-23,2005-01-17
+55937811,Rafael Nadal,rafael nadal,ESP,L,185.0,2003-06-23,2024-05-27
+91148745,Lee Childs,lee childs,GBR,R,,2001-06-25,2007-06-25
+17202770,Brian Vahaly,brian vahaly,USA,R,183.0,2002-06-24,2004-01-19
+97460274,Takao Suzuki,takao suzuki,JPN,R,175.0,2001-01-15,2005-01-17
+26086388,Gilles Elseneer,gilles elseneer,BEL,R,188.0,2003-06-23,2005-08-29
+16204816,Wesley Moodie,wesley moodie,RSA,R,196.0,2003-06-23,2006-08-28
+57388540,Frederic Niemeyer,frederic niemeyer,CAN,R,190.0,2003-06-23,2003-06-23
+13234065,Stefano Galvani,stefano galvani,ITA,R,178.0,2001-05-28,2010-05-24
+85547097,Tomas Berdych,tomas berdych,CZE,R,196.0,2003-08-25,2019-08-26
+13157411,Fernando Verdasco,fernando verdasco,ESP,L,188.0,2003-06-23,2022-08-29
+89707889,Dmitry Tursunov,dmitry tursunov,RUS,R,185.0,2003-08-25,2017-08-28
+34153789,Olivier Patience,olivier patience,FRA,R,180.0,2002-01-14,2010-05-24
+97298575,Chris Guccione,chris guccione,AUS,L,201.0,2004-01-19,2009-08-31
+22277525,Glenn Weiner,glenn weiner,USA,R,188.0,2004-01-19,2005-08-29
+54841154,Joachim Johansson,joachim johansson,SWE,R,198.0,2003-01-13,2007-01-15
+36011494,Filippo Volandri,filippo volandri,ITA,R,183.0,2003-05-26,2014-06-23
+41390785,Florian Mayer,florian mayer,GER,R,190.0,2004-01-19,2018-08-27
+98970411,Thierry Ascione,thierry ascione,FRA,R,188.0,2003-05-26,2008-06-23
+52476355,Todd Reid,todd reid,AUS,R,180.0,2002-01-14,2005-01-17
+51968125,Potito Starace,potito starace,ITA,R,188.0,2004-05-24,2014-05-26
+52112762,Alejandro Falla,alejandro falla,COL,L,185.0,2004-05-24,2015-06-29
+86694730,Igor Andreev,igor andreev,RUS,R,185.0,2004-01-19,2013-06-24
+43815306,Julien Benneteau,julien benneteau,FRA,R,185.0,2002-05-27,2018-08-27
+91450352,Daniel Elsner,daniel elsner,GER,R,183.0,2001-01-15,2004-08-30
+44308593,Guillermo Garcia Lopez,guillermo garcia lopez,ESP,R,188.0,2004-05-24,2019-08-26
+62989105,Juan Monaco,juan monaco,ARG,R,185.0,2004-05-24,2016-08-29
+69717607,Jerome Haehnel,jerome haehnel,FRA,R,185.0,2004-05-24,2007-05-28
+76476269,Julien Jeanpierre,julien jeanpierre,FRA,R,188.0,2004-05-24,2004-05-24
+12393284,Yen Hsun Lu,yen hsun lu,TPE,R,180.0,2004-06-21,2021-06-28
+12793095,Daniele Bracciali,daniele bracciali,ITA,R,180.0,2004-06-21,2007-05-28
+98801294,Mark Hilton,mark hilton,GBR,L,170.0,2001-06-25,2004-06-21
+96786913,Stefano Pescosolido,stefano pescosolido,ITA,R,185.0,2004-06-21,2004-06-21
+19029000,Alexander Peya,alexander peya,AUT,R,183.0,2004-05-24,2009-06-22
+67925816,Marcos Baghdatis,marcos baghdatis,CYP,R,183.0,2004-08-30,2019-07-01
+81531123,Amer Delic,amer delic,BIH,R,196.0,2003-08-25,2009-01-19
+71050446,Tuomas Ketola,tuomas ketola,FIN,R,185.0,2002-08-26,2005-06-20
+73587299,Ricardo Mello,ricardo mello,BRA,L,175.0,2004-01-19,2012-08-27
+67560105,Philipp Kohlschreiber,philipp kohlschreiber,GER,R,178.0,2003-08-25,2022-01-17
+69279438,Andreas Seppi,andreas seppi,ITA,R,190.0,2004-08-30,2022-01-17
+87912353,Tomas Zib,tomas zib,CZE,R,178.0,2000-01-17,2008-08-25
+40398059,Peter Wessels,peter wessels,NED,R,196.0,2000-01-17,2005-08-29
+14523194,Gael Monfils,gael monfils,FRA,R,193.0,2005-01-17,2024-08-26
+46369071,Janko Tipsarevic,janko tipsarevic,SRB,R,180.0,2003-08-25,2019-08-26
+4783295,Kevin Kim,kevin kim,USA,R,180.0,2000-08-28,2009-08-31
+13230585,Santiago Ventura,santiago ventura,ESP,R,183.0,2005-01-17,2010-06-21
+83730404,Bobby Reynolds,bobby reynolds,USA,R,183.0,2004-08-30,2013-06-24
+39090281,Jan Hernych,jan hernych,CZE,R,190.0,2004-06-21,2015-01-19
+38987619,Nathan Healey,nathan healey,AUS,R,180.0,2005-01-17,2006-05-29
+13232081,Nicolas Almagro,nicolas almagro,ESP,R,183.0,2004-05-24,2017-08-28
+8224300,Robin Vik,robin vik,CZE,R,183.0,2005-05-23,2006-08-28
+12288181,Oscar Hernandez,oscar hernandez,ESP,R,180.0,2004-01-19,2010-06-21
+49863833,Richard Gasquet,richard gasquet,FRA,R,185.0,2002-05-27,2024-05-27
+4556937,Florent Serra,florent serra,FRA,R,180.0,2004-05-24,2013-08-26
+15497587,Novak Djokovic,novak djokovic,SRB,R,188.0,2005-01-17,2024-08-26
+26676430,Lukas Dlouhy,lukas dlouhy,CZE,R,185.0,2005-05-23,2008-01-14
+64988739,Kristof Vliegen,kristof vliegen,BEL,R,193.0,2003-08-25,2010-08-30
+99794533,Stan Wawrinka,stan wawrinka,SUI,R,183.0,2005-05-23,2024-08-26
+29413365,Ivo Minar,ivo minar,CZE,R,183.0,2005-06-20,2009-06-22
+41060991,Alessio Di Mauro,alessio di mauro,ITA,L,185.0,2005-06-20,2007-05-28
+23828697,Danai Udomchoke,danai udomchoke,THA,R,173.0,2004-08-30,2012-01-16
+20295594,David Sherwood,david sherwood,GBR,R,193.0,2005-06-20,2005-06-20
+16561313,Andy Murray,andy murray,GBR,R,190.0,2005-06-20,2024-05-27
+77745282,Gilles Muller,gilles muller,LUX,L,193.0,2004-01-19,2018-08-27
+47280540,Michael Lammer,michael lammer,SUI,R,185.0,2005-08-29,2006-01-16
+52278759,Paul Capdeville,paul capdeville,CHI,R,190.0,2005-08-29,2009-08-31
+11118569,Brian Baker,brian baker,USA,R,190.0,2003-08-25,2016-08-29
+62487735,Scoville Jenkins,scoville jenkins,USA,R,188.0,2004-08-30,2008-08-25
+67517286,Boris Pashanski,boris pashanski,SRB,R,180.0,2006-01-16,2008-06-23
+80968785,Alex Bogomolov Jr,alex bogomolov jr,RUS,R,178.0,2001-08-27,2014-01-13
+84502763,Federico Luzzi,federico luzzi,ITA,R,188.0,2001-05-28,2006-01-16
+66451259,Jean Christophe Faurel,jean christophe faurel,FRA,R,175.0,2006-01-16,2006-06-26
+14114740,Jimmy Wang,jimmy wang,TPE,R,178.0,2004-06-21,2015-01-19
+72416099,Gilles Simon,gilles simon,FRA,R,183.0,2005-05-23,2022-05-23
+97444336,Denis Gremelmayr,denis gremelmayr,GER,L,183.0,2006-01-16,2011-06-20
+50971925,Marc Gicquel,marc gicquel,FRA,R,188.0,2004-05-24,2013-06-24
+56351536,Ilija Bozoljac,ilija bozoljac,SRB,R,193.0,2006-05-29,2010-06-21
+21104031,Martin Vassallo Arguello,martin vassallo arguello,ARG,R,183.0,2002-05-27,2010-01-18
+76821711,Evgeny Korolev,evgeny korolev,KAZ,R,185.0,2006-05-29,2010-08-30
+83798763,Dieter Kindlmann,dieter kindlmann,GER,R,183.0,2005-01-17,2010-05-24
+97126803,Jeremy Chardy,jeremy chardy,FRA,R,188.0,2006-05-29,2023-07-03
+13595638,Ruben Ramirez Hidalgo,ruben ramirez hidalgo,ESP,R,183.0,2003-08-25,2013-01-14
+54659232,Mathieu Montcourt,mathieu montcourt,FRA,R,183.0,2006-05-29,2009-05-25
+57356666,Nicolas Mahut,nicolas mahut,FRA,R,190.0,2000-05-29,2019-05-27
+86301183,Richard Bloomfield,richard bloomfield,GBR,R,185.0,2003-06-23,2007-06-25
+52322297,Igor Kunitsyn,igor kunitsyn,RUS,R,180.0,2002-08-26,2012-06-25
+12506113,Benjamin Becker,benjamin becker,GER,R,178.0,2006-06-26,2016-08-29
+46057727,Roko Karanusic,roko karanusic,CRO,R,183.0,2003-08-25,2009-06-22
+27513652,Melle Van Gemerden,melle van gemerden,NED,R,183.0,2005-01-17,2006-06-26
+44828221,Robert Kendrick,robert kendrick,USA,R,190.0,2003-06-23,2011-05-22
+87495064,Sam Querrey,sam querrey,USA,R,198.0,2006-08-28,2022-08-29
+55397826,Teymuraz Gabashvili,teymuraz gabashvili,RUS,R,188.0,2006-08-28,2017-05-29
+64872709,Ryan Sweeting,ryan sweeting,USA,R,196.0,2006-08-28,2012-06-25
+51250002,Jan Hajek,jan hajek,CZE,R,180.0,2006-08-28,2014-01-13
+53276195,Lukasz Kubot,lukasz kubot,POL,R,190.0,2006-08-28,2014-06-23
+52185807,Thiago Alves,thiago alves,BRA,R,178.0,2006-08-28,2010-05-24
+8751961,Marco Chiudinelli,marco chiudinelli,SUI,R,185.0,2006-08-28,2016-08-29
+4609628,Zack Fleishman,zack fleishman,USA,R,188.0,2006-01-16,2007-06-25
+76552687,Dudi Sela,dudi sela,ISR,R,175.0,2005-05-23,2018-07-02
+36688402,Robert Smeets,robert smeets,AUS,L,188.0,2007-01-15,2008-08-25
+30207410,Alex Kuznetsov,alex kuznetsov,USA,R,183.0,2006-08-28,2014-06-23
+78299248,Mischa Zverev,mischa zverev,GER,L,190.0,2007-01-15,2019-07-01
+53855800,Frank Dancevic,frank dancevic,CAN,R,185.0,2006-06-26,2014-08-25
+35673101,Juan Martin del Potro,juan martin del potro,ARG,R,198.0,2006-05-29,2019-05-27
+39455630,Carlos Berlocq,carlos berlocq,ARG,R,183.0,2006-01-16,2018-08-27
+14270580,Konstantinos Economidis,konstantinos economidis,GRE,R,188.0,2002-06-24,2008-01-14
+13753823,Ivan Navarro,ivan navarro,ESP,R,183.0,2004-06-21,2009-08-31
+58614897,Simone Bolelli,simone bolelli,ITA,R,183.0,2007-05-28,2019-05-27
+69356363,Edouard Roger Vasselin,edouard roger vasselin,FRA,R,188.0,2007-05-28,2010-05-24
+72386102,Laurent Recouderc,laurent recouderc,FRA,R,178.0,2007-05-28,2010-05-24
+12904160,Diego Hartfield,diego hartfield,ARG,R,185.0,2006-05-29,2008-01-14
+3924397,Juan Pablo Brzezicki,juan pablo brzezicki,ARG,R,178.0,2005-05-23,2009-08-31
+46959216,Ernests Gulbis,ernests gulbis,LAT,R,190.0,2007-05-28,2020-01-20
+82004813,Flavio Cipolla,flavio cipolla,ITA,R,173.0,2007-05-28,2013-01-14
+25696237,Aisam Ul Haq Qureshi,aisam ul haq qureshi,PAK,R,183.0,2007-06-25,2008-08-25
+70821746,Michael Berrer,michael berrer,GER,L,193.0,2006-06-26,2015-08-31
+19571239,Jo-Wilfried Tsonga,jo-wilfried tsonga,FRA,R,188.0,2005-05-23,2022-05-23
+23520558,Nicolas Devilder,nicolas devilder,FRA,L,173.0,2007-01-15,2012-05-27
+2420683,Rik De Voest,rik de voest,RSA,R,180.0,2007-06-25,2012-01-16
+7244247,John Isner,john isner,USA,R,206.0,2007-08-27,2023-08-28
+36934891,Donald Young,donald young,USA,L,183.0,2005-08-29,2018-08-27
+4678189,Philipp Petzschner,philipp petzschner,GER,R,185.0,2007-08-27,2013-08-26
+42233127,Wayne Odesnik,wayne odesnik,USA,L,180.0,2004-08-30,2014-08-25
+47155412,Robin Haase,robin haase,NED,R,190.0,2007-08-27,2021-02-08
+89114126,Marin Cilic,marin cilic,CRO,R,198.0,2007-01-15,2024-01-15
+38822896,Denis Istomin,denis istomin,UZB,R,188.0,2006-01-16,2021-05-31
+70430266,Alun Jones,alun jones,AUS,R,180.0,2001-01-15,2008-01-14
+34507295,Sam Warburg,sam warburg,USA,R,190.0,2007-06-25,2008-08-25
+53294587,Jesse Levine,jesse levine,CAN,L,175.0,2007-08-27,2013-06-24
+66297917,David Marrero,david marrero,ESP,R,185.0,2008-05-25,2008-05-25
+62198046,Pablo Andujar,pablo andujar,ESP,R,180.0,2008-05-25,2022-06-27
+26257366,Diego Junqueira,diego junqueira,ARG,L,178.0,2008-05-25,2011-08-29
+22084816,Marcos Daniel,marcos daniel,BRA,R,180.0,2003-01-13,2011-01-17
+11549686,Eduardo Schwank,eduardo schwank,ARG,R,183.0,2008-05-25,2012-05-27
+93319706,Marcel Granollers,marcel granollers,ESP,R,190.0,2006-06-26,2019-08-26
+60816579,Miguel Angel Lopez Jaen,miguel angel lopez jaen,ESP,R,188.0,2008-05-25,2008-05-25
+64461173,Sebastian Decoud,sebastian decoud,ARG,L,178.0,2008-05-25,2008-05-25
+10143328,Maximo Gonzalez,maximo gonzalez,ARG,R,175.0,2008-05-25,2015-05-24
+28937234,Thomaz Bellucci,thomaz bellucci,BRA,L,188.0,2008-05-25,2018-05-28
+98688228,Simon Stadler,simon stadler,GER,L,183.0,2006-06-26,2011-01-17
+12028873,Chris Eaton,chris eaton,GBR,R,188.0,2008-06-23,2008-06-23
+19809186,Viktor Troicki,viktor troicki,SRB,R,193.0,2008-01-14,2021-02-08
+79507185,Ryler Deheart,ryler deheart,USA,L,183.0,2008-08-25,2008-08-25
+86824680,Steve Darcis,steve darcis,BEL,R,178.0,2007-08-27,2019-08-26
+72539104,Andrey Golubev,andrey golubev,KAZ,R,185.0,2008-08-25,2015-05-24
+22821581,Andreas Beck,andreas beck,GER,L,190.0,2008-06-23,2014-08-25
+33883585,Kei Nishikori,kei nishikori,JPN,R,178.0,2008-06-23,2024-07-01
+6137517,Rui Machado,rui machado,POR,R,178.0,2008-08-25,2012-08-27
+34254773,Fabio Fognini,fabio fognini,ITA,R,178.0,2007-05-28,2024-08-26
+34968267,Bernard Tomic,bernard tomic,AUS,R,193.0,2009-01-19,2021-02-08
+70017475,Brydan Klein,brydan klein,AUS,R,183.0,2008-01-14,2017-07-03
+56035547,Brian Dabul,brian dabul,ARG,L,170.0,2008-06-23,2011-05-22
+95507262,Josselin Ouanna,josselin ouanna,FRA,R,193.0,2008-05-25,2013-01-14
+6879875,Daniel Gimeno Traver,daniel gimeno traver,ESP,R,185.0,2005-05-23,2016-01-18
+85236908,Sergiy Stakhovsky,sergiy stakhovsky,UKR,R,193.0,2008-06-23,2021-02-08
+96653434,Guillaume Rufin,guillaume rufin,FRA,R,188.0,2009-05-25,2013-08-26
+41628590,Victor Crivoi,victor crivoi,ROU,R,185.0,2008-05-25,2009-08-31
+81149671,Leonardo Mayer,leonardo mayer,ARG,R,188.0,2009-05-25,2020-08-31
+34905477,Pablo Cuevas,pablo cuevas,URU,R,180.0,2007-08-27,2022-05-23
+83224719,Simon Greul,simon greul,GER,R,185.0,2006-06-26,2011-01-17
+4112057,Carsten Ball,carsten ball,AUS,L,198.0,2008-08-25,2011-01-17
+77296729,Jesse Witten,jesse witten,USA,R,178.0,2006-08-28,2010-06-21
+34032389,Somdev Devvarman,somdev devvarman,IND,R,180.0,2009-08-31,2014-06-23
+70539990,Marsel Ilhan,marsel ilhan,TUR,R,190.0,2009-08-31,2016-05-23
+89066721,Horacio Zeballos,horacio zeballos,ARG,L,188.0,2009-08-31,2018-07-02
+34993448,Daniel Koellerer,daniel koellerer,AUT,R,180.0,2009-05-25,2010-05-24
+66803255,Stephane Robert,stephane robert,FRA,R,185.0,2004-05-24,2018-07-02
+45462394,Ivan Sergeyev,ivan sergeyev,UKR,R,175.0,2010-01-18,2010-01-18
+8546265,Ivan Dodig,ivan dodig,CRO,R,183.0,2010-01-18,2017-01-16
+70164714,Illya Marchenko,illya marchenko,UKR,R,185.0,2010-01-18,2017-07-03
+68740034,Santiago Giraldo,santiago giraldo,COL,R,188.0,2007-05-28,2019-08-26
+69447025,Louk Sorensen,louk sorensen,IRL,R,175.0,2010-01-18,2011-08-29
+84182348,Antonio Veic,antonio veic,CRO,R,180.0,2010-01-18,2011-05-22
+56492190,Lukas Lacko,lukas lacko,SVK,R,185.0,2007-01-15,2018-08-27
+56890872,Julian Reister,julian reister,GER,R,188.0,2010-05-24,2014-06-23
+58606626,Tobias Kamke,tobias kamke,GER,R,180.0,2008-06-23,2019-08-26
+67285563,Thiemo De Bakker,thiemo de bakker,NED,R,193.0,2007-06-25,2016-05-23
+5142819,Blaz Kavcic,blaz kavcic,SLO,R,188.0,2010-01-18,2018-01-15
+20157589,Grega Zemlja,grega zemlja,SLO,R,183.0,2009-06-22,2013-08-26
+53727890,Pere Riba,pere riba,ESP,R,183.0,2010-05-24,2014-08-25
+3518388,Yuri Schukin,yuri schukin,KAZ,R,188.0,2001-01-15,2010-05-24
+28037848,Alexandr Dolgopolov,alexandr dolgopolov,UKR,R,180.0,2010-05-24,2018-01-15
+68566549,Ricardas Berankis,ricardas berankis,LTU,R,175.0,2010-06-21,2022-06-27
+6685182,Daniel Brands,daniel brands,GER,R,196.0,2008-05-25,2017-07-03
+97861974,Brendan Evans,brendan evans,USA,R,188.0,2008-08-25,2010-06-21
+99855311,Michal Przysiezny,michal przysiezny,POL,R,185.0,2007-08-27,2014-06-23
+65972654,Martin Fischer,martin fischer,AUT,R,180.0,2010-05-24,2011-06-20
+21471907,Benoit Paire,benoit paire,FRA,R,196.0,2010-05-24,2023-05-29
+87495037,Ryan Harrison,ryan harrison,USA,R,183.0,2010-01-18,2019-01-14
+64265209,Adrian Mannarino,adrian mannarino,FRA,L,183.0,2008-05-25,2024-08-26
+952543,Dustin Brown,dustin brown,GER,R,196.0,2010-06-21,2018-01-15
+76775589,Kevin Anderson,kevin anderson,RSA,R,203.0,2008-01-14,2022-01-17
+23041786,Peter Polansky,peter polansky,CAN,R,180.0,2009-01-19,2018-08-27
+34968267,Bernard Tomic,bernard tomic,AUS,R,196.0,2009-01-19,2021-02-08
+7244247,John Isner,john isner,USA,R,208.0,2007-08-27,2023-08-28
+67055750,Milos Raonic,milos raonic,CAN,R,196.0,2010-08-30,2024-01-15
+16561313,Andy Murray,andy murray,GBR,R,191.0,2005-06-20,2024-05-27
+64265209,Adrian Mannarino,adrian mannarino,FRA,L,180.0,2008-05-25,2024-08-26
+49863833,Richard Gasquet,richard gasquet,FRA,R,183.0,2002-05-27,2024-05-27
+57356666,Nicolas Mahut,nicolas mahut,FRA,R,191.0,2000-05-29,2019-05-27
+47155412,Robin Haase,robin haase,NED,R,191.0,2007-08-27,2021-02-08
+21314328,Grigor Dimitrov,grigor dimitrov,BUL,R,191.0,2009-06-22,2024-08-26
+3994146,Frederico Gil,frederico gil,POR,R,173.0,2008-05-25,2012-01-16
+53276195,Lukasz Kubot,lukasz kubot,POL,R,191.0,2006-08-28,2014-06-23
+93910234,Albert Ramos,albert ramos,ESP,L,188.0,2011-05-22,2024-08-26
+86479977,Andreas Haider Maurer,andreas haider maurer,AUT,R,190.0,2010-08-30,2018-05-28
+16122522,Lukas Rosol,lukas rosol,CZE,R,193.0,2010-08-30,2022-06-27
+47834883,Thomas Schoorel,thomas schoorel,NED,L,203.0,2011-05-22,2011-05-22
+98065866,Maxime Teixeira,maxime teixeira,FRA,R,188.0,2011-05-22,2013-05-27
+70539990,Marsel Ilhan,marsel ilhan,TUR,R,191.0,2009-08-31,2016-05-23
+96485251,Mikhail Kukushkin,mikhail kukushkin,KAZ,R,183.0,2010-08-30,2024-05-27
+93319706,Marcel Granollers,marcel granollers,ESP,R,191.0,2006-06-26,2019-08-26
+38822896,Denis Istomin,denis istomin,UZB,R,185.0,2006-01-16,2021-05-31
+87495037,Ryan Harrison,ryan harrison,USA,R,185.0,2010-01-18,2019-01-14
+21809566,Sergei Bubka,sergei bubka,UKR,R,188.0,2011-08-29,2011-08-29
+18891137,Malek Jaziri,malek jaziri,TUN,R,185.0,2011-08-29,2019-07-01
+22494513,Rogerio Dutra Silva,rogerio dutra silva,BRA,R,178.0,2011-08-29,2018-05-28
+38677963,Vasek Pospisil,vasek pospisil,CAN,R,193.0,2011-08-29,2023-01-16
+30461280,Jack Sock,jack sock,USA,R,191.0,2010-08-30,2022-08-29
+17311871,Tatsuma Ito,tatsuma ito,JPN,R,180.0,2011-08-29,2020-01-20
+84121601,James Duckworth,james duckworth,AUS,R,183.0,2012-01-16,2024-08-26
+72539104,Andrey Golubev,andrey golubev,KAZ,R,180.0,2008-08-25,2015-05-24
+60436408,Edouard Roger-Vasselin,edouard roger-vasselin,FRA,R,185.0,2008-01-14,2016-06-27
+74218871,Matthew Ebden,matthew ebden,AUS,R,188.0,2010-01-18,2019-07-01
+64292469,Cedrik Marcel Stebe,cedrik marcel stebe,GER,L,183.0,2011-06-20,2021-02-08
+95771648,Adrian Ungur,adrian ungur,ROU,R,178.0,2012-05-27,2016-05-23
+59778056,Martin Klizan,martin klizan,SVK,L,191.0,2010-08-30,2019-08-26
+78050540,David Goffin,david goffin,BEL,R,180.0,2012-05-27,2024-08-26
+93284365,Ruben Bemelmans,ruben bemelmans,BEL,L,183.0,2011-06-20,2019-07-01
+19788514,Jerzy Janowicz,jerzy janowicz,POL,R,203.0,2012-06-25,2017-07-03
+80747528,Inigo Cervantes Huegun,inigo cervantes huegun,ESP,R,180.0,2012-06-25,2016-08-29
+7076367,Kenny De Schepper,kenny de schepper,FRA,L,203.0,2011-06-20,2016-05-23
+87690043,Go Soeda,go soeda,JPN,R,178.0,2007-01-15,2020-08-31
+58132152,James Ward,james ward,GBR,R,190.0,2009-06-22,2019-07-01
+5562173,Jurgen Zopp,jurgen zopp,EST,R,190.0,2012-01-16,2018-05-28
+40543181,Tim Smyczek,tim smyczek,USA,R,175.0,2010-08-30,2018-08-27
+78996012,Bradley Klahn,bradley klahn,USA,L,183.0,2010-08-30,2020-08-31
+72413079,Steve Johnson,steve johnson,USA,R,188.0,2011-08-29,2023-08-28
+70705668,Igor Sijsling,igor sijsling,NED,R,191.0,2011-06-20,2016-06-27
+85954242,Dennis Novikov,dennis novikov,USA,R,193.0,2012-08-27,2016-06-27
+46873069,Andrey Kuznetsov,andrey kuznetsov,RUS,R,183.0,2010-06-21,2022-05-23
+3188374,Roberto Bautista Agut,roberto bautista agut,ESP,R,183.0,2012-01-16,2024-08-26
+20738801,Evgeny Donskoy,evgeny donskoy,RUS,R,185.0,2013-01-14,2021-08-30
+57027096,Rajeev Ram,rajeev ram,USA,R,193.0,2004-08-30,2016-08-29
+1095765,Joao Sousa,joao sousa,POR,R,185.0,2012-05-27,2023-01-16
+10831771,Amir Weintraub,amir weintraub,ISR,R,188.0,2013-01-14,2013-01-14
+68556410,Guido Pella,guido pella,ARG,L,183.0,2012-08-27,2023-08-28
+88094825,Lucas Pouille,lucas pouille,FRA,R,185.0,2013-05-27,2024-07-01
+43294320,Federico Delbonis,federico delbonis,ARG,L,193.0,2013-05-27,2022-08-29
+20302910,Nick Kyrgios,nick kyrgios,AUS,R,193.0,2013-05-27,2022-08-29
+84740361,Jan Lennard Struff,jan lennard struff,GER,R,193.0,2013-05-27,2024-08-26
+18654671,Denis Kudla,denis kudla,USA,R,180.0,2012-01-16,2023-01-16
+952543,Dustin Brown,dustin brown,JAM,R,196.0,2010-06-21,2018-01-15
+48586800,Peter Gojowczyk,peter gojowczyk,GER,R,188.0,2012-01-16,2022-08-29
+10143328,Maximo Gonzalez,maximo gonzalez,ARG,R,173.0,2008-05-25,2015-05-24
+51399502,Daniel Evans,daniel evans,GBR,R,175.0,2009-06-22,2024-08-26
+80054906,Thanasi Kokkinakis,thanasi kokkinakis,AUS,R,193.0,2014-01-13,2024-08-26
+56896306,Dusan Lajovic,dusan lajovic,SRB,R,183.0,2014-01-13,2024-08-26
+74087546,Vincent Millot,vincent millot,FRA,L,173.0,2011-01-17,2017-08-28
+40715757,Blaz Rola,blaz rola,SLO,L,193.0,2014-01-13,2019-05-27
+55397826,Teymuraz Gabashvili,teymuraz gabashvili,RUS,R,185.0,2006-08-28,2017-05-29
+90544797,Damir Dzumhur,damir dzumhur,BIH,R,175.0,2014-01-13,2022-01-17
+62146402,Dominic Thiem,dominic thiem,AUT,R,185.0,2014-01-13,2024-08-26
+26884052,Axel Michon,axel michon,FRA,L,176.0,2014-05-26,2014-05-26
+84503649,Marinko Matosevic,marinko matosevic,AUS,R,194.0,2010-01-18,2015-06-29
+866889,Aleksandr Nedovyesov,aleksandr nedovyesov,KAZ,R,188.0,2014-01-13,2015-08-31
+36334097,Facundo Bagnis,facundo bagnis,ARG,L,183.0,2014-05-26,2023-01-16
+70283813,Diego Schwartzman,diego schwartzman,ARG,R,170.0,2014-05-26,2024-08-26
+60268809,Jiri Vesely,jiri vesely,CZE,L,198.0,2013-05-27,2024-01-15
+95800600,Alejandro Gonzalez,alejandro gonzalez,COL,R,190.0,2014-01-13,2015-08-31
+5595360,Tim Puetz,tim puetz,GER,R,185.0,2014-06-23,2015-01-19
+60165987,Luke Saville,luke saville,AUS,R,188.0,2013-01-14,2016-06-27
+33258392,Ante Pavic,ante pavic,CRO,R,196.0,2014-05-26,2014-06-23
+95706494,Pablo Carreno Busta,pablo carreno busta,ESP,R,188.0,2013-05-27,2024-08-26
+76354792,Matthias Bachinger,matthias bachinger,GER,R,188.0,2011-06-20,2018-01-15
+11946897,Borna Coric,borna coric,CRO,R,188.0,2014-08-25,2024-08-26
+75361735,Victor Estrella,victor estrella,DOM,R,173.0,2014-05-26,2018-01-15
+29784458,Alexander Kudryavtsev,alexander kudryavtsev,RUS,R,183.0,2012-01-16,2016-06-27
+71133550,Paolo Lorenzi,paolo lorenzi,ITA,R,183.0,2010-01-18,2020-08-31
+48912904,Sam Groth,sam groth,AUS,R,193.0,2009-01-19,2017-01-16
+93020421,Marius Copil,marius copil,ROU,R,191.0,2015-01-19,2019-08-26
+45565919,Kyle Edmund,kyle edmund,GBR,R,188.0,2013-06-24,2023-01-16
+20353327,Andrea Arnaboldi,andrea arnaboldi,ITA,L,180.0,2014-05-26,2019-07-01
+92118074,Pierre Hugues Herbert,pierre hugues herbert,FRA,R,188.0,2014-05-26,2024-05-27
+35295018,Alexander Zverev,alexander zverev,GER,R,198.0,2015-06-29,2024-08-26
+6328969,John Millman,john millman,AUS,R,183.0,2013-01-14,2023-01-16
+40660811,Liam Broady,liam broady,GBR,L,183.0,2015-06-29,2024-07-01
+52216558,Aljaz Bedene,aljaz bedene,SLO,R,181.0,2013-01-14,2022-08-29
+668157,Nikoloz Basilashvili,nikoloz basilashvili,GEO,R,185.0,2015-05-24,2023-01-16
+7898,Filip Krajinovic,filip krajinovic,SRB,R,185.0,2012-05-27,2023-05-29
+30584372,Hyeon Chung,hyeon chung,KOR,R,188.0,2015-06-29,2019-08-26
+46775659,Austin Krajicek,austin krajicek,USA,L,188.0,2008-08-25,2016-01-18
+28464214,Yoshihito Nishioka,yoshihito nishioka,JPN,L,170.0,2014-08-25,2024-08-26
+63559909,Quentin Halys,quentin halys,FRA,R,191.0,2015-05-24,2024-08-26
+61276083,Renzo Olivo,renzo olivo,ARG,R,178.0,2016-01-18,2017-07-03
+39650212,Omar Jasika,omar jasika,AUS,L,183.0,2016-01-18,2024-01-15
+82394940,Noah Rubin,noah rubin,USA,R,175.0,2014-08-25,2019-07-01
+45683111,Marco Trungelliti,marco trungelliti,ARG,R,178.0,2016-01-18,2022-01-17
+47152151,Mirza Basic,mirza basic,BIH,R,188.0,2016-01-18,2019-01-14
+5444166,Andrej Martin,andrej martin,SVK,R,183.0,2013-08-26,2021-05-31
+58838383,Adam Pavlasek,adam pavlasek,CZE,R,185.0,2016-05-23,2018-05-28
+46911551,Taro Daniel,taro daniel,JPN,R,191.0,2014-08-25,2024-08-26
+41629176,Bjorn Fratangelo,bjorn fratangelo,USA,R,183.0,2015-08-31,2022-05-23
+3719907,Jordan Thompson,jordan thompson,AUS,R,183.0,2014-01-13,2024-08-26
+7481189,Mathias Bourgue,mathias bourgue,FRA,R,188.0,2016-05-23,2021-05-31
+21659302,Marcus Willis,marcus willis,GBR,L,191.0,2016-06-27,2016-06-27
+24061210,Radu Albot,radu albot,MDA,R,175.0,2014-08-25,2024-08-26
+50916103,Matthew Barton,matthew barton,AUS,R,191.0,2016-06-27,2016-06-27
+86440573,Ernesto Escobedo,ernesto escobedo,MEX,R,185.0,2016-08-29,2023-01-16
+97880761,Jan Satral,jan satral,CZE,R,185.0,2016-08-29,2016-08-29
+50623569,Alessandro Giannessi,alessandro giannessi,ITA,L,185.0,2016-08-29,2022-05-23
+87386439,Karen Khachanov,karen khachanov,RUS,R,198.0,2016-08-29,2024-08-26
+10861004,Jared Donaldson,jared donaldson,USA,R,188.0,2014-08-25,2018-07-02
+29970040,Andrey Rublev,andrey rublev,RUS,R,188.0,2015-08-31,2024-08-26
+23240030,Alex De Minaur,alex de minaur,AUS,R,183.0,2017-01-16,2024-08-26
+16886282,Alexander Bublik,alexander bublik,KAZ,R,196.0,2017-01-16,2024-08-26
+37760966,Frances Tiafoe,frances tiafoe,USA,R,188.0,2015-05-24,2024-08-26
+19767529,Andrew Whittington,andrew whittington,AUS,R,188.0,2017-01-16,2017-07-03
+82627194,Nicolas Kicker,nicolas kicker,ARG,R,178.0,2017-05-29,2018-01-15
+98047823,Thiago Monteiro,thiago monteiro,BRA,L,183.0,2017-01-16,2024-08-26
+37126003,Konstantin Kravchuk,konstantin kravchuk,RUS,R,190.0,2014-06-23,2017-05-29
+25790501,Benjamin Bonzi,benjamin bonzi,FRA,R,183.0,2017-05-29,2024-01-15
+67518,Stefano Napolitano,stefano napolitano,ITA,R,196.0,2017-05-29,2017-05-29
+1945746,Daniil Medvedev,daniil medvedev,RUS,R,198.0,2017-01-16,2024-08-26
+29021925,Sebastian Ofner,sebastian ofner,AUT,R,191.0,2017-07-03,2024-08-26
+41270062,Yuichi Sugita,yuichi sugita,JPN,R,173.0,2014-06-23,2021-08-30
+86960401,Stefano Travaglia,stefano travaglia,ITA,R,185.0,2017-07-03,2023-08-28
+17793264,Adrian Menendez Maceiras,adrian menendez maceiras,ESP,R,185.0,2012-06-25,2017-08-28
+93206429,Taylor Fritz,taylor fritz,USA,R,196.0,2016-01-18,2024-08-26
+25519326,Thomas Fabbiano,thomas fabbiano,ITA,R,173.0,2013-08-26,2019-08-26
+83490000,Denis Shapovalov,denis shapovalov,CAN,L,185.0,2017-07-03,2024-08-26
+79286763,Cameron Norrie,cameron norrie,GBR,L,188.0,2017-07-03,2024-07-01
+44375588,Casper Ruud,casper ruud,NOR,R,183.0,2018-01-15,2024-08-26
+55276372,Mackenzie Mcdonald,mackenzie mcdonald,USA,R,178.0,2016-08-29,2024-08-26
+57330372,Maximilian Marterer,maximilian marterer,GER,L,188.0,2017-08-28,2024-08-26
+18931566,Tennys Sandgren,tennys sandgren,USA,R,188.0,2017-05-29,2021-08-30
+60039763,Marton Fucsovics,marton fucsovics,HUN,R,188.0,2016-08-29,2024-08-26
+22522964,Lorenzo Sonego,lorenzo sonego,ITA,R,191.0,2018-01-15,2024-08-26
+94755385,Hubert Hurkacz,hubert hurkacz,POL,R,196.0,2018-05-28,2024-08-26
+44762166,Elias Ymer,elias ymer,SWE,R,185.0,2015-01-19,2024-07-01
+1853767,Corentin Moutet,corentin moutet,FRA,L,180.0,2018-01-15,2024-08-26
+20462958,Marco Cecchinato,marco cecchinato,ITA,R,185.0,2015-08-31,2023-08-28
+25861068,Jaume Munar,jaume munar,ESP,R,183.0,2018-01-15,2024-08-26
+33321816,Guido Andreozzi,guido andreozzi,ARG,R,183.0,2012-08-27,2019-07-01
+59844221,Stefanos Tsitsipas,stefanos tsitsipas,GRE,R,193.0,2017-05-29,2024-08-26
+99819152,Matteo Berrettini,matteo berrettini,ITA,R,196.0,2018-01-15,2024-08-26
+27067661,Nicolas Jarry,nicolas jarry,CHI,R,201.0,2017-05-29,2024-08-26
+55273031,Dennis Novak,dennis novak,AUT,R,183.0,2018-01-15,2023-07-03
+90891417,Jason Kubler,jason kubler,AUS,R,178.0,2010-01-18,2024-01-15
+8024276,Roberto Carballes Baena,roberto carballes baena,ESP,R,183.0,2016-05-23,2024-08-26
+92184456,Ugo Humbert,ugo humbert,FRA,L,188.0,2018-08-27,2024-08-26
+32019267,Laslo Djere,laslo djere,SRB,R,188.0,2016-05-23,2024-08-26
+80276496,Ilya Ivashka,ilya ivashka,BLR,R,193.0,2016-08-29,2023-08-28
+82361983,Alex Bolt,alex bolt,AUS,L,183.0,2017-01-16,2024-07-01
+22182901,Alexei Popyrin,alexei popyrin,AUS,R,196.0,2018-01-15,2024-08-26
+67471888,Reilly Opelka,reilly opelka,USA,R,211.0,2017-01-16,2024-08-26
+53161722,Henri Laaksonen,henri laaksonen,SUI,R,185.0,2017-07-03,2022-06-27
+77177712,Salvatore Caruso,salvatore caruso,ITA,R,185.0,2018-01-15,2022-01-17
+45941068,Lloyd Harris,lloyd harris,RSA,R,193.0,2018-08-27,2024-07-01
+30953899,Elliot Benchetrit,elliot benchetrit,MAR,R,193.0,2018-05-28,2020-09-28
+42737362,Mikael Ymer,mikael ymer,SWE,R,183.0,2019-05-27,2023-07-03
+87327699,Antoine Hoang,antoine hoang,FRA,R,183.0,2019-05-27,2021-08-30
+20693345,Gregoire Barrere,gregoire barrere,FRA,R,183.0,2016-05-23,2024-05-27
+57914015,Hugo Dellien,hugo dellien,BOL,R,180.0,2019-05-27,2023-08-28
+29443880,Cristian Garin,cristian garin,CHI,R,185.0,2017-07-03,2024-07-01
+82973507,Oscar Otte,oscar otte,GER,R,193.0,2018-05-28,2023-07-03
+71334613,Juan Ignacio Londero,juan ignacio londero,ARG,R,180.0,2019-05-27,2022-05-23
+97942164,Miomir Kecmanovic,miomir kecmanovic,SRB,R,183.0,2019-01-14,2024-08-26
+16408722,Yannick Maden,yannick maden,GER,R,185.0,2018-07-02,2019-05-27
+15356315,Felix Auger Aliassime,felix auger aliassime,CAN,R,193.0,2018-08-27,2024-08-26
+64081521,Dominik Koepfer,dominik koepfer,GER,L,180.0,2019-07-01,2024-08-26
+14243078,Jay Clarke,jay clarke,GBR,R,183.0,2018-07-02,2022-06-27
+5285434,Jenson Brooksby,jenson brooksby,USA,R,188.0,2018-08-27,2023-01-16
+79103821,Kamil Majchrzak,kamil majchrzak,POL,R,180.0,2019-01-14,2022-08-29
+83947784,Egor Gerasimov,egor gerasimov,BLR,R,196.0,2019-08-26,2022-01-17
+47113342,Pedro Martinez,pedro martinez,ESP,R,185.0,2019-05-27,2024-08-26
+3664762,Alejandro Tabilo,alejandro tabilo,CHI,L,188.0,2020-01-20,2024-08-26
+42687225,Jannik Sinner,jannik sinner,ITA,R,191.0,2019-08-26,2024-08-26
+84138887,Tommy Paul,tommy paul,USA,R,185.0,2015-08-31,2024-08-26
+57959594,Michael Mmoh,michael mmoh,USA,R,188.0,2016-08-29,2023-08-28
+33317099,Alejandro Davidovich Fokina,alejandro davidovich fokina,ESP,R,183.0,2019-05-27,2024-08-26
+42580593,Marc Polmans,marc polmans,AUS,R,188.0,2019-01-14,2024-01-15
+79998015,Mitchell Krueger,mitchell krueger,USA,R,188.0,2018-08-27,2024-08-26
+47348310,Soon Woo Kwon,soon woo kwon,KOR,R,180.0,2018-01-15,2024-08-26
+64415274,Marcos Giron,marcos giron,USA,R,180.0,2014-08-25,2024-08-26
+25180979,Maxime Cressy,maxime cressy,USA,R,201.0,2020-08-31,2023-07-03
+93850103,Federico Coria,federico coria,ARG,R,180.0,2020-08-31,2024-08-26
+1147763,Brandon Nakashima,brandon nakashima,USA,R,188.0,2020-08-31,2024-08-26
+11650076,Emil Ruusuvuori,emil ruusuvuori,FIN,R,188.0,2020-08-31,2024-07-01
+18335447,J J Wolf,j j wolf,USA,R,183.0,2020-08-31,2024-05-27
+49401760,Christopher Oconnell,christopher oconnell,AUS,R,183.0,2017-01-16,2024-08-26
+70079106,Norbert Gombos,norbert gombos,SVK,R,193.0,2017-07-03,2022-08-29
+24546842,Sumit Nagal,sumit nagal,IND,R,178.0,2019-08-26,2024-08-26
+53563242,Daniel Elahi Galan,daniel elahi galan,COL,R,191.0,2020-01-20,2024-07-01
+96858422,Attila Balazs,attila balazs,HUN,R,180.0,2020-08-31,2023-08-28
+12056656,Daniel Altmaier,daniel altmaier,GER,R,188.0,2020-09-28,2024-08-26
+30924438,Nikola Milojevic,nikola milojevic,SRB,R,188.0,2020-09-28,2022-01-17
+40243874,Jurij Rodionov,jurij rodionov,AUT,L,191.0,2020-09-28,2023-05-29
+52457135,Lorenzo Giustino,lorenzo giustino,ITA,R,180.0,2020-01-20,2020-09-28
+58490641,Hugo Gaston,hugo gaston,FRA,L,173.0,2020-01-20,2024-08-26
+40168935,Sebastian Korda,sebastian korda,USA,R,196.0,2020-08-31,2024-08-26
+29014129,Aslan Karatsev,aslan karatsev,RUS,R,185.0,2021-02-08,2024-07-01
+23167503,Alexandre Muller,alexandre muller,FRA,R,183.0,2017-05-29,2024-08-26
+58816947,Carlos Alcaraz,carlos alcaraz,ESP,R,183.0,2021-02-08,2024-08-26
+93681177,Tomas Machac,tomas machac,CZE,R,183.0,2020-09-28,2024-08-26
+62494695,Roman Safiullin,roman safiullin,RUS,R,185.0,2021-02-08,2024-08-26
+73972297,Lorenzo Musetti,lorenzo musetti,ITA,R,185.0,2021-05-31,2024-08-26
+48499763,Gianluca Mager,gianluca mager,ITA,R,188.0,2020-08-31,2022-01-17
+946720,Botic Van De Zandschulp,botic van de zandschulp,NED,R,191.0,2021-02-08,2024-08-26
+50635503,Enzo Couacaud,enzo couacaud,FRA,R,183.0,2021-05-31,2023-08-28
+15468969,Tallon Griekspoor,tallon griekspoor,NED,R,188.0,2020-01-20,2024-08-26
+22942579,Zachary Svajda,zachary svajda,USA,R,175.0,2019-08-26,2024-08-26
+11223690,Bernabe Zapata Miralles,bernabe zapata miralles,ESP,R,183.0,2021-05-31,2024-01-15
+95821780,Arthur Rinderknech,arthur rinderknech,FRA,R,196.0,2020-09-28,2024-08-26
+63959922,Alex Molcan,alex molcan,SVK,L,178.0,2021-08-30,2023-08-28
+44168120,Stefan Kozlov,stefan kozlov,USA,R,183.0,2022-01-17,2022-08-29
+97749795,Aleksandar Vukic,aleksandar vukic,AUS,R,188.0,2020-09-28,2024-08-26
+40001547,Yannick Hanfmann,yannick hanfmann,GER,R,193.0,2018-08-27,2024-07-01
+66145793,Sebastian Baez,sebastian baez,ARG,R,170.0,2022-01-17,2024-08-26
+65620388,Camilo Ugo Carabelli,camilo ugo carabelli,ARG,R,185.0,2022-05-23,2024-08-26
+72538080,Borna Gojo,borna gojo,CRO,R,196.0,2022-05-23,2023-08-28
+91484563,Holger Rune,holger rune,DEN,R,188.0,2021-08-30,2024-08-26
+42111068,Pedro Cachin,pedro cachin,ARG,R,185.0,2022-05-23,2024-05-27
+39355000,Zdenek Kolar,zdenek kolar,CZE,R,183.0,2022-05-23,2022-06-27
+62116737,Tim Van Rijthoven,tim van rijthoven,NED,R,188.0,2022-06-27,2022-08-29
+10601947,Christian Harrison,christian harrison,USA,R,180.0,2016-08-29,2022-06-27
+3881607,Ryan Peniston,ryan peniston,GBR,L,180.0,2022-06-27,2023-07-03
+54807080,Hugo Grenier,hugo grenier,FRA,R,196.0,2022-06-27,2024-08-26
+1782079,Jack Draper,jack draper,GBR,L,193.0,2021-06-28,2024-08-26
+84420166,Alastair Gray,alastair gray,GBR,R,193.0,2022-06-27,2022-06-27
+64479208,Nuno Borges,nuno borges,POR,R,185.0,2022-05-23,2024-08-26
+91971081,Yibing Wu,yibing wu,CHN,R,183.0,2022-08-29,2023-08-28
+76084102,Emilio Nava,emilio nava,USA,R,185.0,2021-08-30,2023-08-28
+43954318,Brandon Holt,brandon holt,USA,R,185.0,2022-08-29,2023-01-16
+87898581,Gijs Brouwer,gijs brouwer,NED,L,191.0,2022-08-29,2023-07-03
+18546128,Christopher Eubanks,christopher eubanks,USA,R,201.0,2017-08-28,2024-08-26
+83610643,Dalibor Svrcina,dalibor svrcina,CZE,R,178.0,2023-01-16,2023-01-16
+96004950,Juncheng Shang,juncheng shang,CHN,L,180.0,2023-01-16,2024-08-26
+35829344,Yosuke Watanuki,yosuke watanuki,JPN,R,180.0,2023-01-16,2024-01-15
+34514018,Rinky Hijikata,rinky hijikata,AUS,R,178.0,2022-08-29,2024-08-26
+28951245,Tomas Martin Etcheverry,tomas martin etcheverry,ARG,R,196.0,2022-01-17,2024-08-26
+13845392,Constant Lestienne,constant lestienne,FRA,R,180.0,2023-01-16,2024-08-26
+96035894,Jiri Lehecka,jiri lehecka,CZE,R,185.0,2022-01-17,2024-08-26
+66332540,Francisco Cerundolo,francisco cerundolo,ARG,R,185.0,2021-05-31,2024-08-26
+17999500,Ben Shelton,ben shelton,USA,L,193.0,2022-08-29,2024-08-26
+3407558,Matteo Arnaldi,matteo arnaldi,ITA,R,185.0,2023-05-29,2024-08-26
+77146131,Alexander Shevchenko,alexander shevchenko,KAZ,R,185.0,2023-05-29,2024-08-26
+63788668,Luca Van Assche,luca van assche,FRA,R,178.0,2023-01-16,2024-07-01
+28257604,Juan Pablo Varillas,juan pablo varillas,PER,R,185.0,2022-05-23,2024-01-15
+16681485,Genaro Alberto Olivieri,genaro alberto olivieri,ARG,R,175.0,2023-05-29,2023-05-29
+886642,Andrea Vavassori,andrea vavassori,ITA,R,193.0,2022-06-27,2023-05-29
+35227582,Thiago Agustin Tirante,thiago agustin tirante,ARG,R,185.0,2023-05-29,2024-05-27
+26416981,Zhizhen Zhang,zhizhen zhang,CHN,R,193.0,2021-06-28,2024-08-26
+20719163,Giulio Zeppieri,giulio zeppieri,ITA,L,183.0,2022-05-23,2024-05-27
+16611619,Max Purcell,max purcell,AUS,R,185.0,2020-01-20,2024-08-26
+39562881,Thiago Seyboth Wild,thiago seyboth wild,BRA,R,185.0,2020-08-31,2024-08-26
+75744730,Dominic Stricker,dominic stricker,SUI,L,183.0,2023-05-29,2024-08-26
+50768066,Harold Mayot,harold mayot,FRA,R,180.0,2020-09-28,2024-05-27
+59482820,Tomas Barrios Vera,tomas barrios vera,CHI,R,191.0,2021-06-28,2023-07-03
+40715306,Jan Choinski,jan choinski,GBR,R,196.0,2023-07-03,2024-08-26
+32550918,Arthur Fils,arthur fils,FRA,R,185.0,2023-05-29,2024-08-26
+71200936,Yu Hsiou Hsu,yu hsiou hsu,TPE,R,178.0,2023-01-16,2023-08-28
+63300704,Felipe Meligeni Alves,felipe meligeni alves,BRA,R,185.0,2023-08-28,2024-07-01
+32749857,Alex Michelsen,alex michelsen,USA,R,193.0,2023-08-28,2024-08-26
+19624543,Fabian Marozsan,fabian marozsan,HUN,R,193.0,2023-07-03,2024-08-26
+78251095,Juan Manuel Cerundolo,juan manuel cerundolo,ARG,L,183.0,2022-01-17,2023-08-28
+56021115,Titouan Droguet,titouan droguet,FRA,R,191.0,2023-08-28,2023-08-28
+36586303,Jakub Mensik,jakub mensik,CZE,R,193.0,2023-08-28,2024-08-26
+94449104,Jesper De Jong,jesper de jong,NED,R,180.0,2024-01-15,2024-05-27
+64401258,Aleksandar Kovacevic,aleksandar kovacevic,USA,R,183.0,2023-05-29,2024-08-26
+53459440,Pavel Kotov,pavel kotov,RUS,R,191.0,2022-05-23,2024-08-26
+98185226,Flavio Cobolli,flavio cobolli,ITA,R,183.0,2023-05-29,2024-08-26
+19435902,Arthur Cazaux,arthur cazaux,FRA,R,183.0,2021-05-31,2024-08-26
+14539872,Lukas Klein,lukas klein,SVK,R,193.0,2022-06-27,2024-01-15
+64382275,Henri Squire,henri squire,GER,R,196.0,2024-05-27,2024-05-27
+72205740,Filip Misolic,filip misolic,AUT,R,180.0,2024-05-27,2024-05-27
+93251610,Jozef Kovalik,jozef kovalik,SVK,R,183.0,2016-01-18,2024-05-27
+94526247,Luciano Darderi,luciano darderi,ITA,R,183.0,2024-05-27,2024-08-26
+1742067,Mariano Navone,mariano navone,ARG,R,178.0,2024-05-27,2024-08-26
+82072023,Zizou Bergs,zizou bergs,BEL,R,185.0,2022-06-27,2024-08-26
+88119010,Otto Virtanen,otto virtanen,FIN,R,193.0,2023-08-28,2024-08-26
+26570414,Francisco Comesana,francisco comesana,ARG,R,178.0,2024-07-01,2024-08-26
+80886049,Adam Walton,adam walton,AUS,R,183.0,2024-01-15,2024-08-26
+18331494,Giovanni Mpetshi Perricard,giovanni mpetshi perricard,FRA,R,203.0,2023-05-29,2024-08-26
+68970541,Jacob Fearnley,jacob fearnley,GBR,R,183.0,2024-07-01,2024-07-01
+45833801,Mattia Bellucci,mattia bellucci,ITA,L,175.0,2023-01-16,2024-08-26
+96581695,Gabriel Diallo,gabriel diallo,CAN,R,203.0,2024-05-27,2024-08-26
+33350254,Tristan Schoolkate,tristan schoolkate,AUS,R,183.0,2024-08-26,2024-08-26
+32348485,Facundo Diaz Acosta,facundo diaz acosta,ARG,L,183.0,2023-05-29,2024-08-26
+80872670,Jim Courier,jim courier,USA,R,185.0,2000-01-17,2000-01-17
+15489259,Dejan Petrovic,dejan petrovic,SRB,R,,2000-01-17,2001-01-15
+19424185,Julian Alonso,julian alonso,ESP,R,185.0,2000-01-17,2000-01-17
+27391380,Alberto Berasategui,alberto berasategui,ESP,R,173.0,2000-01-17,2000-06-26
+22307803,Juan Antonio Marin,juan antonio marin,CRC,R,175.0,2000-01-17,2006-05-29
+21829973,Bernd Karbacher,bernd karbacher,GER,R,185.0,2000-01-17,2000-01-17
+31853958,Gouichi Motomura,gouichi motomura,JPN,R,173.0,2000-01-17,2003-01-13
+68311217,Nicklas Kulti,nicklas kulti,SWE,R,190.0,2000-01-17,2000-01-17
+89845448,Lorenzo Manta,lorenzo manta,SUI,R,190.0,2000-01-17,2000-01-17
+69763598,Alex Lopez Moron,alex lopez moron,ESP,R,175.0,2000-01-17,2000-01-17
+35347652,Martin Rodriguez,martin rodriguez,ARG,R,178.0,2000-01-17,2000-05-29
+33909605,Rodolphe Cadart,rodolphe cadart,FRA,L,183.0,2000-01-17,2000-01-17
+53447689,Oscar Serrano,oscar serrano,ESP,R,173.0,2000-05-29,2000-05-29
+18813212,Thierry Guardiola,thierry guardiola,FRA,R,188.0,2000-05-29,2000-08-28
+41147063,Guillaume Raoux,guillaume raoux,FRA,R,180.0,2000-05-29,2000-05-29
+51247731,Christian Ruud,christian ruud,NOR,R,188.0,2000-05-29,2001-05-28
+93350098,Eric Prodon,eric prodon,FRA,R,178.0,2000-05-29,2012-05-27
+83777024,Michael Kohlmann,michael kohlmann,GER,R,188.0,2000-06-26,2002-06-24
+95998279,Miles Maclagan,miles maclagan,GBR,R,180.0,2000-06-26,2000-06-26
+3001400,Paul Kilderry,paul kilderry,AUS,R,175.0,2000-06-26,2000-06-26
+91616753,Igor Gaudi,igor gaudi,ITA,R,188.0,2000-06-26,2000-06-26
+91887550,Mahesh Bhupathi,mahesh bhupathi,IND,R,185.0,2000-06-26,2000-06-26
+19746562,Cedric Kauffmann,cedric kauffmann,FRA,R,,2000-08-28,2001-05-28
+53357304,Phillip King,phillip king,USA,R,175.0,2000-08-28,2000-08-28
+38718844,Nenad Zimonjic,nenad zimonjic,SRB,R,190.0,2001-01-15,2001-01-15
+72419561,Ladislav Svarc,ladislav svarc,SVK,R,188.0,2001-01-15,2001-01-15
+94449903,Matthew Breen,matthew breen,AUS,R,,2001-01-15,2001-01-15
+60450931,Todd Perry,todd perry,AUS,R,175.0,2001-01-15,2001-01-15
+86992781,Ota Fukarek,ota fukarek,CZE,R,190.0,2001-01-15,2002-01-14
+24049174,Marc Kevin Goellner,marc kevin goellner,GER,R,196.0,2001-05-28,2001-05-28
+37908781,Artem Derepasko,artem derepasko,RUS,R,,2001-06-25,2001-06-25
+12184554,Luke Milligan,luke milligan,GBR,R,180.0,2001-06-25,2001-06-25
+75764881,Yong Il Yoon,yong il yoon,KOR,R,175.0,2001-06-25,2001-06-25
+20689562,Edwin Kempes,edwin kempes,NED,R,188.0,2001-06-25,2002-08-26
+18608718,Levar Harper Griffith,levar harper griffith,USA,R,,2001-08-27,2001-08-27
+2606257,Hugo Armando,hugo armando,USA,R,183.0,2001-08-27,2005-05-23
+14135803,Cristiano Caratti,cristiano caratti,ITA,R,178.0,2001-08-27,2002-06-24
+27853241,Eric Taino,eric taino,PHI,L,175.0,2001-08-27,2002-08-26
+82556121,Mike Bryan,mike bryan,USA,R,190.0,2001-08-27,2001-08-27
+14899056,Ivan Miranda,ivan miranda,PER,R,175.0,2002-05-27,2004-01-19
+25523499,Didac Perez,didac perez,ESP,R,178.0,2002-05-27,2002-05-27
+95162964,Edgardo Massa,edgardo massa,ARG,R,180.0,2002-05-27,2006-05-29
+36333625,Oliver Marach,oliver marach,AUT,R,185.0,2002-05-27,2006-08-28
+98315074,Alan Mackin,alan mackin,GBR,R,183.0,2002-06-24,2007-01-15
+12848903,Juan Pablo Guzman,juan pablo guzman,ARG,L,178.0,2002-06-24,2007-08-27
+19925222,Alex Bogdanovic,alex bogdanovic,GBR,L,183.0,2002-06-24,2009-06-22
+72862101,Denis Golovanov,denis golovanov,RUS,L,188.0,2002-06-24,2002-06-24
+38291571,Radoslav Lukaev,radoslav lukaev,BUL,R,,2002-08-26,2002-08-26
+9391154,Slimane Saoudi,slimane saoudi,ALG,L,,2002-08-26,2002-08-26
+62206081,Prakash Amritraj,prakash amritraj,IND,R,188.0,2002-08-26,2002-08-26
+22635002,Matias Boeker,matias boeker,USA,R,,2002-08-26,2002-08-26
+22462789,Bjorn Rehnquist,bjorn rehnquist,SWE,R,175.0,2002-08-26,2009-01-19
+14605492,Zeljko Krajan,zeljko krajan,CRO,R,178.0,2003-01-13,2003-06-23
+20611745,Ryan Henry,ryan henry,AUS,R,183.0,2003-01-13,2003-01-13
+18477103,Giovanni Lapentti,giovanni lapentti,ECU,R,193.0,2003-05-26,2009-08-31
+23454687,Sergio Roitman,sergio roitman,ARG,R,185.0,2003-05-26,2009-06-22
+39732211,Mariano Delfino,mariano delfino,ARG,R,183.0,2003-05-26,2003-05-26
+32182976,Hermes Gamonal,hermes gamonal,CHI,R,180.0,2003-05-26,2003-05-26
+81437924,Petr Luxa,petr luxa,CZE,R,190.0,2003-06-23,2003-06-23
+68093662,Michal Mertinak,michal mertinak,SVK,R,180.0,2003-06-23,2003-06-23
+15872550,Maximilian Abel,maximilian abel,GER,R,,2003-08-25,2003-08-25
+99713510,Robert Yim,robert yim,USA,L,,2003-08-25,2003-08-25
+90502378,Jeff Salzenstein,jeff salzenstein,USA,L,185.0,2003-08-25,2004-06-21
+53087872,Dennis Van Scheppingen,dennis van scheppingen,NED,R,185.0,2004-01-19,2004-08-30
+5922577,Jonathan Marray,jonathan marray,GBR,R,183.0,2004-06-21,2007-06-25
+48460495,Andy Ram,andy ram,ISR,R,180.0,2004-06-21,2004-06-21
+46713098,Kj Hippensteel,kj hippensteel,USA,L,190.0,2004-08-30,2004-08-30
+91042749,Marc Kimmich,marc kimmich,AUS,R,183.0,2005-01-17,2006-01-16
+16143172,Sasa Tuksar,sasa tuksar,CRO,R,180.0,2005-05-23,2006-05-29
+71289436,Tomas Tenconi,tomas tenconi,ITA,R,178.0,2005-05-23,2005-05-23
+15956075,Josh Goodall,josh goodall,GBR,R,188.0,2005-06-20,2012-06-25
+91552328,Adrian Garcia,adrian garcia,CHI,R,175.0,2005-06-20,2005-06-20
+9515039,Tobias Summerer,tobias summerer,GER,R,185.0,2005-06-20,2005-08-29
+4544610,Razvan Sabau,razvan sabau,ROU,R,185.0,2005-08-29,2006-06-26
+58775803,Jacob Adaktusson,jacob adaktusson,SWE,R,193.0,2006-01-16,2006-01-16
+32716919,Pavel Snobel,pavel snobel,CZE,L,190.0,2006-01-16,2008-06-23
+55659941,Julio Silva,julio silva,BRA,R,173.0,2006-05-29,2010-08-30
+39051125,Benedikt Dorsch,benedikt dorsch,GER,R,178.0,2006-06-26,2006-06-26
+1929431,Jamie Baker,jamie baker,GBR,R,183.0,2006-06-26,2013-01-14
+81744360,Phillip Simmonds,phillip simmonds,USA,R,,2006-08-28,2006-08-28
+59615451,Brian Wilson,brian wilson,USA,R,190.0,2007-01-15,2007-01-15
+62621768,Dusan Vemic,dusan vemic,SRB,R,190.0,2007-05-28,2007-05-28
+12088466,Alexandre Sidorenko,alexandre sidorenko,FRA,R,185.0,2007-05-28,2009-05-25
+9461749,Jonathan Eysseric,jonathan eysseric,FRA,L,180.0,2007-05-28,2008-05-25
+91634454,Bruno Echagaray,bruno echagaray,MEX,R,183.0,2007-08-27,2007-08-27
+78241796,Michael Mcclune,michael mcclune,USA,R,188.0,2007-08-27,2007-08-27
+41971048,Dominik Meffert,dominik meffert,GER,R,198.0,2007-08-27,2007-08-27
+60436408,Edouard Roger-Vasselin,edouard roger-vasselin,FRA,R,188.0,2008-01-14,2016-06-27
+29104552,Nick Lindahl,nick lindahl,AUS,R,183.0,2008-01-14,2010-01-18
+10819594,Martin Slanar,martin slanar,AUT,R,,2008-01-14,2008-01-14
+3538161,Jesse Huta Galung,jesse huta galung,NED,R,188.0,2008-05-25,2014-01-13
+3994146,Frederico Gil,frederico gil,POR,R,178.0,2008-05-25,2012-01-16
+9317694,Izak Van Der Merwe,izak van der merwe,RSA,R,196.0,2008-06-23,2008-06-23
+97453202,Dawid Olejniczak,dawid olejniczak,POL,R,,2008-06-23,2008-06-23
+68823667,Jan Minar,jan minar,CZE,R,,2008-08-25,2008-08-25
+34638335,Stephane Bohli,stephane bohli,SUI,R,185.0,2008-08-25,2008-08-25
+1683108,Colin Ebelthite,colin ebelthite,AUS,R,,2009-01-19,2009-01-19
+63992451,Andrea Stoppini,andrea stoppini,ITA,R,190.0,2009-01-19,2009-01-19
+57501094,Lamine Ouahab,lamine ouahab,ALG,R,185.0,2009-01-19,2009-01-19
+1936047,Franco Ferreiro,franco ferreiro,BRA,R,188.0,2009-05-25,2009-05-25
+9547020,Romain Jouan,romain jouan,FRA,R,183.0,2009-05-25,2011-08-29
+21314328,Grigor Dimitrov,grigor dimitrov,BUL,R,188.0,2009-06-22,2024-08-26
+15288690,Riccardo Ghedin,riccardo ghedin,ITA,R,188.0,2009-06-22,2009-06-22
+63142096,Luka Gregorc,luka gregorc,SLO,R,,2009-06-22,2009-06-22
+86361952,Santiago Gonzalez,santiago gonzalez,MEX,R,190.0,2009-06-22,2009-06-22
+66573393,Michael Yani,michael yani,USA,R,185.0,2009-06-22,2011-08-29
+67609215,Devin Britton,devin britton,USA,R,193.0,2009-08-31,2009-08-31
+26547928,Chase Buchanan,chase buchanan,USA,R,193.0,2009-08-31,2009-08-31
+58590385,Ricardo Hocevar,ricardo hocevar,BRA,R,180.0,2010-01-18,2010-01-18
+80704076,David Guez,david guez,FRA,R,185.0,2010-01-18,2014-01-13
+88071067,Jorge Aguilar,jorge aguilar,CHI,R,178.0,2010-05-24,2010-05-24
+92219837,Gianni Mina,gianni mina,FRA,R,185.0,2010-05-24,2010-05-24
+46873069,Andrey Kuznetsov,andrey kuznetsov,RUS,R,185.0,2010-06-21,2022-05-23
+89635751,Guillermo Alcaide,guillermo alcaide,ESP,R,188.0,2010-06-21,2010-06-21
+78996012,Bradley Klahn,bradley klahn,USA,L,190.0,2010-08-30,2020-08-31
+30461280,Jack Sock,jack sock,USA,R,185.0,2010-08-30,2022-08-29
+16122522,Lukas Rosol,lukas rosol,CZE,R,196.0,2010-08-30,2022-06-27
+51407075,Dusan Lojda,dusan lojda,CZE,L,188.0,2010-08-30,2010-08-30
+59778056,Martin Klizan,martin klizan,SVK,L,190.0,2010-08-30,2019-08-26
+69358924,Marco Crugnola,marco crugnola,ITA,R,188.0,2011-01-17,2011-01-17
+95899286,Javier Marti,javier marti,ESP,R,,2011-05-22,2011-05-22
+94475629,Augustin Gensse,augustin gensse,FRA,R,180.0,2011-05-22,2011-08-29
+91781019,Daniel Cox,daniel cox,GBR,R,170.0,2011-06-20,2014-06-23
+80946336,Jaroslav Pospisil,jaroslav pospisil,CZE,R,175.0,2011-06-20,2011-06-20
+23140223,Conor Niland,conor niland,IRL,R,185.0,2011-06-20,2011-08-29
+57412013,Jonathan Dasnieres De Veigy,jonathan dasnieres de veigy,FRA,L,175.0,2011-08-29,2012-05-27
+32039345,Joao Souza,joao souza,BRA,R,193.0,2011-08-29,2015-08-31
+58974449,Robert Farah,robert farah,COL,R,193.0,2011-08-29,2011-08-29
+20188131,Matteo Viola,matteo viola,ITA,R,188.0,2012-01-16,2012-01-16
+21644552,Greg Jones,greg jones,AUS,R,190.0,2012-01-16,2012-01-16
+81363800,Frederik Nielsen,frederik nielsen,DEN,R,190.0,2012-01-16,2012-01-16
+93273383,Benjamin Mitchell,benjamin mitchell,AUS,R,183.0,2012-01-16,2013-01-14
+9423714,Daniel Munoz de la Nava,daniel munoz de la nava,ESP,L,178.0,2012-05-27,2016-05-23
+33614977,Oliver Golding,oliver golding,GBR,R,188.0,2012-06-25,2012-06-25
+23091542,Maxime Authom,maxime authom,BEL,R,,2012-08-27,2013-01-14
+38948258,Hiroki Moriya,hiroki moriya,JPN,R,168.0,2012-08-27,2015-06-29
+43246360,Rhyne Williams,rhyne williams,USA,R,185.0,2012-08-27,2014-01-13
+35736144,Arnau Brugues Davi,arnau brugues davi,ESP,L,183.0,2013-01-14,2013-01-14
+60959350,John Patrick Smith,john patrick smith,AUS,L,188.0,2013-01-14,2020-01-20
+34688593,Di Wu,di wu,CHN,R,175.0,2013-01-14,2016-01-18
+34691140,Martin Alund,martin alund,ARG,R,183.0,2013-05-27,2013-06-24
+92665043,Gastao Elias,gastao elias,POR,R,180.0,2013-06-24,2018-07-02
+55971746,Matt Reid,matt reid,AUS,R,183.0,2013-06-24,2013-06-24
+90580620,Bastian Knittel,bastian knittel,GER,L,180.0,2013-06-24,2013-06-24
+26773830,Albano Olivetti,albano olivetti,FRA,R,203.0,2013-08-26,2016-06-27
+75924533,Collin Altamirano,collin altamirano,USA,R,188.0,2013-08-26,2018-08-27
+4227444,Ze Zhang,ze zhang,CHN,R,188.0,2014-01-13,2015-01-19
+33537555,Laurent Lokoli,laurent lokoli,FRA,R,188.0,2014-05-26,2023-07-03
+92757170,Facundo Arguello,facundo arguello,ARG,R,178.0,2014-05-26,2015-05-24
+20198151,Miloslav Mecir Jr,miloslav mecir jr,SVK,R,190.0,2014-05-26,2014-05-26
+18721058,Daniel Smethurst,daniel smethurst,GBR,R,188.0,2014-06-23,2014-06-23
+42277125,James Mcgee,james mcgee,IRL,R,183.0,2014-08-25,2014-08-25
+27508611,Niels Desein,niels desein,BEL,R,190.0,2014-08-25,2014-08-25
+1859119,Yuki Bhambri,yuki bhambri,IND,R,185.0,2015-01-19,2018-08-27
+83126642,Luca Vanni,luca vanni,ITA,R,198.0,2015-05-24,2019-01-14
+73162869,Germain Gigounon,germain gigounon,BEL,R,,2015-05-24,2015-05-24
+33995571,Maxime Hamou,maxime hamou,FRA,R,185.0,2015-05-24,2017-05-29
+72159789,Christian Lindell,christian lindell,SWE,R,193.0,2015-05-24,2015-05-24
+86860508,Kimmer Coppejans,kimmer coppejans,BEL,R,178.0,2015-05-24,2023-07-03
+5474797,Ryan Shane,ryan shane,USA,R,193.0,2015-08-31,2015-08-31
+41016642,Gerald Melzer,gerald melzer,AUT,L,188.0,2016-05-23,2018-01-15
+28419978,Jordi Samper Montana,jordi samper montana,ESP,U,,2016-05-23,2016-05-23
+33157757,Alexander Ward,alexander ward,GBR,R,185.0,2016-06-27,2017-07-03
+82872440,Tristan Lamasine,tristan lamasine,FRA,R,183.0,2016-06-27,2016-06-27
+58908926,Franko Skugor,franko skugor,CRO,R,196.0,2016-06-27,2016-06-27
+84932850,Saketh Myneni,saketh myneni,IND,R,193.0,2016-08-29,2016-08-29
+84990621,Guilherme Clezar,guilherme clezar,BRA,R,183.0,2016-08-29,2016-08-29
+46314726,Blake Mott,blake mott,AUS,R,180.0,2017-01-16,2017-01-16
+1211133,Arthur De Greef,arthur de greef,BEL,R,183.0,2017-05-29,2017-05-29
+19575667,Geoffrey Blancaneaux,geoffrey blancaneaux,FRA,R,180.0,2017-08-28,2022-05-23
+36630239,Vaclav Safranek,vaclav safranek,CZE,R,183.0,2017-08-28,2018-01-15
+77503947,Patrick Kypson,patrick kypson,USA,R,188.0,2017-08-28,2024-01-15
+97169707,Thai Son Kwiatkowski,thai son kwiatkowski,USA,R,188.0,2017-08-28,2020-08-31
+27332827,Jc Aragone,jc aragone,USA,R,178.0,2017-08-28,2017-08-28
+66440550,Darian King,darian king,BAR,R,188.0,2017-08-28,2017-08-28
+68250507,Evan King,evan king,USA,L,185.0,2017-08-28,2017-08-28
+99816998,Kevin King,kevin king,USA,L,191.0,2018-01-15,2018-01-15
+64425477,Calvin Hemery,calvin hemery,FRA,R,191.0,2018-05-28,2018-05-28
+4779770,Mohamed Safwat,mohamed safwat,EGY,R,180.0,2018-05-28,2020-08-31
+42560936,Carlos Taberner,carlos taberner,ESP,R,183.0,2018-05-28,2022-06-27
+91337928,Maxime Janvier,maxime janvier,FRA,R,196.0,2018-05-28,2024-07-01
+47848733,Jason Jung,jason jung,TPE,R,180.0,2018-07-02,2020-09-28
+64899858,Federico Gaio,federico gaio,ITA,R,178.0,2018-08-27,2020-08-31
+36092134,Zhe Li,zhe li,CHN,R,183.0,2019-01-14,2019-01-14
+61292581,Gleb Sakharov,gleb sakharov,FRA,R,185.0,2019-01-14,2019-01-14
+22914026,Prajnesh Gunneswaran,prajnesh gunneswaran,IND,L,188.0,2019-01-14,2020-01-20
+78721567,Rudolf Molleker,rudolf molleker,GER,R,188.0,2019-01-14,2019-05-27
+58154705,Pedro Sousa,pedro sousa,POR,R,180.0,2019-01-14,2021-06-28
+73526620,Alexey Vatutin,alexey vatutin,RUS,R,178.0,2019-05-27,2019-05-27
+29660275,Yasutaka Uchiyama,yasutaka uchiyama,JPN,R,183.0,2019-07-01,2021-06-28
+80742040,Paul Jubb,paul jubb,GBR,R,180.0,2019-07-01,2024-07-01
+84252694,Brayden Schnur,brayden schnur,CAN,R,193.0,2019-07-01,2019-08-26
+74984728,Mario Vilella Martinez,mario vilella martinez,ESP,R,178.0,2020-01-20,2021-05-31
+20079168,Andrew Harris,andrew harris,AUS,R,183.0,2020-01-20,2020-01-20
+6483149,Ulises Blanch,ulises blanch,USA,R,188.0,2020-08-31,2020-08-31
+42479172,Emilio Gomez,emilio gomez,ECU,R,185.0,2020-09-28,2022-01-17
+52296299,Steven Diez,steven diez,CAN,R,175.0,2020-09-28,2020-09-28
+82010221,Frederico Ferreira Silva,frederico ferreira silva,POR,L,178.0,2021-02-08,2021-02-08
+34556044,Li Tu,li tu,AUS,R,183.0,2021-02-08,2024-08-26
+98033674,Mikael Torpegaard,mikael torpegaard,DEN,R,193.0,2021-02-08,2021-02-08
+48045463,Daniel Masur,daniel masur,GER,R,183.0,2021-06-28,2021-06-28
+15941655,Cem Ilkel,cem ilkel,TUR,R,185.0,2021-08-30,2021-08-30
+22053146,Sam Riffice,sam riffice,USA,R,188.0,2021-08-30,2021-08-30
+80714540,Chun Hsin Tseng,chun hsin tseng,TPE,R,175.0,2022-01-17,2023-01-16
+98487727,Timofey Skatov,timofey skatov,KAZ,R,175.0,2022-01-17,2024-08-26
+57442597,Santiago Fa Rodriguez Taverna,santiago fa rodriguez taverna,ARG,R,191.0,2022-05-23,2022-05-23
+28911947,Manuel Guinard,manuel guinard,FRA,R,198.0,2022-05-23,2022-05-23
+77831938,Franco Agamenone,franco agamenone,ITA,R,191.0,2022-05-23,2022-05-23
+56486858,Marc Andrea Huesler,marc andrea huesler,SUI,L,196.0,2022-06-27,2023-08-28
+81930936,Nicola Kuhn,nicola kuhn,GER,R,185.0,2022-06-27,2022-06-27
+54713686,Alexander Ritschard,alexander ritschard,SUI,R,193.0,2022-06-27,2022-08-29
+98521245,Learner Tien,learner tien,USA,L,180.0,2022-08-29,2024-08-26
+53523574,Oleksii Krutykh,oleksii krutykh,UKR,R,185.0,2023-01-16,2023-01-16
+34236170,Eduardo Nava,eduardo nava,USA,R,180.0,2023-05-29,2023-05-29
+13947135,Hamad Medjedovic,hamad medjedovic,SRB,R,188.0,2023-05-29,2024-08-26
+91247936,Sho Shimabukuro,sho shimabukuro,JPN,R,180.0,2023-07-03,2023-08-28
+65904040,George Loffhagen,george loffhagen,GBR,R,188.0,2023-07-03,2023-07-03
+64739601,Arthur Fery,arthur fery,GBR,R,175.0,2023-07-03,2024-07-01
+92663849,Shintaro Mochizuki,shintaro mochizuki,JPN,R,175.0,2023-07-03,2024-05-27
+7347054,Nicolas Moreno De Alboran,nicolas moreno de alboran,USA,R,185.0,2023-08-28,2024-05-27
+57025189,Ethan Quinn,ethan quinn,USA,R,191.0,2023-08-28,2023-08-28
+21108929,Dino Prizmic,dino prizmic,CRO,R,188.0,2024-01-15,2024-01-15
+50190924,Dane Sweeny,dane sweeny,AUS,R,170.0,2024-01-15,2024-01-15
+31226115,Vit Kopriva,vit kopriva,CZE,R,178.0,2024-01-15,2024-07-01
+72982153,Terence Atmane,terence atmane,FRA,L,193.0,2024-01-15,2024-05-27
+69552344,James Mccabe,james mccabe,AUS,R,188.0,2024-01-15,2024-01-15
+86078001,Mate Valkusz,mate valkusz,HUN,R,183.0,2024-01-15,2024-01-15
+2637789,Roman Andres Burruchaga,roman andres burruchaga,ARG,R,183.0,2024-05-27,2024-05-27
+10677455,Luca Nardi,luca nardi,ITA,R,185.0,2024-05-27,2024-08-26
+94319266,Valentin Vacherot,valentin vacherot,MON,R,193.0,2024-05-27,2024-05-27
+9237318,Gustavo Heide,gustavo heide,BRA,R,191.0,2024-05-27,2024-05-27
+71626324,Charles Broom,charles broom,GBR,R,178.0,2024-07-01,2024-07-01
+98961681,Mark Lajal,mark lajal,EST,R,191.0,2024-07-01,2024-07-01
+47043696,Henry Searle,henry searle,GBR,L,193.0,2024-07-01,2024-07-01
+16396959,Billy Harris,billy harris,GBR,R,193.0,2024-07-01,2024-07-01
+13495277,Alejandro Moro Canas,alejandro moro canas,ESP,R,183.0,2024-07-01,2024-07-01
+69342038,Eliot Spizzirri,eliot spizzirri,USA,R,183.0,2024-08-26,2024-08-26
+85669480,Matthew Forbes,matthew forbes,USA,U,,2024-08-26,2024-08-26
+53239556,Bu Yunchaokete,bu yunchaokete,CHN,R,185.0,2024-08-26,2024-08-26
+55130564,Kyrian Jacquet,kyrian jacquet,FRA,R,178.0,2024-08-26,2024-08-26
+90677271,Maks Kasnikowski,maks kasnikowski,POL,R,180.0,2024-08-26,2024-08-26
+73209411,Gaston H.,gaston h.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+87211547,Fils A.,fils a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+34303985,Nishikori K.,nishikori k.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+86751035,Ruud C.,ruud c.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+47656172,Habib H.,habib h.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+9598359,Lehecka J.,lehecka j.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+80262798,Machac T.,machac t.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+19937636,Martinez P.,martinez p.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+64425294,Humbert U.,humbert u.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+11563427,Opelka R.,opelka r.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+17362537,Halys Q.,halys q.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+96267185,Zverev A.,zverev a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+28302575,Tiafoe F.,tiafoe f.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+67684400,Carballes Baena R.,carballes baena r.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+80790952,Mensik J.,mensik j.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+76231849,Michelsen A.,michelsen a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+25598289,Borges N.,borges n.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+92896853,Marozsan F.,marozsan f.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+43857095,Duckworth J.,duckworth j.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+31654127,Mccabe J.,mccabe j.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+4563398,Sinner J.,sinner j.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+10047381,Thompson J.,thompson j.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+88116992,Schoolkate T.,schoolkate t.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+67358038,Vukic A.,vukic a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+56603117,Draper J.,draper j.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+51793820,Kokkinakis T.,kokkinakis t.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+8728408,Cazaux A.,cazaux a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+67918174,Nishioka Y.,nishioka y.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+5782119,Korda S.,korda s.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+74822125,Faria J.,faria j.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+89235544,Auger-Aliassime F.,auger-aliassime f.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+21471417,Davidovich Fokina A.,davidovich fokina a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+677342,Alcaraz C.,alcaraz c.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+60751282,Djokovic N.,djokovic n.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+48746076,Fearnley J.,fearnley j.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+46663797,Bonzi B.,bonzi b.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+49904164,Passaro F.,passaro f.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+97157358,Paul T.,paul t.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+81272333,Berrettini M.,berrettini m.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+84689833,Kecmanovic M.,kecmanovic m.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+45818603,Khachanov K.,khachanov k.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+25637274,Diallo G.,diallo g.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+46271594,Rune H.,rune h.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+26742020,Fritz T.,fritz t.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+54492165,Garin C.,garin c.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+60033572,Tien L.,tien l.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+40395081,Cerundolo F.,cerundolo f.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+97494405,Monfils G.,monfils g.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+79638220,Hurkacz H.,hurkacz h.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+73638332,Diaz Acosta F.,diaz acosta f.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+30967779,Medvedev D.,medvedev d.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+3026678,Altmaier D.,altmaier d.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+79463966,Musetti L.,musetti l.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+90304692,Shelton B.,shelton b.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+17158389,Sonego L.,sonego l.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+33748905,Boyer T.,boyer t.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+76617127,Krueger M.,krueger m.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+68312589,Etcheverry T.,etcheverry t.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+75671034,Giron M.,giron m.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+1290900,Shapovalov D.,shapovalov d.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+91271600,Moutet C.,moutet c.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+36970057,De Minaur A.,de minaur a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+79323333,Carreno Busta P.,carreno busta p.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+29727769,Fonseca J.,fonseca j.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+49873737,Fucsovics M.,fucsovics m.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+81686333,Medjedovic H.,medjedovic h.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+90941105,Navone M.,navone m.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+41952717,Mpetshi G.,mpetshi g.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+54496560,Dzumhur D.,dzumhur d.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+55134974,Kopriva V.,kopriva v.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+26155245,Cerundolo J.M.,cerundolo j.m.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+54079903,Galan D.E.,galan d.e.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+27350974,Gigante M.,gigante m.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+79889542,Nava E.,nava e.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+6444814,Brooksby J.,brooksby j.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+15474416,Popyrin A.,popyrin a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+91242229,Tabilo A.,tabilo a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+5717835,Tsitsipas S.,tsitsipas s.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+64189073,Ofner S.,ofner s.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+26612769,Gasquet R.,gasquet r.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+86022652,Misolic F.,misolic f.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+15650455,Munar J.,munar j.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+89479932,Griekspoor T.,griekspoor t.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+97920262,Gomez F.A.,gomez f.a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+8977466,Norrie C.,norrie c.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+54981896,Shevchenko A.,shevchenko a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+31730626,Dimitrov G.,dimitrov g.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+8943233,Bublik A.,bublik a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+82386181,De Jong J.,de jong j.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+50644353,Walton A.,walton a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+92801719,Herbert P.,herbert p.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+44337688,Rocha H.,rocha h.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+72458966,Rublev A.,rublev a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+48289159,Arnaldi M.,arnaldi m.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+43722833,Cobolli F.,cobolli f.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+20398507,Quinn E.,quinn e.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+90991460,Tarvet O.,tarvet o.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+14006038,Mannarino A.,mannarino a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+60687937,Bellucci M.,bellucci m.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+79020716,Fery A.,fery a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+57239957,Harris L.,harris l.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+64103168,Jarry N.,jarry n.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+99410452,Royer V.,royer v.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+83837955,Darderi L.,darderi l.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+80330568,Harris B.,harris b.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+12661279,Struff J.L.,struff j.l.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+57786111,Majchrzak K.,majchrzak k.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+15843440,Basilashvili N.,basilashvili n.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+74461357,Van De Zandschulp B.,van de zandschulp b.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+8092222,Mochizuki S.,mochizuki s.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+79998767,Evans D.,evans d.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+83997665,Holmgren A.,holmgren a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+67318381,Rinderknech A.,rinderknech a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+47703832,Cilic M.,cilic m.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+97865640,Hijikata R.,hijikata r.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+76507018,Pinnington Jones J.,pinnington jones j.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+49632072,Nakashima B.,nakashima b.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+19688199,Jasika O.,jasika o.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+46114695,Virtanen O.,virtanen o.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+59619535,Monteiro T.,monteiro t.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+57806690,Bu Y.,bu y.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+60730254,Tu L.,tu l.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+82244930,Nagal S.,nagal s.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+58910295,Onclin G.,onclin g.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+46028300,Pouille L.,pouille l.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+3668807,Muller A.,muller a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+36813284,Seyboth Wild T.,seyboth wild t.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+68612888,Stricker D.,stricker d.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+70306280,Landaluce M.,landaluce m.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+33325734,Koepfer D.,koepfer d.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+26766730,Daniel T.,daniel t.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+82346092,Safiullin R.,safiullin r.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+6883844,Baez S.,baez s.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+73036985,Dougaz A.,dougaz a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+781519,Klein L.,klein l.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+6215159,Kotov P.,kotov p.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+13331381,Shang J.,shang j.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+26508480,Basavareddy N.,basavareddy n.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+23388661,Kyrgios N.,kyrgios n.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+48456407,Goffin D.,goffin d.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+3776313,O Connell C.,o connell c.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+49748571,Lajovic D.,lajovic d.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+34791233,Nardi L.,nardi l.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+80742444,Zhang Zh.,zhang zh.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+23939773,Coric B.,coric b.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+85947888,Ugo Carabelli C.,ugo carabelli c.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+49778812,Bergs Z.,bergs z.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+90695963,Samrej K.,samrej k.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+35858324,Comesana F.,comesana f.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+46781806,Wawrinka S.,wawrinka s.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+76588097,Coria F.,coria f.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+32811063,Hanfmann Y.,hanfmann y.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+45140217,Bautista Agut R.,bautista agut r.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+67876027,Moller E.,moller e.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+74115838,Tirante T.A.,tirante t.a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+22406759,Hassan B.,hassan b.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+53089451,Jacquet K.,jacquet k.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+65908113,Blanchet U.,blanchet u.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+5626841,Ramos A.,ramos a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+41778907,Zeppieri G.,zeppieri g.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+99178797,Llamas Ruiz P.,llamas ruiz p.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+97385286,Atmane T.,atmane t.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+7211270,Djere L.,djere l.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+65269217,Kovacevic A.,kovacevic a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+58101651,Marterer M.,marterer m.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+70835263,McDonald M.,mcdonald m.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+25794631,Tabur C.,tabur c.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+79191342,Dellien H.,dellien h.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+80866920,Riedi L.,riedi l.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+89055279,Crawford O.,crawford o.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+30036060,Fognini F.,fognini f.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+89993966,Searle H.,searle h.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+48087245,Rodesch C.,rodesch c.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+52826996,Holt B.,holt b.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+3799511,Tseng C.H.,tseng c.h.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+31654127,McCabe J.,mccabe j.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+99961702,Monday J.,monday j.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+47598447,Eubanks C.,eubanks c.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+77071482,Loffhagen G.,loffhagen g.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+97597129,Clarke J.,clarke j.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+11750739,Zhukayev B.,zhukayev b.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+29860867,Collignon R.,collignon r.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
+11076668,Bolt A.,bolt a.,,,,2025-01-01 00:00:00,2025-12-31 00:00:00
