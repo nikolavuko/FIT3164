@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>T-ELO</title>
+    <style>
+        img {
+            width:450px;
+            float: right;
+            margin-right: 200px;
+            margin-bottom: 100px;
+        }
+        p.title{
+            color: white;
+            font-weight: lighter;
+            font-family: 'Poppins', sans-serif;
+            margin-left: 100px;
+            margin-top: 30px;
+            font-size: 27px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeSlideUp 1.5s ease forwards;
+        }
+        @keyframes fadeSlideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        body{
+            background-image: linear-gradient(to right, #000000, #1a0527);
+            margin: 0;
+        }
+        h1{
+            font-size: 75px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: lighter;
+            color: whitesmoke;
+            margin-top: 100px;
+            margin-left: 100px;
+            opacity: 0;
+            transform: translateY(20px); /* start 20px lower */
+            animation: fadeSlideUp 1.5s ease forwards;
+        }
+        .btn1 {
+            margin-left: 100px;
+            margin-top: 75px;
+            display: inline-flex; 
+            font-family: 'Poppins', sans-serif;
+            font-size: 25px;
+            width: 300px;
+            height: 60px;
+            justify-content: center;
+            align-items: center; 
+            background-color: #c4ff21; 
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 550;
+            transition: 0.3s;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards; 
+        }
+        .btn1:hover{
+            background-color: #a3e202;  /* darker green */
+            transform: scale(0.95);      /* slightly bigger */  
+        }
+        .btn2 {
+            margin-left: 10px;
+            margin-top: 75px;
+            display: inline-flex;
+            font-family: 'Poppins', sans-serif;
+            font-size: 25px;
+            width: 300px;
+            height: 60px;
+            justify-content: center;
+            align-items: center; 
+            background-color: #c4ff21; 
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 550;
+            transition: 0.3s;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards; 
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .btn2:hover{
+            background-color: #a2e000;  /* darker green */
+            transform: scale(0.95);      /* slightly bigger */  
+        }
+    </style>
+</head>
+<body>
+    <p class="title">🎾T-ELO</p>
+    <img src="Images/Djokovic No Background.png" alt="Photo of Djokovic">
+    <h1>THE HOME OF <br>
+        GRAND SLAM <br>
+        STATISTICS</h1>
+    <a href="PlayerRankings.html" class = "btn1">Player Rankings</a>
+    <a href="PlayerComparisons.html" class = "btn2">Player Comparisons</a>
+</body>
+</html>
