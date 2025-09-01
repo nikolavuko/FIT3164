@@ -110,7 +110,13 @@
     <h1>THE HOME OF <br>
         GRAND SLAM <br>
         STATISTICS</h1>
-    <a href="PlayerRankings.html" class = "btn1">Player Rankings</a>
-    <a href="PlayerComparisons.html" class = "btn2">Player Comparisons</a>
+    <a href="PlayerRankings.html" class="btn1">Player Rankings</a>
+    <a href="PlayerComparisons.html" class="btn2">Player Comparisons</a>
+
+    <!-- React will render the charts here -->
+    <div id="chart-root" style="clear:both; padding:40px 0;"></div>
+
+    <!-- Load React entry for this page -->
+    <script type="module" src="/src/homepage.tsx"></script>
 </body>
 </html>
