@@ -11,7 +11,7 @@ import {
 type Player = {
   player_id: string;
   name: string;
-  country?: string;
+  country: string;
 };
 
 type MatchRow = {
@@ -134,12 +134,12 @@ export default function App() {
       ?? rows.columns.find(c => /name|player/i.test(c))
       ?? "name";
 
-    const countryKey = rows.columns.find(c => /country|national/i.test(c));
+    const countryKey = rows.columns.find(c => /country|ioc/i.test(c));
 
     return rows.map(r => ({
       player_id: String(r[idKey] ?? "").trim(),
       name: String(r[nameKey] ?? "").trim(),
-      country: countryKey ? String(r[countryKey] ?? "").trim() : undefined,
+      country: String(countryKey ? r[countryKey] : "UNK").trim(),  
     })).filter(p => p.player_id && p.name);
   }, [playersCsvText]);
 
@@ -154,6 +154,12 @@ export default function App() {
   const idToName = useMemo(() => {
     const m = new Map<string, string>();
     players.forEach(p => m.set(p.player_id, p.name));
+    return m;
+  }, [players]);
+
+  const idToCountry = useMemo(() => {
+    const m = new Map<string, string>();
+    players.forEach(p => m.set(p.player_id, p.country));
     return m;
   }, [players]);
 
@@ -261,10 +267,58 @@ const loserIdKey  =
       return { surface: s as string, winPct: t ? Math.round((w / t) * 1000) / 10 : 0, wins: w, total: t };
     }), [surfaceStats]);
 
+  // Compute Elo rankings for ALL players by year
+function computeEloRankings(matches: MatchRow[], kFactor: number, base = 1500) {
+  const elo = new Map<string, number>();
+  const lastEloPerYear = new Map<string, Map<string, { player_id: string; name: string; country: string; elo: number }>>();
+
+  // sort matches chronologically
+  const sorted = [...matches].sort((a,b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
+  for (const m of sorted) {
+    const Ra = elo.get(m.winner_id) ?? base;
+    const Rb = elo.get(m.loser_id) ?? base;
+    const [newW, newL] = updateElo(Ra, Rb, 1, kFactor);
+
+    elo.set(m.winner_id, newW);
+    elo.set(m.loser_id, newL);
+
+    const year = new Date(m.date).getFullYear().toString();
+
+    if (!lastEloPerYear.has(year)) lastEloPerYear.set(year, new Map());
+
+    const yearMap = lastEloPerYear.get(year)!;
+
+    yearMap.set(m.winner_id, { player_id: m.winner_id, name: idToName.get(m.winner_id) ?? m.winner_id, country: idToCountry.get(m.winner_id) ?? "UNK", elo: newW });
+    yearMap.set(m.loser_id,  { player_id: m.loser_id,  name: idToName.get(m.loser_id)  ?? m.loser_id, country: idToCountry.get(m.loser_id) ?? "UNK", elo: newL });
+  }
+
+  // Flatten to array: one entry per player per year
+  const result: { year: number; player_id: string; name: string; country: string, elo: number }[] = [];
+  for (const [year, map] of lastEloPerYear) {
+    for (const player of map.values()) {
+      result.push({ year: +year, ...player });
+    }
+  }
+
+  return result;
+}
+const rankingsByYear = useMemo(() => {
+  if (matches.length === 0) return [];
+  return computeEloRankings(matches, kFactor);
+}, [matches, kFactor, idToName, idToCountry]);
+
+useEffect(() => {
+  if (rankingsByYear.length === 0) return;
+  console.log("Rankings JSON:", JSON.stringify(rankingsByYear, null, 2));
+}, [rankingsByYear]);
+
+
   /* =======================
      UI
   ======================= */
   return (
+    
     <div style={{ minHeight: "100vh", background: "#0b0b0b", color: "#f1f1f1", padding: 24 }}>
       <div style={{ maxWidth: "min(1600px, 95vw)", margin: "0 auto" }}>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>Tennis ELO Demo</h1>

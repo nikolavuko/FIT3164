@@ -5,13 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player Rankings</title>
     <style>
+        .TopButtons{
+            display: flex;
+            margin-left: 100px;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .HomeButton{
+            background-color: #06a2aa;
+            color: #ffffff;
+            width: 100px;
+            height: 30px;
+            border-radius: 20px;
+        }
+        .HomeBtn{
+            text-decoration: none;
+        }
+        .HomeButton:hover{
+            cursor: pointer;
+        }
+        .PlayerComparisonsButton{
+            position: absolute;
+            background-color: #06a2aa;
+            color: #ffffff;
+            width: 200px;
+            height: 30px;
+            border-radius: 20px;
+        }
+        .PlayerComparisonsBtn{
+            text-decoration: none;
+        }
+        .PlayerComparisonsButton:hover{
+            cursor: pointer;
+        }
         body{
             background-image: linear-gradient(to right, #000000, #1a0527);
 
         }
         h1{
             margin-left: 100px;
-            margin-top: 50px;
+            margin-top: 20px;
             display: inline-flex;
             font-family: 'Poppins', sans-serif;
             font-size: 27px;
@@ -25,11 +58,371 @@
             font-weight: 549;
 
         }
+        .buttons{
+            margin-left: 100px;
+            display: flex;
+            align-items: center;
+        }
+        .dropbtn{
+            background-color: #06a2aa;
+            color: #ffffff;
+            width: 100px;
+            height: 50px;
+            border-radius: 20px;
+            cursor: pointer;
+
+        }
+        .dropdown_content {  
+            display: none;
+            position: absolute;
+            background-color: #06a2aa;
+            color: #ffffff;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            max-height: 200px; /* scroll if too many years */
+            overflow-y: auto;
+            z-index: 1;
+    }
+
+    /* Dropdown items */
+    .dropdown_content div {
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    /* Hover effect for items */
+    .dropdown_content div:hover {
+        background-color: #0d8cc7;
+    }
+
+    .NationsSearch{
+        position: relative;
+        display: inline-block;
+        margin-left: 20px;
+    }
+
+    .countrySearchBar{
+        background-color: #06a2aa;
+        color: #ffffff;
+        height: 28px;
+        text-align: center;
+    }
+    .countrySearchBar::placeholder{
+        color: #ffffff;
+    }
+    .CountrySuggestionsDropdown{
+        display: none;
+        position: absolute;
+        background-color: #06a2aa;
+        color: #ffffff;
+        min-width: 120px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        border-radius: 5px;
+        max-height: 200px; /* scroll if too many years */
+        overflow-y: auto;
+        z-index: 1;
+    }
+    .CountrySuggestionsDropdown div {
+        padding: 10px;
+        cursor: pointer;
+    }
+    .CountrySuggestionsDropdown div:hover {
+        background-color: #0d8cc7;
+    }
+
+
+    .PlayerSearch{
+        position: relative;
+        display: inline-block;
+        margin-left: 20px;
+    }
+
+    .PlayerSearchBar{
+        background-color: #06a2aa;
+        color: #ffffff;
+        height: 28px;
+        text-align: center;
+    }
+    .PlayerSearchBar::placeholder{
+        color: #ffffff;
+    }
+    .PlayerSuggestionsDropdown{
+        display: none;
+        position: absolute;
+        background-color: #06a2aa;
+        color: #ffffff;
+        min-width: 120px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        border-radius: 5px;
+        max-height: 200px; /* scroll if too many years */
+        overflow-y: auto;
+        z-index: 1;
+    }
+    .PlayerSuggestionsDropdown div {
+        padding: 10px;
+        cursor: pointer;
+    }
+    .PlayerSuggestionsDropdown div:hover {
+        background-color: #0d8cc7;
+    }
+
+    .resetButton{
+        margin-left: 20px;
+        background-color: #06a2aa;
+        color: #ffffff;
+        width: 100px;
+        height: 50px;
+        border-radius: 20px;
+    }
+    .resetButton:hover{
+        cursor: pointer;
+    }
+
+    table { 
+        border-collapse: collapse;
+        width: 100%; 
+        margin-top: 16px; 
+    }
+    th, td { 
+        border: 1px transparent; 
+        padding: 16px; text-align:left; 
+    }
+    th { 
+        background: transparent;
+        color: #c4ff21;
+        font-size: 27px;
+    }
+    tbody { 
+        background: transparent;
+        color: #ffffff;
+        font-size: 20px;
+    }
+    .LoadMoreBtn{
+        background-color: #06a2aa;
+        color: #ffffff;
+        width: 150px;
+        height: 50px;
+        align-self: center;
+        border-radius: 30px;
+        display: block;
+        margin: 20px auto;
+    }
     </style>
 </head>
 <body>
+    <DIV class="TopButtons">
+        <a href="Homepage.html" class="HomeBtn">
+        <button class="HomeButton">HOME</button>
+        </a>
+        <a href="PlayerComparisons.html" class="PlayerComparisonsBtn">
+        <button class="PlayerComparisonsButton">PLAYER COMPARISONS</button>
+    </a>
+    </DIV>
+
     <h1>
         GRAND SLAM PLAYER RANKINGS
     </h1>
+
+    <div class="buttons">
+        <button class="dropbtn" id="dropdownBtn">2025</button>
+        <div class="dropdown_content" id="dropdownMenu">
+         <!-- Years will be inserted here by JavaScript -->
+        </div>
+        <div class = NationsSearch>
+            <input 
+                class = "countrySearchBar"
+                type="text" 
+                id="countrySearch" 
+                placeholder="Search by country" 
+                style="padding: 8px 12px; border-radius: 8px; border: none; width: 180px;"
+                autocomplete="off">
+                <div class="CountrySuggestionsDropdown" id="countrySuggestions"></div>
+        </div>
+        <div class = PlayerSearch>
+            <input 
+                class = "PlayerSearchBar"
+                type="text" 
+                id="playerSearch" 
+                placeholder="Search for a player" 
+                style="padding: 8px 12px; border-radius: 8px; border: none; width: 180px;"
+                autocomplete="off">
+                <div class="PlayerSuggestionsDropdown" id="playerSuggestions"></div>
+        </div>
+        <button class="resetButton" id="Reset">RESET</button>
+    </div>
+
+    <table id="rankingTable">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Player</th>
+        <th>ELO</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Rankings will appear here -->
+    </tbody>
+  </table>
+  <button class = "LoadMoreBtn" id="LoadMoreButton">
+    Load More
+  </button>
+
+  <script>
+    const dropdownBtn = document.getElementById('dropdownBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    const LoadMoreBtn = document.getElementById('LoadMoreButton');
+    const CountrySearch = document.getElementById('countrySearch');
+    const countrySuggestions = document.getElementById("countrySuggestions");
+    const PlayerSearch = document.getElementById('playerSearch')
+    const playerSuggestions = document.getElementById('playerSuggestions')
+    const ResetButton = document.getElementById("Reset")
+    let countries = {};
+    let selectedPlayer = null;
+    let selectedCountryCode = null;
+    let SelectedYear = 2025 
+    let CurrentLoaded = 10
+
+    // Generate years 2000 to 2025
+    for (let year = 2025; year >= 2000; year--) {
+        const item = document.createElement('div');
+        item.textContent = year;
+        item.addEventListener('click', () => {
+        dropdownBtn.textContent = year; // Set button text to selected year
+        SelectedYear = year
+        CurrentLoaded = 10
+        displayRankings(SelectedYear, CurrentLoaded, selectedCountryCode);
+        dropdownMenu.style.display = 'none'; // Close dropdown
+        });
+        dropdownMenu.appendChild(item);
+    }
+
+    // Toggle dropdown on button click
+    dropdownBtn.addEventListener('click', () => {
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Close dropdown if clicked outside
+    window.addEventListener('click', (e) => {
+        if (!e.target.matches('.dropbtn')) {
+        dropdownMenu.style.display = 'none';
+        }
+    });
+
+    LoadMoreBtn.addEventListener('click', () => {
+        CurrentLoaded += 10
+        displayRankings(SelectedYear, CurrentLoaded, selectedCountryCode)
+    })
+
+    countrySearch.addEventListener("input", () => {
+        const query = countrySearch.value.toUpperCase();
+        countrySuggestions.innerHTML = "";
+        if (!query) {
+            countrySuggestions.style.display = "none";
+            selectedCountryCode = null;
+            displayRankings(SelectedYear, CurrentLoaded, selectedCountryCode);
+            return;
+        }
+
+        const matches = Object.entries(countries)
+            .filter(([code, name]) => name.includes(query))
+            .slice(0, 10); // max 10 suggestions
+
+        matches.forEach(([code, name]) => {
+            const div = document.createElement("div");
+            div.textContent = name;
+            div.addEventListener("click", () => {
+            countrySearch.value = name;
+            selectedCountryCode = code;
+            countrySuggestions.style.display = "none";
+            CurrentLoaded = 10;
+            displayRankings(SelectedYear, CurrentLoaded, selectedCountryCode);
+            });
+            countrySuggestions.appendChild(div);
+        });
+
+        countrySuggestions.style.display = matches.length ? "block" : "none";
+        });
+
+    countrySearch.addEventListener("focus", () => {
+        countrySearch.value = "";              
+        countrySuggestions.style.display = "none";
+    });
+
+    ResetButton.addEventListener('click', () => {
+        CurrentLoaded = 10
+        selectedCountryCode = null
+        SelectedYear = 2025
+        displayRankings(SelectedYear, CurrentLoaded)
+        dropdownBtn.textContent = "2025";
+        countrySearch.value = "";
+    })
+
+    window.addEventListener("click", (e) => {
+        if (e.target !== countrySearch) {
+            countrySuggestions.style.display = "none";
+        }
+        });
+
+
+    fetch("public/CountryCodes.json")
+        .then(res => res.json())
+        .then(data => {countries = data;})
+        .catch(err => console.error("Failed to load countries.json", err));
+
+    // Load the JSON file
+    fetch("public/rankings.json")
+      .then(res => res.json())
+      .then(data => {
+        // Filter only 2025
+        let rankings = data.filter(d => d.year === 2025);
+        // Sort by Elo descending
+        rankings.sort((a, b) => b.elo - a.elo);
+        rankings = rankings.slice(0, 10);
+
+        const tbody = document.getElementById("rankingTable").querySelector("tbody");
+        rankings.forEach((player, index) => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${player.name}</td>
+            <td>${Math.ceil(player.elo)}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      })
+      .catch(err => console.error("Failed to load rankings.json", err));
+
+    function displayRankings(year, CurrentLoaded, selectedCountryCode = null) {
+    fetch("public/rankings.json")
+        .then(res => res.json())
+        .then(data => {
+        const tbody = document.querySelector("#rankingTable tbody");
+        tbody.innerHTML = ""; // clear previous rows
+
+        let filtered = data
+            .filter(d => d.year === year)
+            .sort((a, b) => b.elo - a.elo);
+         if(selectedCountryCode){
+            filtered = filtered.filter(d => d.country === selectedCountryCode);
+        }
+            
+        filtered = filtered.slice(0, CurrentLoaded);
+
+
+        filtered.forEach((player, index) => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${player.name}</td>
+            <td>${Math.ceil(player.elo)}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+        })
+        .catch(err => console.error("Failed to load rankings.json", err));
+}
+  </script>
 </body>
 </html>
+

@@ -5,12 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player Comparisons</title>
     <style>
+        .TopButtons{
+            display: flex;
+            margin-left: 100px;
+            margin-top: 20px;
+            gap: 20px;
+        }
+        .HomeButton{
+            background-color: #06a2aa;
+            color: #ffffff;
+            width: 100px;
+            height: 30px;
+            border-radius: 20px;
+        }
+        .HomeBtn{
+            text-decoration: none;
+        }
+        .HomeButton:hover{
+            cursor: pointer;
+        }
+        .PlayerRankingsButton{
+            position: absolute;
+            background-color: #06a2aa;
+            color: #ffffff;
+            width: 200px;
+            height: 30px;
+            border-radius: 20px;
+        }
+        .PlayerRankingsBtn{
+            text-decoration: none;
+        }
+        .PlayerRankingsButton:hover{
+            cursor: pointer;
+        }
         body{
             background-image: linear-gradient(to right, #000000, #1a0527);
         }
         h1{
             margin-left: 100px;
-            margin-top: 50px;
+            margin-top: 20px;
             display: inline-flex;
             font-family: 'Poppins', sans-serif;
             font-size: 27px;
@@ -27,6 +60,14 @@
     </style>
 </head>
 <body>
+    <DIV class="TopButtons">
+        <a href="Homepage.html" class="HomeBtn">
+        <button class="HomeButton">HOME</button>
+        </a>
+        <a href="PlayerRankings.html" class="PlayerRankingsBtn">
+        <button class="PlayerRankingsButton">PLAYER RANKINGS</button>
+    </a>
+    </DIV>
     <h1>
         PLAYER COMPARISON
     </h1>
