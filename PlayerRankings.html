@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player Rankings</title>
+    <!-- CSV parser for browser (UMD) -->
+    <script src="https://cdn.jsdelivr.net/npm/d3-dsv@3"></script>
     <style>
         .TopButtons{
             display: flex;
@@ -269,14 +271,54 @@
   </button>
 
   <script>
+    // --- Utilities (ported from src/App.tsx, simplified to JS) ---
+    function parseDateFlexible(raw) {
+      if (raw == null) return null;
+      const s = String(raw).trim();
+      if (!s) return null;
+      if (/^\d{8}$/.test(s)) {
+        const y = +s.slice(0, 4);
+        const m = +s.slice(4, 6);
+        const d = +s.slice(6, 8);
+        const dt = new Date(Date.UTC(y, m - 1, d));
+        return isNaN(+dt) ? null : dt;
+      }
+      if (/^\d{4}[-\/]\d{2}[-\/]\d{2}/.test(s)) {
+        const dt = new Date(s.replace(/\//g, "-"));
+        return isNaN(+dt) ? null : dt;
+      }
+      const m1 = s.match(/^(\d{1,2})[./-](\d{1,2})[./-](\d{2,4})$/);
+      if (m1) {
+        const d = +m1[1], m = +m1[2], y = +m1[3] < 100 ? 2000 + +m1[3] : +m1[3];
+        const dt = new Date(Date.UTC(y, m - 1, d));
+        return isNaN(+dt) ? null : dt;
+      }
+      const dt = new Date(s);
+      return isNaN(+dt) ? null : dt;
+    }
+
+    function expectedScore(Ra, Rb, s) {
+      const scale = s || 400;
+      return 1 / (1 + Math.pow(10, (Rb - Ra) / scale));
+    }
+    function updateElo(Ra, Rb, scoreA, K) {
+      const Ea = expectedScore(Ra, Rb);
+      const Eb = 1 - Ea;
+      const newA = Ra + (K || 32) * (scoreA - Ea);
+      const newB = Rb + (K || 32) * ((1 - scoreA) - Eb);
+      return [newA, newB];
+    }
     const dropdownBtn = document.getElementById('dropdownBtn');
     const dropdownMenu = document.getElementById('dropdownMenu');
     const LoadMoreBtn = document.getElementById('LoadMoreButton');
-    const CountrySearch = document.getElementById('countrySearch');
+    // keep variable name consistent in handlers below
+    const countrySearch = document.getElementById('countrySearch');
     const countrySuggestions = document.getElementById("countrySuggestions");
     const PlayerSearch = document.getElementById('playerSearch')
     const playerSuggestions = document.getElementById('playerSuggestions')
     const ResetButton = document.getElementById("Reset")
+    // computed rankings cache (built once from CSVs)
+    let GLOBAL_RANKINGS = [];
     let countries = {};
     let selectedPlayer = null;
     let selectedCountryCode = null;
@@ -369,59 +411,162 @@
         .then(res => res.json())
         .then(data => {countries = data;})
         .catch(err => console.error("Failed to load countries.json", err));
+    // Build rankings once from CSVs, then render
+    async function buildRankingsFromCsv() {
+      try {
+        const [playersText, matchesText] = await Promise.all([
+          fetch("public/players.csv").then(r => r.text()),
+          fetch("public/matches.csv").then(r => r.text()),
+        ]);
 
-    // Load the JSON file
-    fetch("public/rankings.json")
-      .then(res => res.json())
-      .then(data => {
-        // Filter only 2025
-        let rankings = data.filter(d => d.year === 2025);
-        // Sort by Elo descending
-        rankings.sort((a, b) => b.elo - a.elo);
-        rankings = rankings.slice(0, 10);
+        // Use d3-dsv for robust CSV parsing
+        const playersRows = (window.d3 && d3.csvParse) ? d3.csvParse(playersText) : [];
+        const matchesRows = (window.d3 && d3.csvParse) ? d3.csvParse(matchesText) : [];
 
-        const tbody = document.getElementById("rankingTable").querySelector("tbody");
-        rankings.forEach((player, index) => {
-          const tr = document.createElement("tr");
-          tr.innerHTML = `
-            <td>${index + 1}</td>
-            <td>${player.name}</td>
-            <td>${Math.ceil(player.elo)}</td>
-          `;
-          tbody.appendChild(tr);
+        // Build player maps
+        const playersById = new Map();
+        const idToCountry = new Map();
+        const idToName = new Map();
+        const nameIndex = new Map(); // lowercased name -> id
+        const normIndex = new Map(); // lowercased name_norm -> id
+
+        const pNameKey = (playersRows.columns || []).find(c => c.toLowerCase() === 'name') || 'name';
+        const pNormKey = (playersRows.columns || []).find(c => /norm/i.test(c)) || 'name_norm';
+        const pIdKey = (playersRows.columns || []).find(c => /(^|_)id$/i.test(c)) || 'player_id';
+        const pIocKey = (playersRows.columns || []).find(c => /ioc|country/i.test(c)) || 'ioc';
+
+        playersRows.forEach(r => {
+          const id = String(r[pIdKey] || '').trim();
+          const nm = String(r[pNameKey] || '').trim();
+          const nn = String(r[pNormKey] || '').trim();
+          const ioc = String(r[pIocKey] || 'UNK').trim();
+          if (!id || !nm) return;
+          playersById.set(id, { id, name: nm, norm: nn, country: ioc });
+          idToCountry.set(id, ioc);
+          idToName.set(id, nm);
+          nameIndex.set(nm.toLowerCase(), id);
+          if (nn) normIndex.set(nn.toLowerCase(), id);
         });
-      })
-      .catch(err => console.error("Failed to load rankings.json", err));
+
+        // Prepare matches array with correct IDs
+        const mCols = matchesRows.columns || [];
+        const dateKey = mCols.find(c => /date|tourney_date|match_date/i.test(c)) || mCols[0];
+        const wPidKey = mCols.find(c => /winner.*player.*id/i.test(c)) || mCols.find(c => /^winner_?id$/i) || 'winner_id';
+        const lPidKey = mCols.find(c => /loser.*player.*id/i.test(c))  || mCols.find(c => /^loser_?id$/i)  || 'loser_id';
+        const wNameKey = mCols.find(c => /winner.*name|^winner$/i) || 'winner_name';
+        const lNameKey = mCols.find(c => /loser.*name|^loser$/i)  || 'loser_name';
+        const wIocKey = mCols.find(c => /winner.*ioc/i.test(c)) || 'winner_ioc';
+        const lIocKey = mCols.find(c => /loser.*ioc/i.test(c)) || 'loser_ioc';
+        const keyKey  = mCols.find(c => /match_key/i.test(c)) || 'match_key';
+
+        // helper to resolve mislabelled 2025 De Minaur cases using match_key/ioc hints
+        let deMinaurId = null;
+        for (const [id, p] of playersById.entries()) {
+          if ((p.name && p.name.toLowerCase() === 'alex de minaur') || (p.norm && p.norm.toLowerCase() === 'alex de minaur')) {
+            deMinaurId = id; break;
+          }
+        }
+
+        const matches = [];
+        for (const r of matchesRows) {
+          const dt = parseDateFlexible(r[dateKey]);
+          if (!dt) continue;
+          let w = String(r[wPidKey] || '').trim();
+          let l = String(r[lPidKey] || '').trim();
+          const mk = String(r[keyKey] || '');
+          const mkMatch = mk.match(/(.+)_vs_(.+)$/);
+          const mkW = mkMatch ? mkMatch[1].replace(/_/g,' ').replace(/\.+$/,'').trim().toLowerCase() : '';
+          const mkL = mkMatch ? mkMatch[2].replace(/_/g,' ').replace(/\.+$/,'').trim().toLowerCase() : '';
+          if (!w) {
+            const wn = String(r[wNameKey] || '').trim().toLowerCase();
+            if (wn && (nameIndex.has(wn) || normIndex.has(wn))) {
+              w = nameIndex.get(wn) || normIndex.get(wn) || '';
+            } else if (deMinaurId && (wn.includes('de minaur') || mkW.includes('de minaur')) && String(r[wIocKey]||'') === 'AUS') {
+              w = deMinaurId;
+            }
+          }
+          if (!l) {
+            const ln = String(r[lNameKey] || '').trim().toLowerCase();
+            if (ln && (nameIndex.has(ln) || normIndex.has(ln))) {
+              l = nameIndex.get(ln) || normIndex.get(ln) || '';
+            } else if (deMinaurId && (ln.includes('de minaur') || mkL.includes('de minaur')) && String(r[lIocKey]||'') === 'AUS') {
+              l = deMinaurId;
+            }
+          }
+          // If IDs exist but ioc mismatches and match_key suggests De Minaur, correct them
+          if (deMinaurId && String(r[wIocKey]||'') === 'AUS') {
+            const wn = String(r[wNameKey] || '').toLowerCase();
+            const idCountry = idToCountry.get(w) || '';
+            if ((!w || idCountry !== 'AUS') && (wn.includes('de minaur') || mkW.includes('de minaur'))) w = deMinaurId;
+          }
+          if (deMinaurId && String(r[lIocKey]||'') === 'AUS') {
+            const ln = String(r[lNameKey] || '').toLowerCase();
+            const idCountry = idToCountry.get(l) || '';
+            if ((!l || idCountry !== 'AUS') && (ln.includes('de minaur') || mkL.includes('de minaur'))) l = deMinaurId;
+          }
+          if (!w || !l) continue;
+          matches.push({ date: dt.toISOString(), winner_id: w, loser_id: l });
+        }
+
+        // Compute Elo and collect last rating per player per year
+        const base = 1500;
+        const K = 32;
+        const elo = new Map();
+        const lastEloPerYear = new Map(); // year -> Map(playerId -> {player_id,name,country,elo})
+
+        matches.sort((a,b) => new Date(a.date) - new Date(b.date));
+        for (const m of matches) {
+          const Ra = elo.get(m.winner_id) ?? base;
+          const Rb = elo.get(m.loser_id) ?? base;
+          const [newW, newL] = updateElo(Ra, Rb, 1, K);
+          elo.set(m.winner_id, newW);
+          elo.set(m.loser_id, newL);
+
+          const y = new Date(m.date).getFullYear().toString();
+          if (!lastEloPerYear.has(y)) lastEloPerYear.set(y, new Map());
+          const ym = lastEloPerYear.get(y);
+          const wName = idToName.get(m.winner_id) || m.winner_id;
+          const lName = idToName.get(m.loser_id)  || m.loser_id;
+          const wC = idToCountry.get(m.winner_id) || 'UNK';
+          const lC = idToCountry.get(m.loser_id)  || 'UNK';
+          ym.set(m.winner_id, { player_id: m.winner_id, name: wName, country: wC, elo: newW });
+          ym.set(m.loser_id,  { player_id: m.loser_id,  name: lName, country: lC, elo: newL });
+        }
+
+        const result = [];
+        for (const [year, map] of lastEloPerYear.entries()) {
+          for (const v of map.values()) result.push({ year: +year, ...v });
+        }
+        GLOBAL_RANKINGS = result;
+        // initial render
+        displayRankings(SelectedYear, CurrentLoaded, selectedCountryCode);
+      } catch (e) {
+        console.error('Failed to build rankings from CSV:', e);
+      }
+    }
 
     function displayRankings(year, CurrentLoaded, selectedCountryCode = null) {
-    fetch("public/rankings.json")
-        .then(res => res.json())
-        .then(data => {
-        const tbody = document.querySelector("#rankingTable tbody");
-        tbody.innerHTML = ""; // clear previous rows
+      const tbody = document.querySelector('#rankingTable tbody');
+      tbody.innerHTML = '';
+      let filtered = (GLOBAL_RANKINGS || []).filter(d => d.year === year)
+        .sort((a,b) => b.elo - a.elo);
+      if (selectedCountryCode) {
+        filtered = filtered.filter(d => d.country === selectedCountryCode);
+      }
+      filtered = filtered.slice(0, CurrentLoaded);
+      filtered.forEach((player, index) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${index + 1}</td>
+          <td>${player.name}</td>
+          <td>${Math.ceil(player.elo)}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
 
-        let filtered = data
-            .filter(d => d.year === year)
-            .sort((a, b) => b.elo - a.elo);
-         if(selectedCountryCode){
-            filtered = filtered.filter(d => d.country === selectedCountryCode);
-        }
-            
-        filtered = filtered.slice(0, CurrentLoaded);
-
-
-        filtered.forEach((player, index) => {
-            const tr = document.createElement("tr");
-            tr.innerHTML = `
-            <td>${index + 1}</td>
-            <td>${player.name}</td>
-            <td>${Math.ceil(player.elo)}</td>
-            `;
-            tbody.appendChild(tr);
-        });
-        })
-        .catch(err => console.error("Failed to load rankings.json", err));
-}
+    // Kick off data load immediately
+    buildRankingsFromCsv();
   </script>
 </body>
 </html>
