@@ -261,11 +261,15 @@ const loserIdKey  =
     return result;
   }, [matches, nameToId, selectedPlayerName, kFactor]);
 
-  const surfaceWinData = useMemo(() =>
-    (Object.keys(surfaceStats) as Array<keyof typeof surfaceStats>).map(s => {
-      const { w, t } = surfaceStats[s];
-      return { surface: s as string, winPct: t ? Math.round((w / t) * 1000) / 10 : 0, wins: w, total: t };
-    }), [surfaceStats]);
+  const surfaceWinData = useMemo(() => {
+    const keys = ["Hard", "Clay", "Grass"] as const; // hide "Other"
+    return keys
+      .map((s) => {
+        const { w, t } = surfaceStats[s];
+        return { surface: s as string, winPct: t ? Math.round((w / t) * 1000) / 10 : 0, wins: w, total: t };
+      })
+      .filter((d) => d.total > 0); // drop surfaces with no matches
+  }, [surfaceStats]);
 
   // Compute Elo rankings for ALL players by year
 function computeEloRankings(matches: MatchRow[], kFactor: number, base = 1500) {

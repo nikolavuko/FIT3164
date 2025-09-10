@@ -36,6 +36,7 @@
         body{
             background-image: linear-gradient(to right, #000000, #1a0527);
             margin: 0;
+            overflow-y: auto; /* ensure page can scroll vertically */
         }
         h1{
             font-size: 75px;
@@ -114,7 +115,7 @@
     <a href="PlayerComparisons.html" class="btn2">Player Comparisons</a>
 
     <!-- React will render the charts here -->
-    <div id="chart-root" style="clear:both; padding:40px 0;"></div>
+    <div id="chart-root" style="clear:both; padding:40px 0; min-height: 720px;"></div>
 
     <!-- Load React entry for this page -->
     <script type="module" src="/src/homepage.tsx"></script>
