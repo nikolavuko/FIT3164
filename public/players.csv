@@ -1,8 +1,8 @@
 player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 36504399,Adam Pavlasek,adam pavlasek,CZE,2016-05-23,2018-05-28,7
-3219108,Adam Walton,adam walton,AUS,2024-01-07,2025-07-01,5
+3219108,Adam Walton,adam walton,AUS,2024-01-07,2025-08-25,11
 90001577,Adrian Garcia,adrian garcia,CHI,2005-06-20,2005-06-20,1
-17906708,Adrian Mannarino,adrian mannarino,FRA,2008-05-25,2025-07-04,104
+17906708,Adrian Mannarino,adrian mannarino,FRA,2008-05-25,2025-08-25,111
 62852,Adrian Menendez Maceiras,adrian menendez maceiras,ESP,2012-06-25,2017-08-28,4
 4800079,Adrian Ungur,adrian ungur,ROU,2012-05-27,2016-05-23,8
 98026997,Adrian Voinea,adrian voinea,ROU,2000-01-17,2003-06-23,22
@@ -14,44 +14,44 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 20481490,Albert Costa,albert costa,ESP,2000-01-17,2005-08-29,48
 70306668,Albert Montanes,albert montanes,ESP,2001-05-28,2016-06-27,83
 2680524,Albert Portas,albert portas,ESP,2000-01-17,2006-06-26,31
-42248572,Albert Ramos,albert ramos,ESP,2011-05-22,2025-05-26,75
+42248572,Albert Ramos,albert ramos,ESP,2011-05-22,2025-05-26,76
 67664601,Alberto Berasategui,alberto berasategui,ESP,2000-01-17,2000-06-26,3
-83316041,Alberto Martin,alberto martin,ESP,2000-01-17,2021-08-02,50
-70535143,Alejandro Davidovich Fokina,alejandro davidovich fokina,ESP,2019-05-27,2024-08-26,41
+83316041,Alberto Martin,alberto martin,ESP,2000-01-17,2021-08-02,59
+70535143,Alejandro Davidovich Fokina,alejandro davidovich fokina,ESP,2019-05-27,2025-08-25,43
 39293454,Alejandro Falla,alejandro falla,COL,2004-05-24,2015-06-29,55
 28510968,Alejandro Gonzalez,alejandro gonzalez,COL,2014-01-13,2015-08-31,9
 41682873,Alejandro Moro Canas,alejandro moro canas,ESP,2024-01-07,2024-01-07,1
-98310035,Alejandro Tabilo,alejandro tabilo,CHI,2020-01-20,2025-05-28,13
-12606113,Aleksandar Kovacevic,aleksandar kovacevic,USA,2023-05-29,2025-07-01,6
-65164965,Aleksandar Vukic,aleksandar vukic,AUS,2020-09-28,2025-07-03,13
+98310035,Alejandro Tabilo,alejandro tabilo,CHI,2020-01-20,2025-08-25,17
+12606113,Aleksandar Kovacevic,aleksandar kovacevic,USA,2023-05-29,2025-08-25,9
+65164965,Aleksandar Vukic,aleksandar vukic,AUS,2020-09-28,2025-08-25,20
 37493615,Aleksandr Nedovyesov,aleksandr nedovyesov,KAZ,2014-01-13,2015-08-31,8
 3133152,Alessandro Giannessi,alessandro giannessi,ITA,2016-08-29,2022-05-23,5
 45768941,Alessio Di Mauro,alessio di mauro,ITA,2005-06-20,2007-05-28,8
 557624,Alex Bogdanovic,alex bogdanovic,GBR,2002-06-24,2009-06-22,9
 45373765,Alex Bogomolov Jr,alex bogomolov jr,RUS,2001-08-27,2014-01-13,27
-65417071,Alex Bolt,alex bolt,AUS,2017-01-16,2025-07-01,14
+65417071,Alex Bolt,alex bolt,AUS,2017-01-16,2025-07-01,15
 82019619,Alex Calatrava,alex calatrava,ESP,2001-01-15,2005-06-20,18
 48770669,Alex Corretja,alex corretja,ESP,2000-01-17,2004-08-30,40
-28865657,Alex De Minaur,alex de minaur,AUS,2017-01-16,2024-08-26,79
+28865657,Alex De Minaur,alex de minaur,AUS,2017-01-16,2025-08-25,83
 53674481,Alex Kim,alex kim,USA,2000-08-28,2003-08-25,8
 48249752,Alex Lopez Moron,alex lopez moron,ESP,2000-01-17,2000-01-17,1
-12611033,Alex Michelsen,alex michelsen,USA,2023-08-28,2025-07-01,9
+12611033,Alex Michelsen,alex michelsen,USA,2023-08-28,2025-08-25,16
 25809887,Alex Molcan,alex molcan,SVK,2021-08-30,2023-08-28,17
 65194975,Alex Obrien,alex obrien,USA,2000-01-17,2001-01-15,4
-40706048,Alexander Bublik,alexander bublik,KAZ,2017-01-16,2025-07-01,44
+40706048,Alexander Bublik,alexander bublik,KAZ,2017-01-16,2025-08-25,56
 2284506,Alexander Kudryavtsev,alexander kudryavtsev,RUS,2012-01-16,2016-06-27,5
 40084296,Alexander Peya,alexander peya,AUT,2004-05-24,2009-06-22,11
 4136847,Alexander Popp,alexander popp,GER,2000-05-29,2005-08-29,33
 1215325,Alexander Ritschard,alexander ritschard,SUI,2022-06-27,2022-08-29,2
-93154317,Alexander Shevchenko,alexander shevchenko,KAZ,2023-03-07,2025-07-01,10
+93154317,Alexander Shevchenko,alexander shevchenko,KAZ,2023-03-07,2025-08-25,15
 65826293,Alexander Ward,alexander ward,GBR,2016-06-27,2017-03-07,2
 90600751,Alexander Waske,alexander waske,GER,2002-06-24,2007-08-27,13
-46734571,Alexander Zverev,alexander zverev,GER,2015-06-29,2025-07-01,136
+46734571,Alexander Zverev,alexander zverev,GER,2015-06-29,2025-08-25,152
 54811555,Alexandr Dolgopolov,alexandr dolgopolov,UKR,2010-05-24,2018-01-15,64
-98376956,Alexandre Muller,alexandre muller,FRA,2017-05-29,2025-07-01,15
+98376956,Alexandre Muller,alexandre muller,FRA,2017-05-29,2025-08-25,19
 36528388,Alexandre Sidorenko,alexandre sidorenko,FRA,2007-05-28,2009-05-25,2
 44318176,Alexandre Simoni,alexandre simoni,BRA,2001-08-27,2002-06-24,4
-59624151,Alexei Popyrin,alexei popyrin,AUS,2018-01-15,2025-06-30,43
+59624151,Alexei Popyrin,alexei popyrin,AUS,2018-01-15,2025-08-25,52
 75510026,Alexey Vatutin,alexey vatutin,RUS,2019-05-27,2019-05-27,1
 65237694,Aljaz Bedene,aljaz bedene,SLO,2013-01-14,2022-08-29,53
 71394428,Alun Jones,alun jones,AUS,2001-01-15,2008-01-14,6
@@ -75,8 +75,8 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 91651475,Andrew Ilie,andrew ilie,AUS,2000-01-17,2003-01-13,18
 13725465,Andrew Whittington,andrew whittington,AUS,2017-01-16,2017-03-07,3
 84655398,Andrey Golubev,andrey golubev,KAZ,2008-08-25,2015-05-24,24
-48353604,Andrey Kuznetsov,andrey kuznetsov,USA,2006-08-28,2022-05-23,39
-63724855,Andrey Rublev,andrey rublev,RUS,2015-08-31,2025-07-06,93
+48353604,Andrey Kuznetsov,andrey kuznetsov,USA,2006-08-28,2022-05-23,47
+63724855,Andrey Rublev,andrey rublev,RUS,2015-08-31,2025-08-25,106
 52577225,Andy Murray,andy murray,GBR,2005-06-20,2024-05-27,257
 56621152,Andy Ram,andy ram,ISR,2004-06-21,2004-06-21,1
 52300464,Andy Roddick,andy roddick,USA,2000-08-28,2012-08-27,176
@@ -88,11 +88,11 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 54968648,Arnaud Clement,arnaud clement,FRA,2000-01-17,2012-05-27,99
 71135006,Arnaud Di Pasquale,arnaud di pasquale,FRA,2000-05-29,2004-08-30,15
 81264196,Artem Derepasko,artem derepasko,RUS,2001-06-25,2001-06-25,1
-46085275,Arthur Cazaux,arthur cazaux,FRA,2021-05-31,2025-07-03,12
+46085275,Arthur Cazaux,arthur cazaux,FRA,2021-05-31,2025-07-03,17
 36823293,Arthur De Greef,arthur de greef,BEL,2017-05-29,2017-05-29,1
-98741961,Arthur Fery,arthur fery,GBR,2023-03-07,2025-07-03,2
-64847893,Arthur Fils,arthur fils,FRA,2023-03-07,2025-05-31,13
-51629851,Arthur Rinderknech,arthur rinderknech,FRA,2020-09-28,2025-07-04,25
+98741961,Arthur Fery,arthur fery,GBR,2023-03-07,2025-07-03,4
+64847893,Arthur Fils,arthur fils,FRA,2023-03-07,2025-05-31,19
+51629851,Arthur Rinderknech,arthur rinderknech,FRA,2020-09-28,2025-08-25,34
 19102570,Arvind Parmar,arvind parmar,GBR,2000-01-17,2004-06-21,8
 56370289,Aslan Karatsev,aslan karatsev,RUS,2021-05-31,2024-05-27,27
 31180705,Attila Balazs,attila balazs,HUN,2020-08-31,2023-08-28,7
@@ -106,16 +106,16 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 44848596,Basavareddy N.,basavareddy n,USA,2025-01-13,2025-06-30,2
 4774359,Bastian Knittel,bastian knittel,GER,2013-06-24,2013-06-24,1
 82956618,Bautista Agut R.,bautista agut r,ESP,2025-01-14,2025-06-30,3
-16684172,Ben Shelton,ben shelton,USA,2022-08-29,2025-07-09,28
+16684172,Ben Shelton,ben shelton,USA,2022-08-29,2025-08-25,45
 51768529,Benedikt Dorsch,benedikt dorsch,GER,2006-06-26,2006-06-26,1
 72898107,Benjamin Becker,benjamin becker,GER,2006-06-26,2016-08-29,55
-66463081,Benjamin Bonzi,benjamin bonzi,FRA,2017-05-29,2025-07-02,23
+66463081,Benjamin Bonzi,benjamin bonzi,FRA,2017-05-29,2025-08-25,32
 80527871,Benjamin Mitchell,benjamin mitchell,AUS,2012-01-16,2013-01-14,2
 3656666,Benoit Paire,benoit paire,FRA,2010-05-24,2023-05-29,91
 7178991,Bernabe Zapata Miralles,bernabe zapata miralles,ESP,2021-05-31,2024-01-15,16
 80365173,Bernard Tomic,bernard tomic,AUS,2009-01-19,2021-08-02,79
 86815960,Bernd Karbacher,bernd karbacher,GER,2000-01-17,2000-01-17,1
-36266675,Billy Harris,billy harris,GBR,2024-01-07,2025-07-02,2
+36266675,Billy Harris,billy harris,GBR,2024-01-07,2025-08-25,4
 3265508,Bjorn Fratangelo,bjorn fratangelo,USA,2015-08-31,2022-05-23,14
 77206214,Bjorn Phau,bjorn phau,GER,2000-05-29,2013-01-14,32
 42442584,Bjorn Rehnquist,bjorn rehnquist,SWE,2002-08-26,2009-01-19,3
@@ -127,13 +127,13 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 83572152,Bobby Reynolds,bobby reynolds,USA,2004-08-30,2013-06-24,24
 62014384,Bohdan Ulihrach,bohdan ulihrach,CZE,2000-05-29,2007-06-25,27
 41433779,Boris Pashanski,boris pashanski,SRB,2006-01-16,2008-06-23,9
-33620474,Borna Coric,borna coric,CRO,2014-08-25,2025-01-14,64
+33620474,Borna Coric,borna coric,CRO,2014-08-25,2025-08-25,66
 72928363,Borna Gojo,borna gojo,CRO,2022-05-23,2023-08-28,7
-72573175,Botic Van De Zandschulp,botic van de zandschulp,NED,2021-05-31,2024-08-26,36
+72573175,Botic Van De Zandschulp,botic van de zandschulp,NED,2021-05-31,2025-08-25,37
 91259453,Boyer T.,boyer t,USA,2025-01-14,2025-01-16,2
 92549367,Bradley Klahn,bradley klahn,USA,2010-08-30,2020-08-31,18
-65925134,Brandon Holt,brandon holt,USA,2022-08-29,2025-06-30,4
-84303126,Brandon Nakashima,brandon nakashima,USA,2020-08-31,2025-07-05,29
+65925134,Brandon Holt,brandon holt,USA,2022-08-29,2025-08-25,6
+84303126,Brandon Nakashima,brandon nakashima,USA,2020-08-31,2025-08-25,36
 94693962,Brayden Schnur,brayden schnur,CAN,2019-01-07,2019-08-26,2
 54842034,Brendan Evans,brendan evans,USA,2008-08-25,2010-06-21,4
 51061085,Brian Baker,brian baker,USA,2003-08-25,2016-08-29,19
@@ -143,13 +143,13 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 47457982,Bruno Echagaray,bruno echagaray,MEX,2007-08-27,2007-08-27,1
 97737008,Brydan Klein,brydan klein,AUS,2008-01-14,2017-03-07,6
 65330098,Bu Y.,bu y,CHN,2025-01-12,2025-07-02,3
-71849665,Bu Yunchaokete,bu yunchaokete,CHN,2024-08-26,2024-08-26,1
+71849665,Bu Yunchaokete,bu yunchaokete,CHN,2024-08-26,2025-08-25,2
 65144875,Byron Black,byron black,ZIM,2000-01-17,2002-01-14,15
 91759742,Calvin Hemery,calvin hemery,FRA,2018-05-28,2018-05-28,1
-19083412,Cameron Norrie,cameron norrie,GBR,2017-03-07,2025-07-08,61
-78016004,Camilo Ugo Carabelli,camilo ugo carabelli,ARG,2022-05-23,2024-08-26,3
+19083412,Cameron Norrie,cameron norrie,GBR,2017-03-07,2025-08-25,74
+78016004,Camilo Ugo Carabelli,camilo ugo carabelli,ARG,2022-05-23,2025-08-25,4
 16144792,Carballes Baena R.,carballes baena r,ESP,2025-01-13,2025-07-01,4
-73350060,Carlos Alcaraz,carlos alcaraz,ESP,2021-05-31,2025-07-13,71
+73350060,Carlos Alcaraz,carlos alcaraz,ESP,2021-05-31,2025-08-25,97
 72386636,Carlos Berlocq,carlos berlocq,ARG,2006-01-16,2018-08-27,45
 31847188,Carlos Moya,carlos moya,ESP,2000-05-29,2010-01-18,80
 96307959,Carlos Taberner,carlos taberner,ESP,2018-05-28,2022-06-27,6
@@ -168,10 +168,10 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 15079852,Chris Woodruff,chris woodruff,USA,2000-01-17,2001-08-27,17
 75585919,Christian Harrison,christian harrison,USA,2016-08-29,2022-06-27,4
 9355355,Christian Lindell,christian lindell,SWE,2015-05-24,2015-05-24,1
-6089897,Christian Ruud,christian ruud,NOR,2000-05-29,2025-05-28,71
+6089897,Christian Ruud,christian ruud,NOR,2000-05-29,2025-05-28,79
 68824457,Christian Vinck,christian vinck,GER,2000-05-29,2001-01-15,7
 94662776,Christophe Rochus,christophe rochus,BEL,2000-01-17,2010-01-18,49
-51742194,Christopher Eubanks,christopher eubanks,USA,2017-08-28,2025-07-01,22
+51742194,Christopher Eubanks,christopher eubanks,USA,2017-08-28,2025-07-01,23
 72134275,Christopher Oconnell,christopher oconnell,AUS,2017-01-16,2024-08-26,26
 90300823,Chun Hsin Tseng,chun hsin tseng,TPE,2022-01-17,2023-01-16,5
 93511787,Colin Ebelthite,colin ebelthite,AUS,2009-01-19,2009-01-19,1
@@ -179,21 +179,21 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 22049911,Collin Altamirano,collin altamirano,USA,2013-08-26,2018-08-27,2
 53908007,Conor Niland,conor niland,IRL,2011-06-20,2011-08-29,2
 2578301,Constant Lestienne,constant lestienne,FRA,2023-01-16,2024-08-26,9
-33590805,Corentin Moutet,corentin moutet,FRA,2018-01-15,2025-07-03,41
+33590805,Corentin Moutet,corentin moutet,FRA,2018-01-15,2025-08-25,49
 5873699,Crawford O.,crawford o,GBR,2025-06-30,2025-06-30,1
-60341114,Cristian Garin,cristian garin,CHI,2017-03-07,2025-07-03,41
+60341114,Cristian Garin,cristian garin,CHI,2017-03-07,2025-07-03,45
 51106355,Cristiano Caratti,cristiano caratti,ITA,2001-08-27,2002-06-24,2
 90506107,Cyril Saulnier,cyril saulnier,FRA,2000-01-17,2006-01-16,26
 22934714,Dalibor Svrcina,dalibor svrcina,CZE,2023-01-16,2023-01-16,2
-20848857,Damir Dzumhur,damir dzumhur,BIH,2014-01-13,2025-07-01,42
+20848857,Damir Dzumhur,damir dzumhur,BIH,2014-01-13,2025-08-25,48
 18657305,Danai Udomchoke,danai udomchoke,THA,2004-08-30,2012-01-16,14
 66065100,Dane Sweeny,dane sweeny,AUS,2024-01-15,2024-01-15,1
-7621612,Daniel Altmaier,daniel altmaier,GER,2020-09-28,2025-06-30,21
+7621612,Daniel Altmaier,daniel altmaier,GER,2020-09-28,2025-08-25,30
 96078619,Daniel Brands,daniel brands,GER,2008-05-25,2017-03-07,25
 25138469,Daniel Cox,daniel cox,GBR,2011-06-20,2014-06-23,2
-49101984,Daniel Elahi Galan,daniel elahi galan,COL,2020-01-20,2024-05-27,24
+49101984,Daniel Elahi Galan,daniel elahi galan,COL,2020-01-20,2025-08-25,25
 38583818,Daniel Elsner,daniel elsner,GER,2001-01-15,2004-08-30,6
-55830548,Daniel Evans,daniel evans,GBR,2009-06-22,2025-07-03,64
+55830548,Daniel Evans,daniel evans,GBR,2009-06-22,2025-07-03,66
 98374500,Daniel Gimeno Traver,daniel gimeno traver,ESP,2005-05-23,2016-01-18,36
 58036056,Daniel Koellerer,daniel koellerer,AUT,2009-05-25,2010-05-24,7
 99263469,Daniel Masur,daniel masur,GER,2021-06-28,2021-06-28,1
@@ -202,10 +202,10 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 42462174,Daniel Smethurst,daniel smethurst,GBR,2014-06-23,2014-06-23,1
 41108922,Daniel Vacek,daniel vacek,CZE,2000-01-17,2002-01-14,5
 89915529,Daniele Bracciali,daniele bracciali,ITA,2004-06-21,2007-05-28,16
-57428056,Daniil Medvedev,daniil medvedev,RUS,2017-01-16,2025-06-30,117
+57428056,Daniil Medvedev,daniil medvedev,RUS,2017-01-16,2025-08-25,122
 8427463,Darian King,darian king,BAR,2017-08-28,2017-08-28,1
 12833669,David Ferrer,david ferrer,ESP,2003-01-13,2018-08-27,209
-98990907,David Goffin,david goffin,BEL,2012-05-27,2025-07-01,113
+98990907,David Goffin,david goffin,BEL,2012-05-27,2025-08-25,117
 75309651,David Guez,david guez,FRA,2010-01-18,2014-01-13,4
 2588445,David Marrero,david marrero,ESP,2008-05-25,2008-05-25,2
 79337905,David Nalbandian,david nalbandian,ARG,2001-08-27,2012-06-25,122
@@ -213,7 +213,7 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 21098379,David Sanchez,david sanchez,ESP,2000-08-28,2005-05-23,27
 56280824,David Sherwood,david sherwood,GBR,2005-06-20,2005-06-20,2
 85272829,Davide Sanguinetti,davide sanguinetti,ITA,2000-01-17,2007-06-25,40
-59348917,Davidovich Fokina A.,davidovich fokina a,ESP,2025-01-13,2025-07-07,11
+59348917,Davidovich Fokina A.,davidovich fokina a,ESP,2025-01-13,2025-07-07,20
 94516134,Dawid Olejniczak,dawid olejniczak,POL,2008-06-23,2008-06-23,1
 64627384,De Jong J.,de jong j,NED,2025-05-27,2025-07-03,4
 95360991,Dejan Petrovic,dejan petrovic,SRB,2000-01-17,2001-01-15,3
@@ -221,7 +221,7 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 79591431,Denis Gremelmayr,denis gremelmayr,GER,2006-01-16,2011-06-20,13
 12150093,Denis Istomin,denis istomin,UZB,2006-01-16,2021-05-31,80
 27186822,Denis Kudla,denis kudla,USA,2012-01-16,2023-01-16,47
-1710964,Denis Shapovalov,denis shapovalov,CAN,2017-03-07,2025-07-01,71
+1710964,Denis Shapovalov,denis shapovalov,CAN,2017-03-07,2025-08-25,79
 70514144,Dennis Novak,dennis novak,AUT,2018-01-15,2023-03-07,14
 40319854,Dennis Novikov,dennis novikov,USA,2012-08-27,2016-06-27,4
 9770673,Dennis Van Scheppingen,dennis van scheppingen,NED,2004-01-19,2004-08-30,4
@@ -234,50 +234,50 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 7118752,Diego Junqueira,diego junqueira,ARG,2008-05-25,2011-08-29,8
 12576254,Diego Schwartzman,diego schwartzman,ARG,2014-05-26,2024-08-26,97
 7243957,Dieter Kindlmann,dieter kindlmann,GER,2005-01-17,2010-05-24,7
-69264655,Dino Prizmic,dino prizmic,CRO,2024-01-15,2024-01-15,1
+69264655,Dino Prizmic,dino prizmic,CRO,2024-01-15,2025-08-25,2
 21842284,Dmitry Tursunov,dmitry tursunov,RUS,2003-08-25,2017-08-28,85
-53185636,Dominic Stricker,dominic stricker,SUI,2023-03-07,2025-01-13,9
+53185636,Dominic Stricker,dominic stricker,SUI,2023-03-07,2025-01-13,10
 40035892,Dominic Thiem,dominic thiem,AUT,2014-01-13,2024-08-26,111
 10010775,Dominik Hrbaty,dominik hrbaty,SVK,2000-01-17,2009-01-19,79
-14280435,Dominik Koepfer,dominik koepfer,GER,2019-01-07,2025-01-13,28
+14280435,Dominik Koepfer,dominik koepfer,GER,2019-01-07,2025-01-13,29
 6250407,Dominik Meffert,dominik meffert,GER,2007-08-27,2007-08-27,1
 24810416,Donald Young,donald young,USA,2005-08-29,2018-08-27,57
 22166643,Dougaz A.,dougaz a,TUN,2025-01-13,2025-01-13,1
 51446045,Dudi Sela,dudi sela,ISR,2005-05-23,2018-05-28,64
-99764096,Dusan Lajovic,dusan lajovic,SRB,2014-01-13,2025-06-30,69
+99764096,Dusan Lajovic,dusan lajovic,SRB,2014-01-13,2025-06-30,72
 60293574,Dusan Lojda,dusan lojda,CZE,2010-08-30,2010-08-30,1
 67718971,Dusan Vemic,dusan vemic,SRB,2007-05-28,2007-05-28,1
 66052276,Dustin Brown,dustin brown,JAM,2010-06-21,2018-01-15,29
 44366540,Edgardo Massa,edgardo massa,ARG,2002-05-27,2006-05-29,2
 78782079,Edouard Roger Vasselin,edouard roger vasselin,FRA,2007-05-28,2010-05-24,9
 53951330,Edouard Roger-Vasselin,edouard roger-vasselin,FRA,2008-01-14,2016-06-27,31
-45922391,Eduardo Nava,eduardo nava,USA,2021-08-30,2025-05-28,4
+45922391,Eduardo Nava,eduardo nava,USA,2021-08-30,2025-05-28,7
 6307122,Eduardo Schwank,eduardo schwank,ARG,2008-05-25,2012-05-27,17
 16336912,Edwin Kempes,edwin kempes,NED,2001-06-25,2002-08-26,3
 51244226,Egor Gerasimov,egor gerasimov,BLR,2019-08-26,2022-01-17,14
 31951863,Elias Ymer,elias ymer,SWE,2015-01-19,2024-01-07,11
-35778786,Eliot Spizzirri,eliot spizzirri,USA,2024-08-26,2024-08-26,1
+35778786,Eliot Spizzirri,eliot spizzirri,USA,2024-08-26,2025-08-25,3
 925434,Elliot Benchetrit,elliot benchetrit,MAR,2018-05-28,2020-09-28,6
-67636016,Emil Ruusuvuori,emil ruusuvuori,FIN,2020-08-31,2024-05-27,26
+67636016,Emil Ruusuvuori,emil ruusuvuori,FIN,2020-08-31,2025-08-25,27
 40056975,Emilio Gomez,emilio gomez,ECU,2020-09-28,2022-01-17,2
 72316466,Enzo Couacaud,enzo couacaud,FRA,2021-05-31,2023-08-28,8
 67739863,Eric Prodon,eric prodon,FRA,2000-05-29,2012-05-27,7
 64284845,Eric Taino,eric taino,PHI,2001-08-27,2002-08-26,2
 77124634,Ernesto Escobedo,ernesto escobedo,MEX,2016-08-29,2023-01-16,14
 89815685,Ernests Gulbis,ernests gulbis,LAT,2007-05-28,2020-01-20,85
-91082262,Ethan Quinn,ethan quinn,USA,2023-08-28,2025-07-02,5
+91082262,Ethan Quinn,ethan quinn,USA,2023-08-28,2025-08-25,7
 12390486,Evan King,evan king,USA,2017-08-28,2017-08-28,1
 6384390,Evgeny Donskoy,evgeny donskoy,RUS,2013-01-14,2021-08-30,33
 59609241,Evgeny Korolev,evgeny korolev,KAZ,2006-05-29,2010-08-30,23
-50034464,Fabian Marozsan,fabian marozsan,HUN,2023-03-07,2025-07-03,11
-77378609,Fabio Fognini,fabio fognini,ITA,2007-05-28,2025-06-30,133
+50034464,Fabian Marozsan,fabian marozsan,HUN,2023-03-07,2025-08-25,19
+77378609,Fabio Fognini,fabio fognini,ITA,2007-05-28,2025-06-30,134
 67564074,Fabrice Santoro,fabrice santoro,FRA,2000-01-17,2010-01-18,79
 59336735,Facundo Arguello,facundo arguello,ARG,2014-05-26,2015-05-24,2
 24829845,Facundo Bagnis,facundo bagnis,ARG,2014-05-26,2023-01-16,22
 93934671,Facundo Diaz Acosta,facundo diaz acosta,ARG,2023-05-29,2024-08-26,6
 91087531,Faria J.,faria j,POR,2025-01-13,2025-07-01,4
 7162033,Federico Browne,federico browne,ARG,2000-05-29,2003-05-26,4
-20254810,Federico Coria,federico coria,ARG,2020-08-31,2025-01-14,22
+20254810,Federico Coria,federico coria,ARG,2020-08-31,2025-01-14,23
 12661837,Federico Delbonis,federico delbonis,ARG,2013-05-27,2022-08-29,45
 58407807,Federico Gaio,federico gaio,ITA,2018-08-27,2020-08-31,2
 44529020,Federico Luzzi,federico luzzi,ITA,2001-05-28,2006-01-16,6
@@ -290,18 +290,18 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 16587381,Fernando Verdasco,fernando verdasco,ESP,2003-06-23,2022-08-29,184
 33491560,Fernando Vicente,fernando vicente,ESP,2000-01-17,2007-06-25,42
 42648993,Filip Krajinovic,filip krajinovic,SRB,2012-05-27,2023-05-29,40
-7508473,Filip Misolic,filip misolic,AUT,2024-05-27,2025-06-30,4
+7508473,Filip Misolic,filip misolic,AUT,2024-05-27,2025-06-30,6
 34097455,Filippo Volandri,filippo volandri,ITA,2003-05-26,2014-06-23,44
 39970348,Flavio Cipolla,flavio cipolla,ITA,2007-05-28,2013-01-14,19
-74753368,Flavio Cobolli,flavio cobolli,ITA,2023-05-29,2025-07-09,11
+74753368,Flavio Cobolli,flavio cobolli,ITA,2023-05-29,2025-08-25,22
 78952883,Flavio Saretta,flavio saretta,BRA,2002-01-14,2006-08-28,29
 19828554,Florent Serra,florent serra,FRA,2004-05-24,2013-08-26,54
 83686312,Florian Mayer,florian mayer,GER,2004-01-19,2018-08-27,85
 17004857,Fonseca J.,fonseca j,BRA,2025-01-14,2025-07-04,8
-55103597,Frances Tiafoe,frances tiafoe,USA,2015-05-24,2025-07-02,82
-4934250,Francisco Cerundolo,francisco cerundolo,ARG,2021-05-31,2025-06-30,24
+55103597,Frances Tiafoe,frances tiafoe,USA,2015-05-24,2025-08-25,94
+4934250,Francisco Cerundolo,francisco cerundolo,ARG,2021-05-31,2025-08-25,31
 71979332,Francisco Clavet,francisco clavet,ESP,2000-01-17,2003-01-13,20
-5219819,Francisco Comesana,francisco comesana,ARG,2024-01-07,2025-07-01,6
+5219819,Francisco Comesana,francisco comesana,ARG,2024-01-07,2025-08-25,11
 55400919,Franco Agamenone,franco agamenone,ITA,2022-05-23,2022-05-23,1
 68279870,Franco Ferreiro,franco ferreiro,BRA,2009-05-25,2009-05-25,1
 68344238,Franco Squillari,franco squillari,ARG,2000-01-17,2003-08-25,27
@@ -312,8 +312,8 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 76715513,Frederico Gil,frederico gil,POR,2008-05-25,2012-01-16,17
 27755159,Frederik Nielsen,frederik nielsen,DEN,2012-01-16,2012-01-16,1
 86115486,Fredrik Jonsson,fredrik jonsson,SWE,2000-01-17,2001-06-25,4
-65408352,Gabriel Diallo,gabriel diallo,CAN,2024-05-27,2025-07-02,6
-44954827,Gael Monfils,gael monfils,FRA,2005-01-17,2025-07-04,189
+65408352,Gabriel Diallo,gabriel diallo,CAN,2024-05-27,2025-08-25,12
+44954827,Gael Monfils,gael monfils,FRA,2005-01-17,2025-08-25,198
 81050551,Galan D.E.,galan de,COL,2025-05-25,2025-05-28,2
 22003488,Galo Blanco,galo blanco,ESP,2000-01-17,2004-06-21,24
 58982074,Gastao Elias,gastao elias,POR,2013-06-24,2018-02-07,8
@@ -322,7 +322,7 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 61580393,Genaro Alberto Olivieri,genaro alberto olivieri,ARG,2023-05-29,2023-05-29,3
 8684710,Geoffrey Blancaneaux,geoffrey blancaneaux,FRA,2017-08-28,2022-05-23,2
 68445073,George Bastl,george bastl,SUI,2000-01-17,2006-08-28,13
-89267594,George Loffhagen,george loffhagen,GBR,2023-03-07,2025-07-01,1
+89267594,George Loffhagen,george loffhagen,GBR,2023-03-07,2025-07-01,2
 50263881,Gerald Melzer,gerald melzer,AUT,2016-05-23,2018-01-15,3
 47972717,Germain Gigounon,germain gigounon,BEL,2015-05-24,2015-05-24,1
 88049074,German Puentes,german puentes,ESP,2001-01-15,2001-08-27,4
@@ -336,8 +336,8 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 9703797,Gilles Simon,gilles simon,FRA,2005-05-23,2022-05-23,152
 5819648,Giorgio Galimberti,giorgio galimberti,ITA,2002-05-27,2005-08-29,6
 30451190,Giovanni Lapentti,giovanni lapentti,ECU,2003-05-26,2009-08-31,2
-51899349,Giovanni Mpetshi Perricard,giovanni mpetshi perricard,FRA,2023-05-29,2024-08-26,7
-75455260,Giulio Zeppieri,giulio zeppieri,ITA,2022-05-23,2025-07-01,7
+51899349,Giovanni Mpetshi Perricard,giovanni mpetshi perricard,FRA,2023-05-29,2025-08-25,8
+75455260,Giulio Zeppieri,giulio zeppieri,ITA,2022-05-23,2025-07-01,9
 84173088,Gleb Sakharov,gleb sakharov,FRA,2019-01-14,2019-01-14,1
 85365525,Glenn Weiner,glenn weiner,USA,2004-01-19,2005-08-29,4
 46197232,Go Soeda,go soeda,JPN,2007-01-15,2020-08-31,22
@@ -350,7 +350,7 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 35866729,Grega Zemlja,grega zemlja,SLO,2009-06-22,2013-08-26,19
 72552718,Gregoire Barrere,gregoire barrere,FRA,2016-05-23,2024-05-27,25
 14767490,Gregory Carraz,gregory carraz,FRA,2002-06-24,2005-01-17,12
-9095611,Grigor Dimitrov,grigor dimitrov,BUL,2009-06-22,2025-07-07,154
+9095611,Grigor Dimitrov,grigor dimitrov,BUL,2009-06-22,2025-07-07,160
 86025420,Guido Andreozzi,guido andreozzi,ARG,2012-08-27,2019-05-27,9
 27864298,Guido Pella,guido pella,ARG,2012-08-27,2023-08-28,55
 84997714,Guilherme Clezar,guilherme clezar,BRA,2016-08-29,2016-08-29,1
@@ -363,24 +363,24 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 6274934,Gustavo Heide,gustavo heide,BRA,2024-05-27,2024-05-27,1
 33420453,Gustavo Kuerten,gustavo kuerten,BRA,2000-01-17,2008-05-25,57
 60588347,Habib H.,habib h,LBN,2025-01-12,2025-01-15,2
-19744841,Hamad Medjedovic,hamad medjedovic,SRB,2023-03-07,2025-07-01,4
+19744841,Hamad Medjedovic,hamad medjedovic,SRB,2023-03-07,2025-08-25,9
 71659382,Harel Levy,harel levy,ISR,2000-05-29,2008-01-14,17
 53404244,Harold Mayot,harold mayot,FRA,2020-09-28,2024-05-27,4
 90254740,Hassan B.,hassan b,LBN,2025-05-25,2025-05-25,1
 90934312,Henri Laaksonen,henri laaksonen,SUI,2017-03-07,2022-06-27,20
 69909514,Henri Squire,henri squire,GER,2024-05-27,2024-05-27,2
-71955015,Henry Searle,henry searle,GBR,2024-01-07,2025-06-30,1
+71955015,Henry Searle,henry searle,GBR,2024-01-07,2025-06-30,2
 49503595,Hermes Gamonal,hermes gamonal,CHI,2003-05-26,2003-05-26,1
 72268409,Hernan Gumy,hernan gumy,ARG,2000-01-17,2000-08-28,6
 2070089,Hicham Arazi,hicham arazi,MAR,2000-01-17,2004-08-30,48
 31120675,Hiroki Moriya,hiroki moriya,JPN,2012-08-27,2015-06-29,3
-66711212,Holger Rune,holger rune,DEN,2021-08-30,2025-06-30,37
+66711212,Holger Rune,holger rune,DEN,2021-08-30,2025-08-25,48
 96755876,Holmgren A.,holmgren a,DEN,2025-07-01,2025-07-05,3
 4910374,Horacio Zeballos,horacio zeballos,ARG,2009-08-31,2018-05-28,33
-13023002,Hubert Hurkacz,hubert hurkacz,POL,2018-02-07,2025-05-27,61
+13023002,Hubert Hurkacz,hubert hurkacz,POL,2018-02-07,2025-05-27,64
 92320127,Hugo Armando,hugo armando,USA,2001-08-27,2005-05-23,2
-44469255,Hugo Dellien,hugo dellien,BOL,2019-01-07,2025-06-30,16
-38380125,Hugo Gaston,hugo gaston,FRA,2020-01-20,2025-07-01,21
+44469255,Hugo Dellien,hugo dellien,BOL,2019-01-07,2025-08-25,19
+38380125,Hugo Gaston,hugo gaston,FRA,2020-01-20,2025-08-25,27
 42474932,Hugo Grenier,hugo grenier,FRA,2022-06-27,2024-08-26,8
 10991086,Hyeon Chung,hyeon chung,KOR,2015-06-29,2019-08-26,25
 41486460,Hyung Taik Lee,hyung taik lee,KOR,2000-08-28,2008-08-25,51
@@ -404,15 +404,15 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 86287752,Izak Van Der Merwe,izak van der merwe,RSA,2008-06-23,2008-06-23,1
 95035878,J J Wolf,j j wolf,USA,2020-08-31,2024-05-27,16
 99471753,Jack Brasington,jack brasington,USA,2001-08-27,2003-01-13,8
-73914024,Jack Draper,jack draper,GBR,2021-06-28,2025-07-03,23
+73914024,Jack Draper,jack draper,GBR,2021-06-28,2025-08-25,34
 76699505,Jack Sock,jack sock,USA,2010-08-30,2022-08-29,63
 17301710,Jacob Adaktusson,jacob adaktusson,SWE,2006-01-16,2006-01-16,1
-35516306,Jacob Fearnley,jacob fearnley,GBR,2024-01-07,2025-06-30,7
+35516306,Jacob Fearnley,jacob fearnley,GBR,2024-01-07,2025-08-25,11
 96731345,Jacobo Diaz,jacobo diaz,ESP,2000-01-17,2003-01-13,10
-88300054,Jakub Mensik,jakub mensik,CZE,2023-08-28,2025-07-05,9
+88300054,Jakub Mensik,jakub mensik,CZE,2023-08-28,2025-08-25,19
 65398497,James Blake,james blake,USA,2001-08-27,2013-08-26,101
-88990078,James Duckworth,james duckworth,AUS,2012-01-16,2025-06-30,44
-9934620,James Mccabe,james mccabe,AUS,2024-01-15,2025-07-01,3
+88990078,James Duckworth,james duckworth,AUS,2012-01-16,2025-08-25,49
+9934620,James Mccabe,james mccabe,AUS,2024-01-15,2025-07-01,4
 73988324,James Mcgee,james mcgee,IRL,2014-08-25,2014-08-25,1
 48172339,James Sekulov,james sekulov,AUS,2000-01-17,2000-01-17,2
 59893309,James Ward,james ward,GBR,2009-06-22,2019-01-07,16
@@ -430,16 +430,16 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 42327995,Jan Siemerink,jan siemerink,NED,2000-01-17,2001-08-27,9
 95270130,Jan Vacek,jan vacek,CZE,2001-06-25,2004-06-21,15
 76008160,Janko Tipsarevic,janko tipsarevic,SRB,2003-08-25,2019-08-26,103
-26618743,Jannik Sinner,jannik sinner,ITA,2019-08-26,2025-07-13,79
+26618743,Jannik Sinner,jannik sinner,ITA,2019-08-26,2025-08-25,107
 82355692,Jared Donaldson,jared donaldson,USA,2014-08-25,2018-05-28,17
 8142823,Jarkko Nieminen,jarkko nieminen,FIN,2002-01-14,2015-08-31,106
 95509998,Jaroslav Pospisil,jaroslav pospisil,CZE,2011-06-20,2011-06-20,1
 55978194,Jason Jung,jason jung,TPE,2018-02-07,2020-09-28,3
 67914159,Jason Kubler,jason kubler,AUS,2010-01-18,2024-01-15,22
 78170813,Jason Stoltenberg,jason stoltenberg,AUS,2000-01-17,2001-06-25,10
-3173899,Jaume Munar,jaume munar,ESP,2018-01-15,2025-07-05,34
+3173899,Jaume Munar,jaume munar,ESP,2018-01-15,2025-08-25,44
 93634128,Javier Marti,javier marti,ESP,2011-05-22,2011-05-22,1
-76810834,Jay Clarke,jay clarke,GBR,2018-02-07,2025-07-01,5
+76810834,Jay Clarke,jay clarke,GBR,2018-02-07,2025-07-01,6
 97090208,Jaymon Crabb,jaymon crabb,AUS,2002-01-14,2003-01-13,3
 35885002,Jc Aragone,jc aragone,USA,2017-08-28,2017-08-28,1
 11443923,Jean Christophe Faurel,jean christophe faurel,FRA,2006-01-16,2006-06-26,4
@@ -449,18 +449,18 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 93389799,Jeff Salzenstein,jeff salzenstein,USA,2003-08-25,2004-06-21,4
 42772009,Jeff Tarango,jeff tarango,USA,2000-01-17,2001-01-15,6
 9659505,Jens Knippschild,jens knippschild,GER,2000-01-17,2002-05-27,9
-38209508,Jenson Brooksby,jenson brooksby,USA,2018-08-27,2025-07-02,18
+38209508,Jenson Brooksby,jenson brooksby,USA,2018-08-27,2025-08-25,25
 77802027,Jeremy Chardy,jeremy chardy,FRA,2006-05-29,2023-03-07,110
 48827713,Jerome Golmard,jerome golmard,FRA,2000-01-17,2004-08-30,22
 73336578,Jerome Haehnel,jerome haehnel,FRA,2004-05-24,2007-05-28,6
 14823942,Jerzy Janowicz,jerzy janowicz,POL,2012-06-25,2017-05-29,42
-6282162,Jesper De Jong,jesper de jong,NED,2024-01-15,2024-05-27,4
+6282162,Jesper De Jong,jesper de jong,NED,2024-01-15,2025-08-25,5
 58770334,Jesse Huta Galung,jesse huta galung,NED,2008-05-25,2014-01-13,5
 63256272,Jesse Levine,jesse levine,CAN,2007-08-27,2013-06-24,23
 45355814,Jesse Witten,jesse witten,USA,2006-08-28,2010-06-21,6
 65345637,Jim Courier,jim courier,USA,2000-01-17,2000-01-17,1
 43039098,Jimmy Wang,jimmy wang,TPE,2004-06-21,2015-01-19,20
-54821561,Jiri Lehecka,jiri lehecka,CZE,2022-01-17,2025-07-02,21
+54821561,Jiri Lehecka,jiri lehecka,CZE,2022-01-17,2025-08-25,35
 32860737,Jiri Novak,jiri novak,CZE,2000-01-17,2006-08-28,65
 74469197,Jiri Vanek,jiri vanek,CZE,2000-01-17,2009-05-25,29
 71626122,Jiri Vesely,jiri vesely,CZE,2013-05-27,2024-01-15,67
@@ -476,7 +476,7 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 52905542,Jonathan Dasnieres De Veigy,jonathan dasnieres de veigy,FRA,2011-08-29,2012-05-27,2
 74355811,Jonathan Eysseric,jonathan eysseric,FRA,2007-05-28,2008-05-25,2
 60356443,Jonathan Marray,jonathan marray,GBR,2004-06-21,2007-06-25,3
-85221269,Jordan Thompson,jordan thompson,AUS,2014-01-13,2025-07-06,59
+85221269,Jordan Thompson,jordan thompson,AUS,2014-01-13,2025-08-25,68
 1664060,Jordi Samper Montana,jordi samper montana,ESP,2016-05-23,2016-05-23,1
 95382419,Jorge Aguilar,jorge aguilar,CHI,2010-05-24,2010-05-24,1
 72359225,Jose Acasuso,jose acasuso,ARG,2001-05-28,2010-01-18,45
@@ -503,18 +503,18 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 22306349,Julien Jeanpierre,julien jeanpierre,FRA,2004-05-24,2004-05-24,3
 18073117,Julien Varlet,julien varlet,FRA,2002-05-27,2003-05-26,4
 26422412,Julio Silva,julio silva,BRA,2006-05-29,2010-08-30,2
-27684507,Juncheng Shang,juncheng shang,CHN,2023-01-16,2025-01-13,11
+27684507,Juncheng Shang,juncheng shang,CHN,2023-01-16,2025-01-13,12
 62094560,Jurgen Melzer,jurgen melzer,AUT,2000-06-26,2017-01-16,112
 56466670,Jurgen Zopp,jurgen zopp,EST,2012-01-16,2018-05-28,14
 79511522,Jurij Rodionov,jurij rodionov,AUT,2020-09-28,2023-05-29,3
 60422944,Justin Bower,justin bower,RSA,2000-06-26,2002-06-24,3
 59082804,Justin Gimelstob,justin gimelstob,USA,2000-05-29,2007-08-27,31
-51843347,Kamil Majchrzak,kamil majchrzak,POL,2019-01-07,2025-07-06,16
-92203525,Karen Khachanov,karen khachanov,RUS,2016-08-29,2025-07-08,92
+51843347,Kamil Majchrzak,kamil majchrzak,POL,2019-01-07,2025-08-25,24
+92203525,Karen Khachanov,karen khachanov,RUS,2016-08-29,2025-08-25,105
 49269647,Karim Alami,karim alami,MAR,2000-01-17,2001-08-27,12
 19715011,Karol Beck,karol beck,SVK,2002-06-24,2012-08-27,37
 15540789,Karol Kucera,karol kucera,SVK,2000-01-17,2005-08-29,34
-31712579,Kei Nishikori,kei nishikori,JPN,2008-06-23,2025-01-15,150
+31712579,Kei Nishikori,kei nishikori,JPN,2008-06-23,2025-01-15,152
 78843743,Kenneth Carlsen,kenneth carlsen,DEN,2001-06-25,2006-05-29,24
 33725662,Kenny De Schepper,kenny de schepper,FRA,2011-06-20,2016-05-23,20
 98995085,Kevin Anderson,kevin anderson,RSA,2008-01-14,2022-01-17,124
@@ -528,45 +528,45 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 80554478,Kristian Pless,kristian pless,DEN,2001-05-28,2007-08-27,27
 87897439,Kristof Vliegen,kristof vliegen,BEL,2003-08-25,2010-08-30,32
 2199745,Kyle Edmund,kyle edmund,GBR,2013-06-24,2023-01-16,48
-46083206,Kyrian Jacquet,kyrian jacquet,FRA,2024-08-26,2025-05-25,1
+46083206,Kyrian Jacquet,kyrian jacquet,FRA,2024-08-26,2025-05-25,2
 35276782,Ladislav Svarc,ladislav svarc,SVK,2001-01-15,2001-01-15,1
 78876320,Lamine Ouahab,lamine ouahab,ALG,2009-01-19,2009-01-19,1
 40266991,Landaluce M.,landaluce m,ESP,2025-01-13,2025-01-13,1
 44391457,Lars Burgsmuller,lars burgsmuller,GER,2000-08-28,2006-01-16,32
-23946905,Laslo Djere,laslo djere,SRB,2016-05-23,2025-06-30,42
+23946905,Laslo Djere,laslo djere,SRB,2016-05-23,2025-06-30,44
 15801505,Laurence Tieleman,laurence tieleman,ITA,2000-01-17,2000-06-26,3
 33741490,Laurent Lokoli,laurent lokoli,FRA,2014-05-26,2023-03-07,5
 79207624,Laurent Recouderc,laurent recouderc,FRA,2007-05-28,2010-05-24,5
 72775784,Leander Paes,leander paes,IND,2000-01-17,2001-06-25,4
-25946104,Learner Tien,learner tien,USA,2022-08-29,2025-07-02,7
+25946104,Learner Tien,learner tien,USA,2022-08-29,2025-08-25,11
 70387149,Lee Childs,lee childs,GBR,2001-06-25,2007-06-25,5
 80481585,Leonardo Mayer,leonardo mayer,ARG,2009-05-25,2020-08-31,73
 49230813,Levar Harper Griffith,levar harper griffith,USA,2001-08-27,2001-08-27,1
-70945537,Li Tu,li tu,AUS,2021-08-02,2025-01-12,2
+70945537,Li Tu,li tu,AUS,2021-08-02,2025-01-12,3
 10631763,Liam Broady,liam broady,GBR,2015-06-29,2024-01-07,15
 19420381,Llamas Ruiz P.,llamas ruiz p,ESP,2025-05-26,2025-05-26,1
 53162960,Lleyton Hewitt,lleyton hewitt,AUS,2000-01-17,2016-01-18,201
-32879539,Lloyd Harris,lloyd harris,RSA,2018-08-27,2025-07-02,34
+32879539,Lloyd Harris,lloyd harris,RSA,2018-08-27,2025-08-25,39
 95795271,Lorenzo Giustino,lorenzo giustino,ITA,2020-01-20,2020-09-28,3
 75117239,Lorenzo Manta,lorenzo manta,SUI,2000-01-17,2000-01-17,1
-58373494,Lorenzo Musetti,lorenzo musetti,ITA,2021-05-31,2025-07-01,36
-73459386,Lorenzo Sonego,lorenzo sonego,ITA,2018-01-15,2025-07-07,49
+58373494,Lorenzo Musetti,lorenzo musetti,ITA,2021-05-31,2025-08-25,50
+73459386,Lorenzo Sonego,lorenzo sonego,ITA,2018-01-15,2025-08-25,60
 25467094,Louk Sorensen,louk sorensen,IRL,2010-01-18,2011-08-29,3
-88481648,Luca Nardi,luca nardi,ITA,2024-01-07,2025-07-01,3
+88481648,Luca Nardi,luca nardi,ITA,2024-01-07,2025-08-25,7
 51838421,Luca Van Assche,luca van assche,FRA,2023-01-16,2024-05-27,10
 79776467,Luca Vanni,luca vanni,ITA,2015-05-24,2019-01-14,4
-93355379,Lucas Pouille,lucas pouille,FRA,2013-05-27,2025-01-12,63
-99747631,Luciano Darderi,luciano darderi,ITA,2024-01-07,2025-07-04,5
+93355379,Lucas Pouille,lucas pouille,FRA,2013-05-27,2025-01-12,64
+99747631,Luciano Darderi,luciano darderi,ITA,2024-01-07,2025-08-25,13
 15227183,Luis Horna,luis horna,PER,2002-08-26,2008-08-25,34
 79637651,Luka Gregorc,luka gregorc,SLO,2009-06-22,2009-06-22,1
 49153720,Lukas Dlouhy,lukas dlouhy,CZE,2005-05-23,2008-01-14,14
-36658708,Lukas Klein,lukas klein,SVK,2022-06-27,2025-01-13,3
+36658708,Lukas Klein,lukas klein,SVK,2022-06-27,2025-01-13,4
 49958108,Lukas Lacko,lukas lacko,SVK,2007-01-15,2018-08-27,48
 28593290,Lukas Rosol,lukas rosol,CZE,2010-08-30,2022-06-27,41
 39549412,Lukasz Kubot,lukasz kubot,POL,2006-08-28,2014-06-23,42
 80391709,Luke Milligan,luke milligan,GBR,2001-06-25,2001-06-25,1
 71267884,Luke Saville,luke saville,AUS,2013-01-14,2016-06-27,6
-31755184,Mackenzie Mcdonald,mackenzie mcdonald,USA,2016-08-29,2025-06-30,43
+31755184,Mackenzie Mcdonald,mackenzie mcdonald,USA,2016-08-29,2025-08-25,46
 77748447,Magnus Gustafsson,magnus gustafsson,SWE,2000-05-29,2001-08-27,8
 72359365,Magnus Larsson,magnus larsson,SWE,2001-05-28,2003-01-13,9
 92541299,Magnus Norman,magnus norman,SWE,2000-01-17,2003-08-25,28
@@ -591,15 +591,15 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 53123998,Marco Trungelliti,marco trungelliti,ARG,2016-01-18,2022-01-17,14
 17680875,Marcos Baghdatis,marcos baghdatis,CYP,2004-08-30,2019-01-07,121
 88783669,Marcos Daniel,marcos daniel,BRA,2003-01-13,2011-01-17,17
-92165347,Marcos Giron,marcos giron,USA,2014-08-25,2025-07-03,33
+92165347,Marcos Giron,marcos giron,USA,2014-08-25,2025-08-25,41
 97518301,Marcos Ondruska,marcos ondruska,RSA,2001-01-15,2001-05-28,3
 37483473,Marcus Willis,marcus willis,GBR,2016-06-27,2016-06-27,2
 57627587,Mardy Fish,mardy fish,USA,2000-08-28,2015-08-31,91
 31008583,Mariano Delfino,mariano delfino,ARG,2003-05-26,2003-05-26,1
-70321718,Mariano Navone,mariano navone,ARG,2024-01-07,2025-07-03,6
+70321718,Mariano Navone,mariano navone,ARG,2024-01-07,2025-08-25,12
 75967012,Mariano Puerta,mariano puerta,ARG,2000-01-17,2005-08-29,25
 51436541,Mariano Zabaleta,mariano zabaleta,ARG,2000-01-17,2008-01-14,42
-31316536,Marin Cilic,marin cilic,CRO,2007-01-15,2025-07-07,196
+31316536,Marin Cilic,marin cilic,CRO,2007-01-15,2025-08-25,202
 32189323,Marinko Matosevic,marinko matosevic,AUS,2010-01-18,2015-06-29,21
 42227655,Mario Ancic,mario ancic,CRO,2002-06-24,2009-01-19,64
 55239023,Mario Vilella Martinez,mario vilella martinez,ESP,2020-01-20,2021-08-02,3
@@ -620,21 +620,21 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 54777472,Martin Slanar,martin slanar,AUT,2008-01-14,2008-01-14,1
 24986269,Martin Vassallo Arguello,martin vassallo arguello,ARG,2002-05-27,2010-01-18,24
 3908504,Martin Verkerk,martin verkerk,NED,2002-08-26,2007-05-28,19
-36186323,Marton Fucsovics,marton fucsovics,HUN,2016-08-29,2025-07-05,59
+36186323,Marton Fucsovics,marton fucsovics,HUN,2016-08-29,2025-08-25,65
 757042,Mate Valkusz,mate valkusz,HUN,2024-01-15,2024-01-15,1
 33821870,Mathias Bourgue,mathias bourgue,FRA,2016-05-23,2021-05-31,4
 16508378,Mathieu Montcourt,mathieu montcourt,FRA,2006-05-29,2009-05-25,7
 39723020,Matias Boeker,matias boeker,USA,2002-08-26,2002-08-26,1
 53816847,Matt Reid,matt reid,AUS,2013-06-24,2013-06-24,1
-99099448,Matteo Arnaldi,matteo arnaldi,ITA,2023-03-07,2025-07-01,17
-3867010,Matteo Berrettini,matteo berrettini,ITA,2018-01-15,2025-06-30,72
+99099448,Matteo Arnaldi,matteo arnaldi,ITA,2023-03-07,2025-08-25,22
+3867010,Matteo Berrettini,matteo berrettini,ITA,2018-01-15,2025-06-30,75
 78580397,Matteo Viola,matteo viola,ITA,2012-01-16,2012-01-16,1
 50075584,Matthew Barton,matthew barton,AUS,2016-06-27,2016-06-27,2
 70153160,Matthew Breen,matthew breen,AUS,2001-01-15,2001-01-15,1
 1836928,Matthew Ebden,matthew ebden,AUS,2010-01-18,2019-05-27,32
 98936039,Matthew Forbes,matthew forbes,USA,2024-08-26,2024-08-26,1
 72024767,Matthias Bachinger,matthias bachinger,GER,2011-06-20,2018-01-15,11
-37245147,Mattia Bellucci,mattia bellucci,ITA,2023-01-16,2025-07-04,5
+37245147,Mattia Bellucci,mattia bellucci,ITA,2023-01-16,2025-08-25,10
 54365619,Max Mirnyi,max mirnyi,BLR,2000-01-17,2007-08-27,62
 53992293,Max Purcell,max purcell,AUS,2020-01-20,2024-08-26,14
 85893318,Maxime Authom,maxime authom,BEL,2012-08-27,2013-01-14,2
@@ -643,7 +643,7 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 34779839,Maxime Janvier,maxime janvier,FRA,2018-05-28,2024-01-07,4
 2643748,Maxime Teixeira,maxime teixeira,FRA,2011-05-22,2013-05-27,3
 5955255,Maximilian Abel,maximilian abel,GER,2003-08-25,2003-08-25,1
-75918781,Maximilian Marterer,maximilian marterer,GER,2017-08-28,2025-05-27,27
+75918781,Maximilian Marterer,maximilian marterer,GER,2017-08-28,2025-05-27,28
 721645,Maximo Gonzalez,maximo gonzalez,ARG,2008-05-25,2015-05-24,19
 54000837,Melle Van Gemerden,melle van gemerden,NED,2005-01-17,2006-06-26,4
 83905211,Michael Berrer,michael berrer,GER,2006-06-26,2015-08-31,33
@@ -670,10 +670,10 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 64390683,Miles Maclagan,miles maclagan,GBR,2000-06-26,2000-06-26,1
 91829394,Milos Raonic,milos raonic,CAN,2010-08-30,2024-01-15,129
 58493352,Miloslav Mecir Jr,miloslav mecir jr,SVK,2014-05-26,2014-05-26,1
-49516601,Miomir Kecmanovic,miomir kecmanovic,SRB,2019-01-07,2025-07-05,45
+49516601,Miomir Kecmanovic,miomir kecmanovic,SRB,2019-01-07,2025-08-25,54
 70596088,Mirza Basic,mirza basic,BIH,2016-01-18,2019-01-14,6
 84072024,Mischa Zverev,mischa zverev,GER,2007-01-15,2019-05-27,44
-88297911,Mitchell Krueger,mitchell krueger,USA,2018-08-27,2025-01-16,6
+88297911,Mitchell Krueger,mitchell krueger,USA,2018-08-27,2025-01-16,8
 51222602,Mohamed Safwat,mohamed safwat,EGY,2018-05-28,2020-08-31,3
 11157854,Moller E.,moller e,DEN,2025-05-25,2025-06-30,2
 81836808,Monday J.,monday j,GBR,2025-07-01,2025-07-01,1
@@ -681,7 +681,7 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 11447403,Nathan Healey,nathan healey,AUS,2005-01-17,2006-05-29,6
 4801160,Nenad Zimonjic,nenad zimonjic,SRB,2001-01-15,2001-01-15,1
 13367474,Neville Godwin,neville godwin,RSA,2000-06-26,2002-06-24,5
-76269198,Nick Kyrgios,nick kyrgios,AUS,2013-05-27,2025-01-13,87
+76269198,Nick Kyrgios,nick kyrgios,AUS,2013-05-27,2025-01-13,88
 70980028,Nick Lindahl,nick lindahl,AUS,2008-01-14,2010-01-18,2
 76632297,Nicklas Kulti,nicklas kulti,SWE,2000-01-17,2000-01-17,1
 85376394,Nicola Kuhn,nicola kuhn,GER,2022-06-27,2022-06-27,1
@@ -689,7 +689,7 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 35585058,Nicolas Coutelot,nicolas coutelot,FRA,2001-05-28,2003-05-26,10
 27734712,Nicolas Devilder,nicolas devilder,FRA,2007-01-15,2012-05-27,16
 54588163,Nicolas Escude,nicolas escude,FRA,2000-01-17,2004-05-24,37
-23872944,Nicolas Jarry,nicolas jarry,CHI,2017-03-07,2025-07-06,29
+23872944,Nicolas Jarry,nicolas jarry,CHI,2017-03-07,2025-08-25,36
 2790234,Nicolas Kicker,nicolas kicker,ARG,2017-03-07,2018-01-15,7
 31470746,Nicolas Kiefer,nicolas kiefer,GER,2000-01-17,2010-06-21,76
 17733607,Nicolas Lapentti,nicolas lapentti,ECU,2000-01-17,2010-05-24,62
@@ -700,12 +700,12 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 52937265,Niels Desein,niels desein,BEL,2014-08-25,2014-08-25,1
 89618252,Nikola Milojevic,nikola milojevic,SRB,2020-09-28,2022-01-17,3
 92304110,Nikolay Davydenko,nikolay davydenko,RUS,2001-01-15,2014-05-26,132
-74367467,Nikoloz Basilashvili,nikoloz basilashvili,GEO,2015-05-24,2025-07-03,51
+74367467,Nikoloz Basilashvili,nikoloz basilashvili,GEO,2015-05-24,2025-07-03,55
 46457926,Noah Rubin,noah rubin,USA,2014-08-25,2019-01-07,8
 75810067,Noam Okun,noam okun,ISR,2000-01-17,2006-08-28,9
 34801280,Norbert Gombos,norbert gombos,SVK,2017-03-07,2022-08-29,17
-42342055,Novak Djokovic,novak djokovic,SRB,2005-01-17,2025-07-11,432
-83786690,Nuno Borges,nuno borges,POR,2022-05-23,2025-07-04,19
+42342055,Novak Djokovic,novak djokovic,SRB,2005-01-17,2025-08-25,456
+83786690,Nuno Borges,nuno borges,POR,2022-05-23,2025-08-25,30
 77737595,O Connell C.,o connell c,AUS,2025-01-13,2025-06-30,3
 65795515,Oleg Ogorodov,oleg ogorodov,UZB,2002-05-27,2002-05-27,2
 69316975,Oleksii Krutykh,oleksii krutykh,UKR,2023-01-16,2023-01-16,1
@@ -714,16 +714,16 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 30016088,Olivier Mutis,olivier mutis,FRA,2003-05-26,2005-01-17,12
 69779984,Olivier Patience,olivier patience,FRA,2002-01-14,2010-05-24,20
 98572058,Olivier Rochus,olivier rochus,BEL,2000-06-26,2013-06-24,83
-71240421,Omar Jasika,omar jasika,AUS,2016-01-18,2025-01-12,4
+71240421,Omar Jasika,omar jasika,AUS,2016-01-18,2025-01-12,5
 91701327,Onclin G.,onclin g,BEL,2025-01-12,2025-01-12,1
 3644249,Orlin Stanoytchev,orlin stanoytchev,BUL,2000-01-17,2000-08-28,4
 31177590,Oscar Hernandez,oscar hernandez,ESP,2004-01-19,2010-06-21,30
 32798447,Oscar Otte,oscar otte,GER,2018-05-28,2023-05-29,21
 99969378,Oscar Serrano,oscar serrano,ESP,2000-05-29,2000-05-29,1
 32552882,Ota Fukarek,ota fukarek,CZE,2001-01-15,2002-01-14,2
-23265734,Otto Virtanen,otto virtanen,FIN,2023-08-28,2025-01-12,6
+23265734,Otto Virtanen,otto virtanen,FIN,2023-08-28,2025-01-12,7
 40325697,Pablo Andujar,pablo andujar,ESP,2008-05-25,2022-06-27,66
-23023747,Pablo Carreno Busta,pablo carreno busta,ESP,2013-05-27,2024-08-26,92
+23023747,Pablo Carreno Busta,pablo carreno busta,ESP,2013-05-27,2025-08-25,94
 17193178,Pablo Cuevas,pablo cuevas,URU,2007-08-27,2022-05-23,66
 10280902,Paolo Lorenzi,paolo lorenzi,ITA,2010-01-18,2020-08-31,47
 45351021,Paradorn Srichaphan,paradorn srichaphan,THA,2000-01-17,2007-01-15,51
@@ -736,10 +736,10 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 50442127,Paul Henri Mathieu,paul henri mathieu,FRA,2001-05-28,2017-05-29,95
 88047787,Paul Jubb,paul jubb,GBR,2019-01-07,2024-01-07,3
 1130969,Paul Kilderry,paul kilderry,AUS,2000-06-26,2000-06-26,1
-44026582,Pavel Kotov,pavel kotov,RUS,2022-05-23,2025-01-13,11
+44026582,Pavel Kotov,pavel kotov,RUS,2022-05-23,2025-01-13,12
 50110398,Pavel Snobel,pavel snobel,CZE,2006-01-16,2008-06-23,2
 87725172,Pedro Cachin,pedro cachin,ARG,2022-05-23,2024-05-27,12
-54492394,Pedro Martinez,pedro martinez,ESP,2019-05-27,2025-07-05,29
+54492394,Pedro Martinez,pedro martinez,ESP,2019-05-27,2025-08-25,36
 42081519,Pedro Sousa,pedro sousa,POR,2019-01-14,2021-08-02,4
 83508236,Pere Riba,pere riba,ESP,2010-05-24,2014-08-25,16
 87721625,Pete Sampras,pete sampras,USA,2000-01-17,2002-08-26,52
@@ -753,12 +753,12 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 80343156,Philipp Petzschner,philipp petzschner,GER,2007-08-27,2013-08-26,35
 45664251,Phillip King,phillip king,USA,2000-08-28,2000-08-28,1
 24995008,Phillip Simmonds,phillip simmonds,USA,2006-08-28,2006-08-28,1
-43994316,Pierre Hugues Herbert,pierre hugues herbert,FRA,2014-05-26,2025-05-29,43
+43994316,Pierre Hugues Herbert,pierre hugues herbert,FRA,2014-05-26,2025-05-29,45
 64932466,Pinnington Jones J.,pinnington jones j,GBR,2025-07-01,2025-07-03,2
 49484991,Potito Starace,potito starace,ITA,2004-05-24,2014-05-26,42
 89279663,Prajnesh Gunneswaran,prajnesh gunneswaran,IND,2019-01-07,2020-01-20,5
 93313355,Prakash Amritraj,prakash amritraj,IND,2002-08-26,2002-08-26,1
-56134727,Quentin Halys,quentin halys,FRA,2015-05-24,2025-07-01,29
+56134727,Quentin Halys,quentin halys,FRA,2015-05-24,2025-08-25,36
 75729135,Radek Stepanek,radek stepanek,CZE,2002-06-24,2017-01-16,113
 27699041,Radoslav Lukaev,radoslav lukaev,BUL,2002-08-26,2002-08-26,1
 43601615,Radu Albot,radu albot,MDA,2014-08-25,2024-08-26,45
@@ -768,7 +768,7 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 85988802,Rajeev Ram,rajeev ram,USA,2004-08-30,2016-08-29,22
 31246399,Ramon Delgado,ramon delgado,PAR,2001-08-27,2010-06-21,15
 25245774,Razvan Sabau,razvan sabau,ROU,2005-08-29,2006-06-26,4
-75506370,Reilly Opelka,reilly opelka,USA,2017-01-16,2025-07-03,29
+75506370,Reilly Opelka,reilly opelka,USA,2017-01-16,2025-08-25,36
 59846478,Renzo Furlan,renzo furlan,ITA,2003-01-13,2003-01-13,2
 25692656,Renzo Olivo,renzo olivo,ARG,2016-01-18,2017-05-29,6
 62285677,Rhyne Williams,rhyne williams,USA,2012-08-27,2014-01-13,5
@@ -778,18 +778,18 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 69917358,Riccardo Ghedin,riccardo ghedin,ITA,2009-06-22,2009-06-22,1
 56751750,Richard Bloomfield,richard bloomfield,GBR,2003-06-23,2007-06-25,5
 44151259,Richard Fromberg,richard fromberg,AUS,2000-01-17,2002-01-14,10
-93807101,Richard Gasquet,richard gasquet,FRA,2002-05-27,2025-05-29,190
+93807101,Richard Gasquet,richard gasquet,FRA,2002-05-27,2025-05-29,192
 85574457,Richard Krajicek,richard krajicek,NED,2000-01-17,2003-01-13,20
 62171818,Riedi L.,riedi l,SUI,2025-06-30,2025-06-30,1
 32125848,Rik De Voest,rik de voest,RSA,2007-06-25,2012-01-16,9
-87494374,Rinky Hijikata,rinky hijikata,AUS,2022-08-29,2025-07-04,12
+87494374,Rinky Hijikata,rinky hijikata,AUS,2022-08-29,2025-08-25,17
 72470079,Robby Ginepri,robby ginepri,USA,2001-08-27,2014-05-26,67
 3638453,Robert Farah,robert farah,COL,2011-08-29,2011-08-29,1
 11511108,Robert Kendrick,robert kendrick,USA,2003-06-23,2011-05-22,21
 86668371,Robert Smeets,robert smeets,AUS,2007-01-15,2008-08-25,5
 51355533,Robert Yim,robert yim,USA,2003-08-25,2003-08-25,1
-2319749,Roberto Bautista Agut,roberto bautista agut,ESP,2012-01-16,2024-08-26,124
-71463953,Roberto Carballes Baena,roberto carballes baena,ESP,2016-05-23,2024-08-26,41
+2319749,Roberto Bautista Agut,roberto bautista agut,ESP,2012-01-16,2025-08-25,125
+71463953,Roberto Carballes Baena,roberto carballes baena,ESP,2016-05-23,2025-08-25,42
 86117379,Robin Haase,robin haase,NED,2007-08-27,2021-08-02,64
 30905695,Robin Soderling,robin soderling,SWE,2002-08-26,2011-06-20,82
 36926843,Robin Vik,robin vik,CZE,2005-05-23,2006-08-28,7
@@ -801,7 +801,7 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 20046122,Roko Karanusic,roko karanusic,CRO,2003-08-25,2009-06-22,16
 18152860,Romain Jouan,romain jouan,FRA,2009-05-25,2011-08-29,2
 12832573,Roman Andres Burruchaga,roman andres burruchaga,ARG,2024-05-27,2024-05-27,1
-45663925,Roman Safiullin,roman safiullin,RUS,2021-05-31,2025-06-30,20
+45663925,Roman Safiullin,roman safiullin,RUS,2021-05-31,2025-08-25,25
 28757759,Ronald Agenor,ronald agenor,USA,2000-01-17,2000-06-26,4
 5714321,Royer V.,royer v,FRA,2025-05-25,2025-07-02,3
 71615108,Ruben Bemelmans,ruben bemelmans,BEL,2011-06-20,2019-01-07,23
@@ -829,10 +829,10 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 81629075,Sasa Tuksar,sasa tuksar,CRO,2005-05-23,2006-05-29,2
 87118190,Scott Draper,scott draper,AUS,2000-01-17,2005-06-20,17
 27508284,Scoville Jenkins,scoville jenkins,USA,2004-08-30,2008-08-25,7
-72245817,Sebastian Baez,sebastian baez,ARG,2022-01-17,2025-07-01,21
+72245817,Sebastian Baez,sebastian baez,ARG,2022-01-17,2025-08-25,25
 4462879,Sebastian Decoud,sebastian decoud,ARG,2008-05-25,2008-05-25,2
-75308876,Sebastian Korda,sebastian korda,USA,2020-08-31,2025-05-30,37
-36411707,Sebastian Ofner,sebastian ofner,AUT,2017-03-07,2025-07-05,17
+75308876,Sebastian Korda,sebastian korda,USA,2020-08-31,2025-05-30,42
+36411707,Sebastian Ofner,sebastian ofner,AUT,2017-03-07,2025-08-25,23
 99318541,Sebastien De Chaunac,sebastien de chaunac,FRA,2001-08-27,2009-01-19,6
 2184697,Sebastien Grosjean,sebastien grosjean,FRA,2000-01-17,2010-01-18,106
 72671630,Sebastien Lareau,sebastien lareau,CAN,2000-01-17,2000-08-28,4
@@ -841,7 +841,7 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 88369651,Sergio Roitman,sergio roitman,ARG,2003-05-26,2009-06-22,12
 95213187,Sergiy Stakhovsky,sergiy stakhovsky,UKR,2008-06-23,2021-08-02,61
 69838886,Seyboth Wild T.,seyboth wild t,BRA,2025-01-13,2025-01-13,1
-21788455,Shintaro Mochizuki,shintaro mochizuki,JPN,2023-03-07,2025-07-02,3
+21788455,Shintaro Mochizuki,shintaro mochizuki,JPN,2023-03-07,2025-08-25,7
 84666610,Sho Shimabukuro,sho shimabukuro,JPN,2023-03-07,2023-08-28,2
 89911784,Simon Greul,simon greul,GER,2006-06-26,2011-01-17,14
 25993036,Simon Stadler,simon stadler,GER,2006-06-26,2011-01-17,5
@@ -851,14 +851,14 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 39799691,Slimane Saoudi,slimane saoudi,ALG,2002-08-26,2002-08-26,1
 66523672,Somdev Devvarman,somdev devvarman,IND,2009-08-31,2014-06-23,19
 42923296,Soon Woo Kwon,soon woo kwon,KOR,2018-01-15,2024-08-26,27
-24368625,Stan Wawrinka,stan wawrinka,SUI,2005-05-23,2025-05-26,229
+24368625,Stan Wawrinka,stan wawrinka,SUI,2005-05-23,2025-05-26,231
 69580218,Stefan Koubek,stefan koubek,AUT,2000-01-17,2010-06-21,62
 37815540,Stefan Kozlov,stefan kozlov,USA,2022-01-17,2022-08-29,4
 8751765,Stefano Galvani,stefano galvani,ITA,2001-05-28,2010-05-24,14
 67582260,Stefano Napolitano,stefano napolitano,ITA,2017-05-29,2017-05-29,2
 1022691,Stefano Pescosolido,stefano pescosolido,ITA,2004-06-21,2004-06-21,2
 60962221,Stefano Travaglia,stefano travaglia,ITA,2017-03-07,2023-08-28,19
-57771350,Stefanos Tsitsipas,stefanos tsitsipas,GRE,2017-03-07,2025-06-30,96
+57771350,Stefanos Tsitsipas,stefanos tsitsipas,GRE,2017-03-07,2025-08-25,102
 13877716,Stephane Bohli,stephane bohli,SUI,2008-08-25,2008-08-25,1
 69060012,Stephane Huet,stephane huet,FRA,2000-05-29,2001-06-25,7
 92495065,Stephane Robert,stephane robert,FRA,2004-05-24,2018-02-07,33
@@ -866,23 +866,23 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 97145470,Steve Johnson,steve johnson,USA,2011-08-29,2023-08-28,75
 95136651,Steven Diez,steven diez,CAN,2020-09-28,2020-09-28,1
 86482170,Struff J.L.,struff jl,GER,2025-01-13,2025-07-04,5
-95838804,Sumit Nagal,sumit nagal,IND,2019-08-26,2025-01-12,9
+95838804,Sumit Nagal,sumit nagal,IND,2019-08-26,2025-01-12,10
 84237468,Tabur C.,tabur c,FRA,2025-05-27,2025-05-27,1
 29641196,Takao Suzuki,takao suzuki,JPN,2001-01-15,2005-01-17,6
-81199702,Tallon Griekspoor,tallon griekspoor,NED,2020-01-20,2025-06-30,29
-29471513,Taro Daniel,taro daniel,JPN,2014-08-25,2025-01-13,37
+81199702,Tallon Griekspoor,tallon griekspoor,NED,2020-01-20,2025-08-25,36
+29471513,Taro Daniel,taro daniel,JPN,2014-08-25,2025-01-13,38
 47878116,Tarvet O.,tarvet o,GBR,2025-06-30,2025-07-02,2
 32332849,Tatsuma Ito,tatsuma ito,JPN,2011-08-29,2020-01-20,17
 39495536,Taylor Dent,taylor dent,USA,2000-06-26,2010-08-30,52
-77721566,Taylor Fritz,taylor fritz,USA,2016-01-18,2025-07-11,86
+77721566,Taylor Fritz,taylor fritz,USA,2016-01-18,2025-08-25,101
 93309920,Tennys Sandgren,tennys sandgren,USA,2017-05-29,2021-08-30,33
-72882994,Terence Atmane,terence atmane,FRA,2024-01-15,2025-05-26,2
+72882994,Terence Atmane,terence atmane,FRA,2024-01-15,2025-05-26,3
 83919149,Teymuraz Gabashvili,teymuraz gabashvili,RUS,2006-08-28,2017-05-29,50
 94488419,Thai Son Kwiatkowski,thai son kwiatkowski,USA,2017-08-28,2020-08-31,2
-74189284,Thanasi Kokkinakis,thanasi kokkinakis,AUS,2014-01-13,2025-01-15,38
+74189284,Thanasi Kokkinakis,thanasi kokkinakis,AUS,2014-01-13,2025-01-15,40
 44633948,Thiago Agustin Tirante,thiago agustin tirante,ARG,2023-05-29,2024-05-27,3
 17379021,Thiago Alves,thiago alves,BRA,2006-08-28,2010-05-24,9
-62268381,Thiago Monteiro,thiago monteiro,BRA,2017-01-16,2025-05-25,30
+62268381,Thiago Monteiro,thiago monteiro,BRA,2017-01-16,2025-05-25,32
 54656386,Thiago Seyboth Wild,thiago seyboth wild,BRA,2020-08-31,2024-08-26,9
 5357056,Thiemo De Bakker,thiemo de bakker,NED,2007-06-25,2016-05-23,19
 41139116,Thierry Ascione,thierry ascione,FRA,2003-05-26,2008-06-23,15
@@ -909,19 +909,19 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 63740170,Tomas Barrios Vera,tomas barrios vera,CHI,2021-06-28,2023-03-07,4
 87693766,Tomas Behrend,tomas behrend,GER,2000-01-17,2006-01-16,16
 90048770,Tomas Berdych,tomas berdych,CZE,2003-08-25,2019-08-26,207
-82055340,Tomas Machac,tomas machac,CZE,2020-09-28,2025-07-03,20
-62488580,Tomas Martin Etcheverry,tomas martin etcheverry,ARG,2022-01-17,2025-07-01,26
+82055340,Tomas Machac,tomas machac,CZE,2020-09-28,2025-08-25,30
+62488580,Tomas Martin Etcheverry,tomas martin etcheverry,ARG,2022-01-17,2025-08-25,32
 49682527,Tomas Tenconi,tomas tenconi,ITA,2005-05-23,2005-05-23,1
 86526576,Tomas Zib,tomas zib,CZE,2000-01-17,2008-08-25,18
 91918332,Tommy Haas,tommy haas,GER,2000-01-17,2017-03-07,136
-19417702,Tommy Paul,tommy paul,USA,2015-08-31,2025-07-03,54
+19417702,Tommy Paul,tommy paul,USA,2015-08-31,2025-08-25,69
 84872738,Tommy Robredo,tommy robredo,ESP,2001-01-15,2018-08-27,165
 16986602,Tristan Lamasine,tristan lamasine,FRA,2016-06-27,2016-06-27,1
-63577812,Tristan Schoolkate,tristan schoolkate,AUS,2024-08-26,2025-05-25,3
+63577812,Tristan Schoolkate,tristan schoolkate,AUS,2024-08-26,2025-08-25,7
 75491592,Tseng C.H.,tseng ch,TPE,2025-07-01,2025-07-01,1
 11464699,Tuomas Ketola,tuomas ketola,FIN,2002-08-26,2005-06-20,4
 91489267,Ugo Carabelli C.,ugo carabelli c,ARG,2025-01-14,2025-07-01,3
-37682973,Ugo Humbert,ugo humbert,FRA,2018-08-27,2025-07-01,41
+37682973,Ugo Humbert,ugo humbert,FRA,2018-08-27,2025-08-25,49
 51690017,Ulises Blanch,ulises blanch,USA,2020-08-31,2020-08-31,1
 81514430,Vaclav Safranek,vaclav safranek,CZE,2017-08-28,2018-01-15,2
 57277751,Vadim Kutsenko,vadim kutsenko,RUS,2003-01-13,2004-01-19,3
@@ -934,7 +934,7 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 72667020,Viktor Troicki,viktor troicki,SRB,2008-01-14,2021-08-02,89
 22020588,Vincent Millot,vincent millot,FRA,2011-01-17,2017-08-28,6
 12876585,Vincent Spadea,vincent spadea,USA,2000-01-17,2009-06-22,53
-59148214,Vit Kopriva,vit kopriva,CZE,2024-01-07,2025-06-30,3
+59148214,Vit Kopriva,vit kopriva,CZE,2024-01-07,2025-08-25,6
 32269019,Vladimir Voltchkov,vladimir voltchkov,BLR,2000-06-26,2004-05-24,19
 30306197,Wayne Arthurs,wayne arthurs,AUS,2000-01-17,2007-06-25,49
 33733538,Wayne Black,wayne black,ZIM,2000-01-17,2001-06-25,9
@@ -943,26 +943,51 @@ player_id,name,name_norm,ioc,first_seen_date,last_seen_date,match_count
 32807029,Werner Eschauer,werner eschauer,AUT,2000-05-29,2008-01-14,10
 79005215,Wesley Moodie,wesley moodie,RSA,2003-06-23,2006-08-28,15
 82295767,Xavier Malisse,xavier malisse,BEL,2000-08-28,2013-08-26,102
-98641416,Yannick Hanfmann,yannick hanfmann,GER,2018-08-27,2025-05-25,16
+98641416,Yannick Hanfmann,yannick hanfmann,GER,2018-08-27,2025-05-25,18
 13252083,Yannick Maden,yannick maden,GER,2018-02-07,2019-05-27,4
 39839341,Yasutaka Uchiyama,yasutaka uchiyama,JPN,2019-01-07,2021-08-02,7
 94856485,Yen Hsun Lu,yen hsun lu,TPE,2004-06-21,2021-08-02,74
 27321291,Yevgeny Kafelnikov,yevgeny kafelnikov,RUS,2000-01-17,2003-08-25,53
 54263250,Yibing Wu,yibing wu,CHN,2022-08-29,2023-08-28,8
 62318152,Yong Il Yoon,yong il yoon,KOR,2001-06-25,2001-06-25,1
-83339930,Yoshihito Nishioka,yoshihito nishioka,JPN,2014-08-25,2025-07-01,52
+83339930,Yoshihito Nishioka,yoshihito nishioka,JPN,2014-08-25,2025-07-01,56
 74581005,Yosuke Watanuki,yosuke watanuki,JPN,2023-01-16,2024-01-15,6
 24738045,Younes El Aynaoui,younes el aynaoui,MAR,2000-01-17,2005-08-29,50
 17642702,Yu Hsiou Hsu,yu hsiou hsu,TPE,2023-01-16,2023-08-28,3
 93984342,Yuichi Sugita,yuichi sugita,JPN,2014-06-23,2021-08-30,21
 66893811,Yuki Bhambri,yuki bhambri,IND,2015-01-19,2018-08-27,6
 34605580,Yuri Schukin,yuri schukin,KAZ,2001-01-15,2010-05-24,3
-1468315,Zachary Svajda,zachary svajda,USA,2019-08-26,2024-08-26,5
+1468315,Zachary Svajda,zachary svajda,USA,2019-08-26,2025-08-25,7
 23616875,Zack Fleishman,zack fleishman,USA,2006-01-16,2007-06-25,4
 81449443,Zdenek Kolar,zdenek kolar,CZE,2022-05-23,2022-06-27,3
 94160839,Zeljko Krajan,zeljko krajan,CRO,2003-01-13,2003-06-23,3
 2407175,Zhang Zh.,zhang zh,CHN,2025-01-14,2025-01-14,1
 20379977,Zhe Li,zhe li,CHN,2019-01-14,2019-01-14,1
-46352434,Zhizhen Zhang,zhizhen zhang,CHN,2014-01-13,2024-08-26,18
+46352434,Zhizhen Zhang,zhizhen zhang,CHN,2014-01-13,2024-08-26,20
 16531594,Zhukayev B.,zhukayev b,KAZ,2025-07-01,2025-07-01,1
-75176361,Zizou Bergs,zizou bergs,BEL,2022-06-27,2025-06-30,9
+75176361,Zizou Bergs,zizou bergs,BEL,2022-06-27,2025-08-25,14
+99969379,Valentin Royer,valentin royer,,2025-08-25,2025-08-25,2
+99969380,Elmer Møller,elmer møller,,2025-08-25,2025-08-25,1
+99969381,Francesco Passaro,francesco passaro,,2025-08-25,2025-08-25,1
+99969382,Jaime Faria,jaime faria,,2025-08-25,2025-08-25,1
+99969383,Tseng Chun-hsin,tseng chun-hsin,,2025-08-25,2025-08-25,1
+99969384,Federico Agustin Gomez,federico agustin gomez,,2025-08-25,2025-08-25,1
+99969385,Felix Auger-Aliassime,felix auger-aliassime,,2025-08-25,2025-08-25,6
+99969386,Coleman Wong,coleman wong,,2025-08-25,2025-08-25,3
+99969387,Tristan Boyer,tristan boyer,,2025-08-25,2025-08-25,2
+99969388,Nishesh Basavareddy,nishesh basavareddy,,2025-08-25,2025-08-25,1
+99969389,Leandro Riedi,leandro riedi,,2025-08-25,2025-08-25,3
+99969390,Christopher O'Connell,christopher o'connell,,2025-08-25,2025-08-25,1
+99969391,Zsombor Piros,zsombor piros,,2025-08-25,2025-08-25,1
+99969392,Martin Damm,martin damm,,2025-08-25,2025-08-25,2
+99969393,Darwin Blanch,darwin blanch,,2025-08-25,2025-08-25,1
+99969394,Jan-Lennard Struff,jan-lennard struff,,2025-08-25,2025-08-25,4
+99969395,Ugo Blanchet,ugo blanchet,,2025-08-25,2025-08-25,3
+99969396,Joao Fonseca,joao fonseca,,2025-08-25,2025-08-25,2
+99969397,Jerome Kym,jerome kym,,2025-08-25,2025-08-25,3
+99969398,Emilio Nava,emilio nava,,2025-08-25,2025-08-25,1
+99969399,Ignacio Buse,ignacio buse,,2025-08-25,2025-08-25,1
+99969400,Pablo Llamas Ruiz,pablo llamas ruiz,,2025-08-25,2025-08-25,1
+99969401,Raphael Collignon,raphael collignon,,2025-08-25,2025-08-25,3
+99969402,Casper Ruud,casper ruud,,2025-08-25,2025-08-25,2
+99969403,Stefan Dostanic,stefan dostanic,,2025-08-25,2025-08-25,1
