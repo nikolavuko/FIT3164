@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { csvParse } from "d3-dsv";
-import { Treemap, ResponsiveContainer, Tooltip } from "recharts";
+import { Treemap, ResponsiveContainer, Tooltip, Cell } from "recharts";
 
 type MatchCsvRow = Record<string, string>;
 
@@ -36,6 +36,7 @@ export default function GrandSlamCountryTreemap() {
   const [countryMap, setCountryMap] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<"idle" | "loading" | "ready" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
+  // No UI toggle; we selectively show flags for a few countries
 
   useEffect(() => {
     let cancelled = false;
@@ -58,6 +59,40 @@ export default function GrandSlamCountryTreemap() {
     })();
     return () => { cancelled = true; };
   }, []);
+
+  // IOC -> ISO2 mapping for flags stored in /public/flags/{iso2}.svg
+  const IOC_TO_ISO2: Record<string, string> = {
+    ESP: "es",
+    SRB: "rs",
+    SUI: "ch",
+    USA: "us",
+    ITA: "it",
+    RUS: "ru",
+    GBR: "gb",
+    BRA: "br",
+    CRO: "hr",
+    AUS: "au",
+    ARG: "ar",
+    AUT: "at",
+    SWE: "se",
+  };
+
+  // Countries that should show full-tile flags (stretched)
+  const FLAG_CODES = new Set(["ESP", "SRB", "SUI"]);
+
+  // Hand-picked colors for other countries (fallback to hashed color if missing)
+  const COLOR_BY_IOC: Record<string, string> = {
+    USA: "#0d3b66", // deep blue
+    ITA: "#2e7d32", // green
+    ARG: "#2e86de", // light blue
+    AUS: "#ef6c00", // orange
+    AUT: "#c62828", // red
+    BRA: "#1b5e20", // green (darker)
+    CRO: "#1565c0", // blue
+    GBR: "#283593", // indigo
+    RUS: "#455a64", // blue-grey
+    SWE: "#1976d2", // blue
+  };
 
   const data: CountryNode[] = useMemo(() => {
     if (!matchesCsv) return [];
@@ -89,17 +124,37 @@ export default function GrandSlamCountryTreemap() {
     };
 
     const nodes: CountryNode[] = Array.from(counts.entries())
-      .map(([code, value]) => ({
-        code,
-        value,
-        name: displayName(code),
-        fill: colorFor(code),
-      }))
+      .map(([code, value]) => {
+        const iso2 = IOC_TO_ISO2[code as keyof typeof IOC_TO_ISO2];
+        const useFlag = FLAG_CODES.has(code) && !!iso2;
+        const patternId = useFlag ? `flag-${iso2}-stretch` : undefined;
+        return {
+          code,
+          value,
+          name: displayName(code),
+          // Spain/Serbia/Switzerland show stretched flags; others get curated colors
+          fill: patternId ? `url(#${patternId})` : (COLOR_BY_IOC[code] ?? colorFor(code)),
+        } as CountryNode;
+      })
       // Sort descending for stable coloring/labels
       .sort((a, b) => b.value - a.value);
 
     return nodes;
   }, [matchesCsv, countryMap]);
+
+  // Collect the unique ISO2 codes present to define patterns once
+  const patternIso2s = useMemo(() => {
+    const s = new Set<string>();
+    for (const n of data) {
+      if (!FLAG_CODES.has(n.code)) continue;
+      const iso2 = IOC_TO_ISO2[n.code];
+      if (iso2) s.add(iso2);
+    }
+    return Array.from(s);
+  }, [data]);
+
+  // Flags are stretched to fill (for selected countries)
+  const preserveAR = 'none';
 
   if (status === "loading") {
     return <div style={{ color: "#ccc", margin: "16px 0" }}>Loading treemap...</div>;
@@ -127,10 +182,37 @@ export default function GrandSlamCountryTreemap() {
             aspectRatio={4 / 3}
             isAnimationActive={false}
           >
+            {/* Define patterns used as cell fills */}
+            <defs>
+              {patternIso2s.map((iso2) => (
+                <pattern
+                  key={`${iso2}-stretch`}
+                  id={`flag-${iso2}-stretch`}
+                  width="1"
+                  height="1"
+                  patternUnits="objectBoundingBox"
+                >
+                  {/* Background so letterboxing areas have a neutral base */}
+                  <rect width="100%" height="100%" fill="#0b0b18" />
+                  <image
+                    href={`/flags/${iso2}.svg`}
+                    width="100%"
+                    height="100%"
+                    preserveAspectRatio={preserveAR}
+                  />
+                </pattern>
+              ))}
+            </defs>
+            {/* Per-cell fills to apply flag patterns */}
+            {data.map((d) => (
+              <Cell key={d.code} fill={d.fill} stroke="#13132a" />
+            ))}
             <Tooltip />
           </Treemap>
         </ResponsiveContainer>
       </div>
+      {/* Spain, Serbia, Switzerland rendered with stretched flags. Others use curated colors. */}
     </div>
   );
 }
+
