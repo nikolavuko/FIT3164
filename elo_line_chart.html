@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Player ELO Over Time</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* center content horizontally */
+    }
+    h2 {
+      margin-bottom: 1rem;
+    }
+    #vis {
+      width: 800px;   /* fix chart width */
+      max-width: 100%;
+    }
+    .controls {
+      margin-top: 1rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h2>Player ELO Rating (2000–2025)</h2>
+
+  <!-- Chart container -->
+  <div id="vis"></div>
+
+  <!-- Dropdown controls -->
+  <div class="controls">
+    <label for="playerSelect"><strong>Select Player:</strong></label>
+    <select id="playerSelect"></select>
+  </div>
+
+  <script>
+    fetch("/rankings.json")
+      .then(response => response.json())
+      .then(data => {
+        const players = [...new Set(data.map(d => d.name))].sort();
+
+        const select = document.getElementById("playerSelect");
+        players.forEach(name => {
+          const option = document.createElement("option");
+          option.value = name;
+          option.text = name;
+          select.appendChild(option);
+        });
+
+        updateChart(players[0]);
+        select.addEventListener("change", e => {
+          updateChart(e.target.value);
+        });
+
+        function updateChart(playerName) {
+          const playerData = data
+            .filter(d => d.name === playerName)
+            .map(d => ({
+              year: new Date(d.year, 0, 1),
+              elo: d.elo,
+              name: d.name
+            }));
+
+          const spec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "description": "ELO rating over time",
+            "data": { "values": playerData },
+            "mark": { "type": "line", "point": true },
+            "width": 800,
+            "height": 400,
+            "encoding": {
+              "x": { "field": "year", "type": "temporal", "title": "Year" },
+              "y": { "field": "elo", "type": "quantitative", "title": "ELO Rating" },
+              "color": { "field": "name", "type": "nominal", "legend": {"orient": "right"} },
+              "tooltip": [
+                { "field": "name", "type": "nominal" },
+                { "field": "year", "type": "temporal" },
+                { "field": "elo", "type": "quantitative" }
+              ]
+            }
+          };
+
+          vegaEmbed("#vis", spec);
+        }
+      });
+  </script>
+</body>
+</html>
