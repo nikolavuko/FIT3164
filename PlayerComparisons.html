@@ -169,7 +169,7 @@
             padding-right: 5px;     
         }
         .selected-player {
-            width: 600px; 
+            width: 510px; 
             height: 150px;
             display: flex;
             gap: 200px; 
@@ -184,6 +184,30 @@
             cursor: pointer;
             transition: all 0.3s ease; /* smooth transition */
         }
+        .overview-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 70px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 25px;
+        }
+
+        .overview-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 500px; 
+            margin-bottom: 30px;
+        }
+
+        .metric {
+            font-weight: bold;
+            width: 250px;
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
@@ -213,6 +237,39 @@
         </button>
     </Div>
 
+    <div class="overview-container" id="playerOverview" style="display:none;">
+        <div class="overview-row">
+            <span id="elo1"></span>
+            <span class="metric">CURRENT ELO</span>
+            <span id="elo2"></span>
+        </div>
+        <div class="overview-row">
+            <span id="highestElo1"></span>
+            <span class="metric">HIGHEST ELO</span>
+            <span id="highestElo2"></span>
+        </div>
+        <div class="overview-row">
+            <span id="titles1"></span>
+            <span class="metric">TITLES WON</span>
+            <span id="titles2"></span>
+        </div>
+        <div class="overview-row">
+            <span id="h2h1"></span>
+            <span class="metric">HEAD 2 HEAD</span>
+            <span id="h2h2"></span>
+        </div>
+        <div class="overview-row">
+            <span id="surface1"></span>
+            <span class="metric">PREFERRED SURFACE</span>
+            <span id="surface2"></span>
+        </div>
+        <div class="overview-row">
+            <span id="winPct1"></span>
+            <span class="metric">WIN PERCENTAGE</span>
+            <span id="winPct2"></span>
+        </div>
+    </div>
+
     <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
     <div class="sidebar" id="sidebar">
     <button class="close-btn" id="closeBtn">X</button>
@@ -229,6 +286,10 @@
     const results = document.getElementById('results');
     const closeBtn = document.getElementById("closeBtn");
     let activeBtn = null;
+    let selectedPlayers = {
+    player1: null,
+    player2: null
+    };
 
     PickPlayerButton1.addEventListener('click', () => {
         sidebar.classList.add("open");
@@ -322,12 +383,45 @@
             activeBtn.style.backgroundImage = 'none';
         }
         const container = document.querySelector('.PickPlayerButtons');
-        container.style.gap = '200px';
+        container.style.gap = '300px';
         // Close sidebar
         sidebar.classList.remove("open");
         overlay.classList.remove("show");
         results.innerHTML = "";
         searchInput.value = "";
+        if (activeBtn.id === 'PickPlayerButton1') {
+            selectedPlayers.player1 = { name: playerName, country: countryCode };
+        } 
+        else { 
+            selectedPlayers.player2 = { name: playerName, country: countryCode };
+        }
+        if (selectedPlayers.player1 && selectedPlayers.player2) {
+            showOverview(selectedPlayers.player1, selectedPlayers.player2);
+        }
+    }
+
+    function showOverview(player1, player2) {
+        const overview = document.getElementById('playerOverview');
+        overview.style.display = 'block';
+
+        // Example hardcoded values; replace with your actual data
+        document.getElementById('elo1').textContent = 2500;
+        document.getElementById('elo2').textContent = 2450;
+
+        document.getElementById('highestElo1').textContent = 2600;
+        document.getElementById('highestElo2').textContent = 2560;
+
+        document.getElementById('titles1').textContent = 24;
+        document.getElementById('titles2').textContent = 22;
+
+        document.getElementById('h2h1').textContent = 31;
+        document.getElementById('h2h2').textContent = 29;
+
+        document.getElementById('surface1').textContent = "Hard";
+        document.getElementById('surface2').textContent = "Clay";
+
+        document.getElementById('winPct1').textContent = "81.9%";
+        document.getElementById('winPct2').textContent = "91.3%";
     }
 
     </script>
