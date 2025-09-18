@@ -20,6 +20,7 @@ type MatchRow = {
   surface: "Hard" | "Clay" | "Grass" | "Other" | string;
   winner_id: string;
   loser_id: string;
+  round?: string;
 };
 
 /* =======================
@@ -41,6 +42,32 @@ function tidySurface(s: string): "Hard" | "Clay" | "Grass" | "Other" {
   if (t.includes("clay")) return "Clay";
   if (t.includes("grass")) return "Grass";
   return "Other";
+}
+
+function tidyRound(s: string | undefined): string | undefined {
+  if (!s) return undefined;
+  const r = String(s).trim().toUpperCase();
+  const map: Record<string, string> = {
+    R128: "R128",
+    R64: "R64",
+    R32: "R32",
+    R16: "R16",
+    QF: "QF",
+    SF: "SF",
+    F: "F",
+    RR: "RR",
+    G: "Group",
+  };
+  if (map[r]) return map[r];
+  // Common variants
+  if (r.includes("FINAL") || r === "FINALS") return "F";
+  if (r.includes("SEMI")) return "SF";
+  if (r.includes("QUARTER")) return "QF";
+  if (/^R?\s?1\s?6$/i.test(r) || r === "ROUND OF 16") return "R16";
+  if (/^R?\s?3\s?2$/i.test(r)) return "R32";
+  if (/^R?\s?6\s?4$/i.test(r)) return "R64";
+  if (/^R?\s?1\s?2\s?8$/i.test(r)) return "R128";
+  return r || undefined;
 }
 
 function expectedScore(Ra: number, Rb: number, s = 400) {
@@ -183,6 +210,7 @@ const loserIdKey  =
   const loserNameKey = rows.columns.find(c => /loser.*name|^loser$/i.test(c));
 
   const tourneyKey = rows.columns.find(c => /tourn|event|slam|name/i.test(c)) ?? "tourney";
+  const roundKey = rows.columns.find(c => /^round$/i.test(c)) ?? "round";
 
   const out: MatchRow[] = [];
   for (const r of rows) {
@@ -216,6 +244,7 @@ const loserIdKey  =
       surface: tidySurface(String(r[surfaceKey] ?? "")),
       winner_id: w,
       loser_id: l,
+      round: tidyRound(String(r[roundKey] ?? ""))
     });
   }
 
@@ -270,6 +299,19 @@ const loserIdKey  =
       })
       .filter((d) => d.total > 0); // drop surfaces with no matches
   }, [surfaceStats]);
+
+  // Last 5 match results for selected player (newest first)
+  const lastFiveResults = useMemo(() => {
+    const pid = nameToId.get(selectedPlayerName.toLowerCase());
+    if (!pid || matches.length === 0) return Array(5).fill({ res: "NA", round: undefined });
+    const mine = matches
+      .filter(m => m.winner_id === pid || m.loser_id === pid)
+      .sort((a,b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+    const recent = mine.slice(-5).reverse(); // newest first
+    const mapped = recent.map(m => ({ res: (m.winner_id === pid ? "W" : "L") as ("W"|"L"), round: m.round }));
+    while (mapped.length < 5) mapped.push({ res: "NA" as const, round: undefined });
+    return mapped as { res: "W"|"L"|"NA"; round?: string }[];
+  }, [matches, nameToId, selectedPlayerName]);
 
   // Compute Elo rankings for ALL players by year
 function computeEloRankings(matches: MatchRow[], kFactor: number, base = 1500) {
@@ -357,7 +399,8 @@ useEffect(() => {
           </datalist>
         </div>
 
-        {/* Charts */}
+        {/* Charts */
+        }
         <div style={{ display: "grid", gap: 24, gridTemplateColumns: "3fr 2fr" }}>
           <div style={{ background: "transparent", padding: 16, borderRadius: 12 }}>
             <h3>ELO over time</h3>
@@ -397,6 +440,34 @@ useEffect(() => {
                 </BarChart>
               </ResponsiveContainer>
             </div>
+          </div>
+        </div>
+
+        {/* Last 5 match results */}
+        <div style={{ marginTop: 16, padding: "8px 0" }}>
+          <h3 style={{ margin: "8px 0 6px" }}>Last 5 match results</h3>
+          <div style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
+            {lastFiveResults.map((item, i) => {
+              const color = item.res === "W" ? "#2e7d32" : item.res === "L" ? "#c62828" : "#000000";
+              const label = item.res === "W" ? "Win" : item.res === "L" ? "Loss" : "Unavailable";
+              const round = item.round ?? "";
+              return (
+                <div key={`last5-${i}`} style={{ display: "flex", flexDirection: "column", alignItems: "center", minWidth: 24 }}>
+                  <div
+                    title={round ? `${label} • ${round}` : label}
+                    aria-label={round ? `${label} ${round}` : label}
+                    style={{
+                      width: 18,
+                      height: 18,
+                      borderRadius: "50%",
+                      background: color,
+                      border: "1px solid #444",
+                    }}
+                  />
+                  <div style={{ fontSize: 12, marginTop: 4, color: "#ddd" }}>{round || "—"}</div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
