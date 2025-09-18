@@ -323,7 +323,7 @@ useEffect(() => {
   ======================= */
   return (
     
-    <div style={{ minHeight: "100vh", background: "#0b0b0b", color: "#f1f1f1", padding: 24 }}>
+    <div style={{ minHeight: "100vh", background: "transparent", color: "#f1f1f1", padding: 24 }}>
       <div style={{ maxWidth: "min(1600px, 95vw)", margin: "0 auto" }}>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>Tennis ELO Demo</h1>
         <p style={{ opacity: 0.8, marginBottom: 16 }}>
@@ -359,7 +359,7 @@ useEffect(() => {
 
         {/* Charts */}
         <div style={{ display: "grid", gap: 24, gridTemplateColumns: "3fr 2fr" }}>
-          <div style={{ background: "#161616", padding: 16, borderRadius: 12 }}>
+          <div style={{ background: "transparent", padding: 16, borderRadius: 12 }}>
             <h3>ELO over time</h3>
             <div style={{ height: 350 }}>
               <ResponsiveContainer width="100%" height="100%">
@@ -374,7 +374,7 @@ useEffect(() => {
             </div>
           </div>
 
-          <div style={{ background: "#161616", padding: 16, borderRadius: 12 }}>
+          <div style={{ background: "transparent", padding: 16, borderRadius: 12 }}>
             <h3>Surface Win %</h3>
             <div style={{ height: 350 }}>
               <ResponsiveContainer width="100%" height="100%">
