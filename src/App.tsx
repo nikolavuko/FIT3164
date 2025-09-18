@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { csvParse, dsvFormat } from "d3-dsv";
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
-  BarChart, Bar, Legend
+  BarChart, Bar, Legend, Cell
 } from "recharts";
 
 /* =======================
@@ -382,9 +382,18 @@ useEffect(() => {
                   <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
                   <XAxis dataKey="surface" />
                   <YAxis domain={[0, 100]} />
-                  <Tooltip />
+                  <Tooltip formatter={(value) => [`${value}`, "Win Percentage"]} />
                   <Legend />
-                  <Bar dataKey="winPct" fill="#8884d8" />
+                  <Bar dataKey="winPct" name="Win Percentage">
+                    {surfaceWinData.map((entry) => {
+                      const s = (entry.surface || "").toString();
+                      const color = s === "Hard" ? "#1976d2" // blue
+                                   : s === "Clay" ? "#ef6c00" // orange
+                                   : s === "Grass" ? "#2e7d32" // green
+                                   : "#8884d8"; // fallback
+                      return <Cell key={`cell-${s}`} fill={color} />;
+                    })}
+                  </Bar>
                 </BarChart>
               </ResponsiveContainer>
             </div>

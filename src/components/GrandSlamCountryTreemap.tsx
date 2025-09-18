@@ -164,7 +164,7 @@ export default function GrandSlamCountryTreemap() {
   }
 
   return (
-    <div style={{ background: "#0b0b18", borderRadius: 12, padding: 16, margin: "24px auto", maxWidth: 1200 }}>
+    <div className="treemap-root" style={{ background: "#0b0b18", borderRadius: 12, padding: 16, margin: "24px auto", maxWidth: 1200 }}>
       <h2 style={{ color: "#eaeaea", fontFamily: "Inter, system-ui, sans-serif", fontWeight: 600, margin: 0, marginBottom: 8 }}>
         Grand Slam Titles by Country
       </h2>
@@ -178,7 +178,7 @@ export default function GrandSlamCountryTreemap() {
             dataKey="value"
             nameKey="name"
             stroke="#13132a"
-            fill="#6ad36f"
+            fill="#000000"
             aspectRatio={4 / 3}
             isAnimationActive={false}
           >
@@ -207,7 +207,13 @@ export default function GrandSlamCountryTreemap() {
             {data.map((d) => (
               <Cell key={d.code} fill={d.fill} stroke="#13132a" />
             ))}
-            <Tooltip />
+            {/* Force tooltip text to black instead of series color */}
+            <Tooltip
+              contentStyle={{ color: "#000", borderColor: "#cfd8dc" }}
+              labelStyle={{ color: "#000" }}
+              itemStyle={{ color: "#000" }}
+              wrapperStyle={{ outline: "none" }}
+            />
           </Treemap>
         </ResponsiveContainer>
       </div>

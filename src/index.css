@@ -66,3 +66,9 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Force treemap country labels to pure black (fill and stroke) */
+.treemap-root .recharts-text {
+  fill: #000 !important;
+  stroke: #000 !important;
+}
