@@ -326,11 +326,10 @@ useEffect(() => {
     <div style={{ minHeight: "100vh", background: "transparent", color: "#f1f1f1", padding: 24 }}>
       <div style={{ maxWidth: "min(1600px, 95vw)", margin: "0 auto" }}>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>Tennis ELO Demo</h1>
-        <p style={{ opacity: 0.8, marginBottom: 16 }}>
-          Data auto-loads from <code>/public/players.csv</code> and <code>/public/matches.csv</code>.
-        </p>
+        {/* Removed verbose data-source blurb for a cleaner look */}
 
-        {/* Debug info */}
+        {/* Debug info removed */}
+        {false && (
         <div style={{fontSize:12, opacity:0.7, margin:"6px 0 12px"}}>
           Parsed players: {players.length} · Parsed matches: {matches.length}
           {selectedPlayerName && (() => {
@@ -339,6 +338,7 @@ useEffect(() => {
             return <> · {selectedPlayerName} matches found: {played}</>;
           })()}
         </div>
+        )}
 
         {loading === "loading" && <div>Loading CSVs…</div>}
         {loading === "error" && <div style={{ color: "#ff7b7b" }}>Error: {errorMsg}</div>}

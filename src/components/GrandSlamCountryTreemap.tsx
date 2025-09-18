@@ -168,9 +168,7 @@ export default function GrandSlamCountryTreemap() {
       <h2 style={{ color: "#eaeaea", fontFamily: "Inter, system-ui, sans-serif", fontWeight: 600, margin: 0, marginBottom: 8 }}>
         Grand Slam Titles by Country
       </h2>
-      <p style={{ color: "#9aa0a6", marginTop: 0, marginBottom: 12, fontSize: 14 }}>
-        Men's singles, from available data in matches.csv
-      </p>
+      {/* Removed data-source note for a more polished presentation */}
       <div style={{ width: "100%", height: 520 }}>
         <ResponsiveContainer>
           <Treemap
