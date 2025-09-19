@@ -58,7 +58,7 @@
 
         }
         .PickPlayerButtons{
-            margin-left: 100px;
+            margin-left: 102px;
             display: flex;
             gap: 25px;
         }
@@ -169,7 +169,7 @@
             padding-right: 5px;     
         }
         .selected-player {
-            width: 510px; 
+            width: 500px; 
             height: 150px;
             display: flex;
             gap: 200px; 
@@ -334,12 +334,45 @@
             const rows = data.trim().split("\n").slice(1);
             players = rows.map(row => {
             const cols = row.split(",");
-            return { name: cols[1].trim(),
-                    country: cols[3].trim()
+            return { 
+                id: cols[0].trim(),
+                name: cols[1].trim(),
+                country: cols[3].trim()
              }; 
             });
         })
         .catch(error => console.error("Error loading players.csv:", error));
+
+    let eloData = []
+
+    fetch('public/rankings.json')
+        .then(response=>response.json())
+        .then(data=>{
+            eloData = data;
+        }
+        )
+        .catch(err => console.error("Error loading elo data:", err));
+
+    matches = []
+
+    fetch("public/matches.csv")
+        .then(response=>response.text())
+        .then(data =>{
+            const rows = data.trim().split("\n").slice(1);
+            matches = rows.map(row=>{
+                const cols = row.split(",");
+                return{
+                    tourney_id: cols[0].trim(),
+                    surface: cols[2].trim(),
+                    round: cols[8].trim(),
+                    winner_id: cols[11].trim(),
+                    loser_id: cols[20].trim(),
+                    winner_player_id: cols[31].trim(),
+                    loser_player_id: cols[32].trim()
+                }
+            })
+        })
+        .catch(err => console.error("Error loading matches:", err));
 
     searchInput.addEventListener('input', () => {
     const query = searchInput.value.toLowerCase();
@@ -363,7 +396,7 @@
         `;
         results.appendChild(item);
         item.querySelector(".add-btn").addEventListener("click", () => {
-        addPlayerToButton(player.name, player.country);
+        addPlayerToButton(player.id, player.name, player.country);
             });
         });
         
@@ -373,7 +406,7 @@
         searchInput.value = "";
     })
 
-    function addPlayerToButton(playerName, countryCode) {
+    function addPlayerToButton(playerID, playerName, countryCode) {
         if (!activeBtn) return;
 
         activeBtn.innerHTML = `${playerName}`;
@@ -390,38 +423,82 @@
         results.innerHTML = "";
         searchInput.value = "";
         if (activeBtn.id === 'PickPlayerButton1') {
-            selectedPlayers.player1 = { name: playerName, country: countryCode };
+            selectedPlayers.player1 = { id: playerID, name: playerName, country: countryCode };
         } 
         else { 
-            selectedPlayers.player2 = { name: playerName, country: countryCode };
+            selectedPlayers.player2 = { id: playerID ,name: playerName, country: countryCode };
         }
         if (selectedPlayers.player1 && selectedPlayers.player2) {
             showOverview(selectedPlayers.player1, selectedPlayers.player2);
         }
     }
 
+
+    function getCurrentElo(playerID){
+        const CurrElo = eloData.find(p=> p.player_id === playerID && p.year === 2025);
+        return CurrElo ? Math.round(CurrElo.elo) : "retired";
+    }
+
+    function getHighestElo(playerID){
+        const elos = eloData.filter(p=>p.player_id === playerID).map(p=>p.elo)
+        return elos.length > 0 ? Math.round(Math.max(...elos)): null;
+    }
+
+    function getTitles(playerID){
+        const titles = matches.filter(m => m.winner_player_id === playerID && m.round === "F").length;
+        return titles;
+    }
+
+    function getH2H(player1ID, player2ID){
+        const wins = matches.filter(m=> m.winner_player_id === player1ID&& m.loser_player_id === player2ID).length;
+        return wins;
+    }
+
+    function getPreferredSurface(playerID){
+        const surfaces = ["Grass", "Clay", "Hard"];
+        let bestSurface = null;
+        let bestPct = -1;
+
+        for (const s of surfaces) {
+            const wins   = matches.filter(m => m.winner_player_id === playerID && m.surface === s).length;
+            const losses = matches.filter(m => m.loser_player_id  === playerID && m.surface === s).length;
+            const total  = wins + losses;
+            const pct    = total > 0 ? wins / total : 0;   
+            if (pct > bestPct) {
+                bestPct = pct;
+                bestSurface = s;
+            }
+        }
+        return bestSurface;
+    }
+
+    function getWinPct(playerID){
+        const totalMatches = matches.filter(m => m.winner_player_id === playerID).length + matches.filter(m => m.loser_player_id === playerID).length
+        return ((matches.filter(m => m.winner_player_id === playerID).length / totalMatches).toFixed(4) * 100).toString()+"%"
+    }
+
     function showOverview(player1, player2) {
         const overview = document.getElementById('playerOverview');
         overview.style.display = 'block';
 
-        // Example hardcoded values; replace with your actual data
-        document.getElementById('elo1').textContent = 2500;
-        document.getElementById('elo2').textContent = 2450;
+        // Example hardcoded values; replace with actual data
+        document.getElementById('elo1').textContent = getCurrentElo(player1.id);
+        document.getElementById('elo2').textContent = getCurrentElo(player2.id);
 
-        document.getElementById('highestElo1').textContent = 2600;
-        document.getElementById('highestElo2').textContent = 2560;
+        document.getElementById('highestElo1').textContent = getHighestElo(player1.id);
+        document.getElementById('highestElo2').textContent = getHighestElo(player2.id);
 
-        document.getElementById('titles1').textContent = 24;
-        document.getElementById('titles2').textContent = 22;
+        document.getElementById('titles1').textContent = getTitles(player1.id);
+        document.getElementById('titles2').textContent = getTitles(player2.id);
 
-        document.getElementById('h2h1').textContent = 31;
-        document.getElementById('h2h2').textContent = 29;
+        document.getElementById('h2h1').textContent = getH2H(player1.id, player2.id)
+        document.getElementById('h2h2').textContent = getH2H(player2.id, player1.id)
 
-        document.getElementById('surface1').textContent = "Hard";
-        document.getElementById('surface2').textContent = "Clay";
+        document.getElementById('surface1').textContent = getPreferredSurface(player1.id);
+        document.getElementById('surface2').textContent = getPreferredSurface(player2.id);
 
-        document.getElementById('winPct1').textContent = "81.9%";
-        document.getElementById('winPct2').textContent = "91.3%";
+        document.getElementById('winPct1').textContent = getWinPct(player1.id);
+        document.getElementById('winPct2').textContent = getWinPct(player2.id);
     }
 
     </script>
