@@ -268,6 +268,11 @@
             <span class="metric">WIN PERCENTAGE</span>
             <span id="winPct2"></span>
         </div>
+                <div class="overview-row">
+            <span id="matchTime1"></span>
+            <span class="metric">AVERAGE MATCH DURATION (MINS)</span>
+            <span id="matchTime2"></span>
+        </div>
     </div>
 
     <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
@@ -365,6 +370,7 @@
                     tourney_id: cols[0].trim(),
                     surface: cols[2].trim(),
                     round: cols[8].trim(),
+                    minutes: cols[9].trim(),
                     winner_id: cols[11].trim(),
                     loser_id: cols[20].trim(),
                     winner_player_id: cols[31].trim(),
@@ -477,6 +483,13 @@
         return (100*(matches.filter(m => m.winner_player_id === playerID).length / totalMatches)).toFixed(2)+"%"
     }
 
+    function getAverageDuration(playerID){
+        const playerMatches = matches.filter(m => m.winner_player_id === playerID || m.loser_player_id === playerID);
+        const totalMinutes = playerMatches.reduce((sum, m) => {const mins = Number(m.minutes);
+        return sum + (isNaN(mins) ? 0 : mins);}, 0);
+        return (totalMinutes / playerMatches.length).toFixed(2); 
+    }
+
     function showOverview(player1, player2) {
         const overview = document.getElementById('playerOverview');
         overview.style.display = 'block';
@@ -499,6 +512,9 @@
 
         document.getElementById('winPct1').textContent = getWinPct(player1.id);
         document.getElementById('winPct2').textContent = getWinPct(player2.id);
+
+        document.getElementById('matchTime1').textContent = getAverageDuration(player1.id);
+        document.getElementById('matchTime2').textContent = getAverageDuration(player2.id);
     }
 
     </script>
