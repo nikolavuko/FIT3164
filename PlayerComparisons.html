@@ -474,7 +474,7 @@
 
     function getWinPct(playerID){
         const totalMatches = matches.filter(m => m.winner_player_id === playerID).length + matches.filter(m => m.loser_player_id === playerID).length
-        return ((matches.filter(m => m.winner_player_id === playerID).length / totalMatches).toFixed(4) * 100).toString()+"%"
+        return (100*(matches.filter(m => m.winner_player_id === playerID).length / totalMatches)).toFixed(2)+"%"
     }
 
     function showOverview(player1, player2) {
