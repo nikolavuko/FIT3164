@@ -354,6 +354,18 @@ const rankingsByYear = useMemo(() => {
   return computeEloRankings(matches, kFactor);
 }, [matches, kFactor, idToName, idToCountry]);
 
+const topYearlyElo = useMemo(() => {
+  if (rankingsByYear.length === 0) return [];
+  const bestByYear = new Map<number, typeof rankingsByYear[number]>();
+  for (const entry of rankingsByYear) {
+    const current = bestByYear.get(entry.year);
+    if (!current || entry.elo > current.elo) {
+      bestByYear.set(entry.year, entry);
+    }
+  }
+  return Array.from(bestByYear.values()).sort((a, b) => a.year - b.year);
+}, [rankingsByYear]);
+
 useEffect(() => {
   if (rankingsByYear.length === 0) return;
   console.log("Rankings JSON:", JSON.stringify(rankingsByYear, null, 2));
@@ -442,6 +454,31 @@ useEffect(() => {
             </div>
           </div>
         </div>
+
+        {topYearlyElo.length > 0 && (
+          <div style={{ marginTop: 24, background: "transparent", padding: 16, borderRadius: 12 }}>
+            <h3>Yearly Top ELO</h3>
+            <div style={{ height: 360 }}>
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={topYearlyElo}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
+                  <XAxis dataKey="year" />
+                  <YAxis domain={["dataMin - 50", "dataMax + 50"]} />
+                  <Tooltip
+                    labelFormatter={(label) => `Season ${label}`}
+                    formatter={(value: number | string, _name: string, entry: any) => {
+                      const val = typeof value === 'number' ? Math.round(value) : value;
+                      const playerName = entry?.payload?.name ? String(entry.payload.name) : 'Top ELO';
+                      return [String(val), playerName];
+                    }}
+                    contentStyle={{ background: '#1a1a1a', border: '1px solid #333' }}
+                  />
+                  <Line type="monotone" dataKey="elo" stroke="#c4ff21" dot={{ r: 5, stroke: '#101010', strokeWidth: 1 }} activeDot={{ r: 6 }} />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
+        )}
 
         {/* Last 5 match results */}
         <div style={{ marginTop: 16, padding: "8px 0" }}>
