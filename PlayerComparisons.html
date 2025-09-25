@@ -69,12 +69,20 @@
             background-image: linear-gradient(to right, #009bc6cd, #00cf45e3);
             font-size: 20px;
         }
+        .Player1:hover{
+            cursor: pointer;
+            background-image: linear-gradient(to right, #02acdbcd, #03e04de3);
+        }
         .Player2{
             width: 285px;
             height: 400px;
             border-radius: 20px;
             background-image: linear-gradient(to right, #00cf45, #009bc6);
             font-size: 20px;
+        }
+        .Player2:hover{
+            cursor: pointer;
+            background-image: linear-gradient(to right, #03e04de3, #02acdbcd);
         }
         .plus {
             font-size: 70px;
@@ -442,7 +450,7 @@
 
     function getCurrentElo(playerID){
         const CurrElo = eloData.find(p=> p.player_id === playerID && p.year === 2025);
-        return CurrElo ? Math.round(CurrElo.elo) : "retired";
+        return CurrElo ? Math.round(CurrElo.elo) : "Retired";
     }
 
     function getHighestElo(playerID){
