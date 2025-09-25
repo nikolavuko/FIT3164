@@ -314,13 +314,17 @@
     // keep variable name consistent in handlers below
     const countrySearch = document.getElementById('countrySearch');
     const countrySuggestions = document.getElementById("countrySuggestions");
-    const PlayerSearch = document.getElementById('playerSearch')
+    const playerSearchInput = document.getElementById('playerSearch')
     const playerSuggestions = document.getElementById('playerSuggestions')
     const ResetButton = document.getElementById("Reset")
     // computed rankings cache (built once from CSVs)
     let GLOBAL_RANKINGS = [];
     let countries = {};
-    let selectedPlayer = null;
+    let playerDirectory = [];
+    let playerIdByName = new Map();
+    let playerIdByNorm = new Map();
+    let selectedPlayerId = null;
+    let playerSearchQuery = "";
     let selectedCountryCode = null;
     let SelectedYear = 2025 
     let CurrentLoaded = 10
@@ -355,6 +359,52 @@
         CurrentLoaded += 10
         displayRankings(SelectedYear, CurrentLoaded, selectedCountryCode)
     })
+
+
+    playerSearchInput.addEventListener('input', () => {
+        const rawValue = playerSearchInput.value.trim();
+        playerSearchQuery = rawValue.toLowerCase();
+        selectedPlayerId = null;
+        CurrentLoaded = 10;
+        playerSuggestions.innerHTML = '';
+
+        if (!rawValue) {
+            playerSuggestions.style.display = 'none';
+            displayRankings(SelectedYear, CurrentLoaded, selectedCountryCode);
+            return;
+        }
+
+        const matches = playerDirectory
+            .filter(player => player.nameLower.includes(playerSearchQuery) || (player.normLower && player.normLower.includes(playerSearchQuery)))
+            .slice(0, 10);
+
+        matches.forEach(player => {
+            const div = document.createElement('div');
+            div.textContent = player.name;
+            div.addEventListener('click', () => {
+                selectedPlayerId = player.id;
+                playerSearchQuery = player.nameLower;
+                playerSearchInput.value = player.name;
+                playerSuggestions.style.display = 'none';
+                CurrentLoaded = 10;
+                displayRankings(SelectedYear, CurrentLoaded, selectedCountryCode);
+            });
+            playerSuggestions.appendChild(div);
+        });
+
+        if (playerIdByName.has(playerSearchQuery)) {
+            selectedPlayerId = playerIdByName.get(playerSearchQuery);
+        } else if (playerIdByNorm.has(playerSearchQuery)) {
+            selectedPlayerId = playerIdByNorm.get(playerSearchQuery);
+        }
+
+        playerSuggestions.style.display = matches.length ? 'block' : 'none';
+        displayRankings(SelectedYear, CurrentLoaded, selectedCountryCode);
+    });
+
+    playerSearchInput.addEventListener('focus', () => {
+        playerSuggestions.style.display = playerSuggestions.children.length ? 'block' : 'none';
+    });
 
     countrySearch.addEventListener("input", () => {
         const query = countrySearch.value.toUpperCase();
@@ -394,15 +444,23 @@
     ResetButton.addEventListener('click', () => {
         CurrentLoaded = 10
         selectedCountryCode = null
+        selectedPlayerId = null
+        playerSearchQuery = ''
         SelectedYear = 2025
-        displayRankings(SelectedYear, CurrentLoaded)
         dropdownBtn.textContent = "2025";
         countrySearch.value = "";
+        playerSearchInput.value = "";
+        playerSuggestions.style.display = 'none';
+        playerSuggestions.innerHTML = '';
+        displayRankings(SelectedYear, CurrentLoaded)
     })
 
     window.addEventListener("click", (e) => {
-        if (e.target !== countrySearch) {
+        if (e.target !== countrySearch && (!countrySuggestions || !countrySuggestions.contains(e.target))) {
             countrySuggestions.style.display = "none";
+        }
+        if (e.target !== playerSearchInput && (!playerSuggestions || !playerSuggestions.contains(e.target))) {
+            playerSuggestions.style.display = "none";
         }
         });
 
@@ -424,11 +482,14 @@
         const matchesRows = (window.d3 && d3.csvParse) ? d3.csvParse(matchesText) : [];
 
         // Build player maps
+        playerDirectory = [];
+        playerIdByName = new Map();
+        playerIdByNorm = new Map();
         const playersById = new Map();
         const idToCountry = new Map();
         const idToName = new Map();
-        const nameIndex = new Map(); // lowercased name -> id
-        const normIndex = new Map(); // lowercased name_norm -> id
+        const nameIndex = playerIdByName; // lowercased name -> id
+        const normIndex = playerIdByNorm; // lowercased name_norm -> id
 
         const pNameKey = (playersRows.columns || []).find(c => c.toLowerCase() === 'name') || 'name';
         const pNormKey = (playersRows.columns || []).find(c => /norm/i.test(c)) || 'name_norm';
@@ -441,11 +502,14 @@
           const nn = String(r[pNormKey] || '').trim();
           const ioc = String(r[pIocKey] || 'UNK').trim();
           if (!id || !nm) return;
+          const nameLower = nm.toLowerCase();
+          const normLower = nn ? nn.toLowerCase() : '';
           playersById.set(id, { id, name: nm, norm: nn, country: ioc });
           idToCountry.set(id, ioc);
           idToName.set(id, nm);
-          nameIndex.set(nm.toLowerCase(), id);
-          if (nn) normIndex.set(nn.toLowerCase(), id);
+          playerDirectory.push({ id, name: nm, country: ioc, nameLower, normLower });
+          nameIndex.set(nameLower, id);
+          if (normLower) normIndex.set(normLower, id);
         });
 
         // Prepare matches array with correct IDs
@@ -548,16 +612,36 @@
     function displayRankings(year, CurrentLoaded, selectedCountryCode = null) {
       const tbody = document.querySelector('#rankingTable tbody');
       tbody.innerHTML = '';
-      let filtered = (GLOBAL_RANKINGS || []).filter(d => d.year === year)
-        .sort((a,b) => b.elo - a.elo);
+      const ranked = (GLOBAL_RANKINGS || [])
+        .filter(d => d.year === year)
+        .sort((a,b) => b.elo - a.elo)
+        .map((player, index) => ({ ...player, rank: index + 1 }));
+
+      let filtered = ranked;
       if (selectedCountryCode) {
         filtered = filtered.filter(d => d.country === selectedCountryCode);
       }
-      filtered = filtered.slice(0, CurrentLoaded);
-      filtered.forEach((player, index) => {
+      if (selectedPlayerId) {
+        filtered = filtered.filter(d => d.player_id === selectedPlayerId);
+      } else if (playerSearchQuery) {
+        const q = playerSearchQuery;
+        filtered = filtered.filter(d => d.name.toLowerCase().includes(q));
+      }
+
+      const limited = filtered.slice(0, CurrentLoaded);
+      if (limited.length === 0) {
+        const emptyRow = document.createElement('tr');
+        emptyRow.innerHTML = `
+          <td colspan="3" style="text-align:center">No players found.</td>
+        `;
+        tbody.appendChild(emptyRow);
+        return;
+      }
+
+      limited.forEach((player) => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
-          <td>${index + 1}</td>
+          <td>${player.rank}</td>
           <td>${player.name}</td>
           <td>${Math.ceil(player.elo)}</td>
         `;
