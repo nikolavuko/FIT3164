@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { csvParse, dsvFormat } from "d3-dsv";
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
-  BarChart, Bar, Legend, Cell
+  BarChart, Bar, Legend, Cell, TooltipProps
 } from "recharts";
 
 /* =======================
@@ -43,6 +43,26 @@ function tidySurface(s: string): "Hard" | "Clay" | "Grass" | "Other" {
   if (t.includes("grass")) return "Grass";
   return "Other";
 }
+const surfaceColorMap: Record<string, string> = {
+  Hard: "#1976d2",
+  Clay: "#ef6c00",
+  Grass: "#2e7d32",
+};
+
+const SurfaceTooltip: React.FC<TooltipProps<number, string>> = ({ active, payload }) => {
+  if (!active || !payload || payload.length === 0) return null;
+  const data = payload[0];
+  const surface = String(data.payload?.surface ?? "");
+  const color = surfaceColorMap[surface] ?? "#111";
+  const rawValue = data.value;
+  const displayValue = typeof rawValue === "number" ? rawValue.toFixed(1) : String(rawValue ?? "");
+  return (
+    <div style={{ background: "#fefefe", border: "1px solid #333", padding: "6px 10px" }}>
+      <div style={{ fontWeight: 600, color }}>{surface}</div>
+      <div style={{ color }}>{`Win Percentage: ${displayValue}`}</div>
+    </div>
+  );
+};
 
 function tidyRound(s: string | undefined): string | undefined {
   if (!s) return undefined;
@@ -300,17 +320,17 @@ const loserIdKey  =
       .filter((d) => d.total > 0); // drop surfaces with no matches
   }, [surfaceStats]);
 
-  // Last 5 match results for selected player (newest first)
+  // Last 5 match results for selected player (oldest to newest)
   const lastFiveResults = useMemo(() => {
     const pid = nameToId.get(selectedPlayerName.toLowerCase());
     if (!pid || matches.length === 0) return Array(5).fill({ res: "NA", round: undefined });
     const mine = matches
       .filter(m => m.winner_id === pid || m.loser_id === pid)
-      .sort((a,b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-    const recent = mine.slice(-5).reverse(); // newest first
-    const mapped = recent.map(m => ({ res: (m.winner_id === pid ? "W" : "L") as ("W"|"L"), round: m.round }));
-    while (mapped.length < 5) mapped.push({ res: "NA" as const, round: undefined });
-    return mapped as { res: "W"|"L"|"NA"; round?: string }[];
+      .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+    const recent = mine.slice(-5); // keep chronological order
+    const mapped = recent.map(m => ({ res: (m.winner_id === pid ? "W" : "L") as ("W" | "L"), round: m.round }));
+    while (mapped.length < 5) mapped.unshift({ res: "NA" as const, round: undefined });
+    return mapped as { res: "W" | "L" | "NA"; round?: string }[];
   }, [matches, nameToId, selectedPlayerName]);
 
   // Compute Elo rankings for ALL players by year
@@ -365,6 +385,38 @@ const topYearlyElo = useMemo(() => {
   }
   return Array.from(bestByYear.values()).sort((a, b) => a.year - b.year);
 }, [rankingsByYear]);
+
+  const eloYAxisConfig = useMemo(() => {
+    if (!eloSeries.length) return null;
+    const values = eloSeries.map((d) => d.elo);
+    if (values.length === 0) return null;
+    const minValue = Math.min(...values);
+    const maxValue = Math.max(...values);
+    const minTick = Math.min(1200, Math.floor(minValue / 100) * 100);
+    const maxTick = Math.ceil(maxValue / 100) * 100;
+    const ticks: number[] = [];
+    for (let tick = minTick; tick <= maxTick; tick += 100) {
+      ticks.push(tick);
+    }
+    return { domain: [minTick, maxTick] as [number, number], ticks };
+  }, [eloSeries]);
+
+  const topEloYAxisConfig = useMemo(() => {
+    if (!topYearlyElo.length) return null;
+    const values = topYearlyElo.map((d) => d.elo);
+    if (values.length === 0) return null;
+    const minValue = Math.min(...values);
+    const maxValue = Math.max(...values);
+    const minTick = Math.floor(minValue / 100) * 100;
+    const maxTick = Math.ceil(maxValue / 100) * 100;
+    const ticks: number[] = [];
+    for (let tick = minTick; tick <= maxTick; tick += 100) {
+      ticks.push(tick);
+    }
+    return { domain: [minTick, maxTick] as [number, number], ticks };
+  }, [topYearlyElo]);
+
+  const yearlyXAxisTicks = useMemo(() => topYearlyElo.map((d) => d.year), [topYearlyElo]);
 
 useEffect(() => {
   if (rankingsByYear.length === 0) return;
@@ -421,8 +473,19 @@ useEffect(() => {
                 <LineChart data={eloSeries}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
                   <XAxis dataKey="date" tickFormatter={(d) => new Date(d).getFullYear().toString()} />
-                  <YAxis domain={[1200, "dataMax + 50"]} />
-                  <Tooltip labelFormatter={(d) => new Date(d as string).toDateString()} />
+                  <YAxis
+                    domain={eloYAxisConfig?.domain ?? [1200, 2300]}
+                    ticks={eloYAxisConfig?.ticks}
+                    allowDecimals={false}
+                    tickFormatter={(value) => Number(value).toFixed(0)}
+                  />
+                  <Tooltip
+                    labelFormatter={(d) => new Date(d as string).toDateString()}
+                    formatter={(value: number | string) => [Number(value).toFixed(0), "elo"]}
+                    labelStyle={{ color: "#000" }}
+                    itemStyle={{ color: "#000" }}
+                    contentStyle={{ background: "#fefefe", border: "1px solid #333", color: "#000" }}
+                  />
                   <Line type="monotone" dataKey="elo" dot={false} stroke="#82ca9d" />
                 </LineChart>
               </ResponsiveContainer>
@@ -437,7 +500,7 @@ useEffect(() => {
                   <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
                   <XAxis dataKey="surface" />
                   <YAxis domain={[0, 100]} />
-                  <Tooltip formatter={(value) => [`${value}`, "Win Percentage"]} />
+                  <Tooltip content={<SurfaceTooltip />} />
                   <Legend />
                   <Bar dataKey="winPct" name="Win Percentage">
                     {surfaceWinData.map((entry) => {
@@ -460,10 +523,21 @@ useEffect(() => {
             <h3>Yearly Top ELO</h3>
             <div style={{ height: 360 }}>
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={topYearlyElo}>
+                <LineChart data={topYearlyElo} margin={{ right: 24 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
-                  <XAxis dataKey="year" />
-                  <YAxis domain={["dataMin - 50", "dataMax + 50"]} />
+                  <XAxis
+                    dataKey="year"
+                    ticks={yearlyXAxisTicks}
+                    interval={0}
+                    padding={{ left: 0, right: 16 }}
+                    tickMargin={8}
+                  />
+                  <YAxis
+                    domain={topEloYAxisConfig?.domain ?? [1600, 2400]}
+                    ticks={topEloYAxisConfig?.ticks}
+                    allowDecimals={false}
+                    tickFormatter={(value) => Number(value).toFixed(0)}
+                  />
                   <Tooltip
                     labelFormatter={(label) => `Season ${label}`}
                     formatter={(value: number | string, _name: string, entry: any) => {
@@ -511,3 +585,17 @@ useEffect(() => {
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
