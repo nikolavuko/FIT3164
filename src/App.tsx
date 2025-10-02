@@ -2,8 +2,9 @@ import React, { useEffect, useMemo, useState } from "react";
 import { csvParse, dsvFormat } from "d3-dsv";
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
-  BarChart, Bar, Legend, Cell, TooltipProps
+  BarChart, Bar, Legend, Cell
 } from "recharts";
+import type { TooltipProps } from "recharts";
 
 /* =======================
    Types
@@ -585,6 +586,7 @@ useEffect(() => {
     </div>
   );
 }
+
 
 
 
