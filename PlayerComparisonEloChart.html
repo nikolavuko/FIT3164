@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Player ELO Comparison</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        :root {
+            color-scheme: dark;
+        }
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-image: linear-gradient(to right, #000000, #1a0527);
+            color: #ffffff;
+            min-height: 100vh;
+        }
+        .TopButtons {
+            display: flex;
+            margin: 20px 0 0 100px;
+            gap: 20px;
+        }
+        .HomeButton,
+        .PlayerRankingsButton {
+            background-color: #353333b8;
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            height: 30px;
+            transition: background-color 0.2s ease;
+        }
+        .HomeButton {
+            width: 100px;
+        }
+        .PlayerRankingsButton {
+            width: 200px;
+        }
+        .HomeButton:hover,
+        .PlayerRankingsButton:hover {
+            cursor: pointer;
+            background-color: #4c4c4cbc;
+        }
+        .HomeBtn,
+        .PlayerRankingsBtn {
+            text-decoration: none;
+        }
+        h1 {
+            margin: 20px 0 40px 100px;
+            display: inline-flex;
+            font-size: 27px;
+            justify-content: center;
+            align-items: center;
+            background-color: #c4ff21;
+            width: clamp(280px, 60vw, 600px);
+            height: 120px;
+            border-radius: 8px;
+            color: black;
+            font-weight: 600;
+        }
+        .PickPlayerButtons {
+            margin-left: 102px;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        .PlayerButton {
+            width: 285px;
+            height: 160px;
+            border-radius: 20px;
+            background-image: linear-gradient(to right, #009bc6cd, #00cf45e3);
+            font-size: 20px;
+            color: #ffffff;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            transition: transform 0.2s ease, background-image 0.2s ease;
+        }
+        .PlayerButton:hover {
+            cursor: pointer;
+            transform: translateY(-4px);
+            background-image: linear-gradient(to right, #02acdbcd, #03e04de3);
+        }
+        .PlayerButton .plus {
+            font-size: 64px;
+            font-weight: bold;
+            line-height: 1;
+        }
+        .PlayerButton.selected-player {
+            width: clamp(240px, 35vw, 420px);
+            min-height: 120px;
+            background-image: none;
+            background-color: #06a2aa;
+            font-weight: 600;
+            text-align: center;
+            padding: 0 12px;
+        }
+        .chart-section {
+            margin: 40px auto 60px;
+            width: min(90vw, 900px);
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(4px);
+        }
+        .chart-header {
+            margin-bottom: 16px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: 600;
+        }
+        #chartPlaceholder {
+            text-align: center;
+            font-size: 18px;
+            color: #d0d0d0;
+            margin-top: 30px;
+        }
+        #chart {
+            width: 100%;
+            min-height: 360px;
+        }
+        .sidebar {
+            position: fixed;
+            border-radius: 20px;
+            top: 2%;
+            right: -100%;
+            width: 350px;
+            max-width: 90%;
+            height: 90%;
+            background: #e6fff5;
+            color: #222;
+            box-shadow: -3px 0 8px rgba(0, 0, 0, 0.3);
+            transition: right 0.3s ease;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            z-index: 1000;
+        }
+        .sidebar.open {
+            right: 1%;
+        }
+        .sidebar h2 {
+            margin: 0 0 15px;
+            font-size: 22px;
+            font-weight: 600;
+        }
+        .sidebar input {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+        }
+        .close-btn {
+            align-self: flex-end;
+            background: #06a2aa;
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 999;
+        }
+        .overlay.show {
+            display: block;
+        }
+        .player-option {
+            padding: 10px;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background: #e2f5ed;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .add-btn {
+            background-color: #000000;
+            width: 70px;
+            height: 30px;
+            border-radius: 10px;
+            color: whitesmoke;
+            border: none;
+            cursor: pointer;
+        }
+        .add-btn:hover {
+            background-color: #252525;
+        }
+        #results {
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+        @media (max-width: 768px) {
+            .TopButtons {
+                margin-left: 20px;
+            }
+            h1 {
+                margin-left: 20px;
+                width: 80vw;
+                height: auto;
+                padding: 18px;
+            }
+            .PickPlayerButtons {
+                margin-left: 20px;
+                gap: 16px;
+            }
+            .chart-section {
+                width: 92vw;
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="TopButtons">
+        <a href="Homepage.html" class="HomeBtn">
+            <button class="HomeButton">HOME</button>
+        </a>
+        <a href="PlayerRankings.html" class="PlayerRankingsBtn">
+            <button class="PlayerRankingsButton">PLAYER RANKINGS</button>
+        </a>
+    </div>
+
+    <h1>ELO COMPARISON TOOL</h1>
+
+    <div class="PickPlayerButtons">
+        <button class="PlayerButton" id="PickPlayerButton1">
+            <div class="plus">+</div>
+            Click To Add Player
+        </button>
+        <button class="PlayerButton" id="PickPlayerButton2">
+            <div class="plus">+</div>
+            Click To Add Player
+        </button>
+    </div>
+
+    <section class="chart-section">
+        <div class="chart-header">Elo  Comparision Over Players' Careers</div>
+        <div id="chartPlaceholder">Select two players to compare their ELO trends.</div>
+        <div id="chart"></div>
+    </section>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeBtn">X</button>
+        <h2>Search Player</h2>
+        <input type="text" placeholder="Search" />
+        <div id="results">Player results will show here...</div>
+    </div>
+
+    <script>
+        const PickPlayerButton1 = document.getElementById('PickPlayerButton1');
+        const PickPlayerButton2 = document.getElementById('PickPlayerButton2');
+        const overlay = document.getElementById('overlay');
+        const searchInput = document.querySelector('.sidebar input');
+        const results = document.getElementById('results');
+        const closeBtn = document.getElementById('closeBtn');
+        const chartPlaceholder = document.getElementById('chartPlaceholder');
+        const chartContainer = document.getElementById('chart');
+
+        let activeBtn = null;
+        let players = [];
+        let eloData = [];
+        let countryColors = {};
+
+        const selectedPlayers = {
+            player1: null,
+            player2: null,
+        };
+
+        // Load auxiliary data used to color player buttons
+        fetch('public/CountryColors.json')
+            .then(response => response.json())
+            .then(data => {
+                countryColors = data;
+            })
+            .catch(error => console.error('Error loading CountryColors.json:', error));
+
+        // Load player metadata for search
+        fetch('public/players.csv')
+            .then(response => response.text())
+            .then(data => {
+                const rows = data.trim().split('\n').slice(1);
+                players = rows.map(row => {
+                    const cols = row.split(',');
+                    return {
+                        id: cols[0].trim(),
+                        name: cols[1].trim(),
+                        country: cols[3].trim(),
+                    };
+                });
+            })
+            .catch(error => console.error('Error loading players.csv:', error));
+
+        // Load ELO timeseries data
+        fetch('public/elo_rankings.json')
+            .then(response => response.json())
+            .then(data => {
+                eloData = data;
+            })
+            .catch(err => console.error('Error loading ELO rankings:', err));
+
+        PickPlayerButton1.addEventListener('click', () => openSidebar(PickPlayerButton1));
+        PickPlayerButton2.addEventListener('click', () => openSidebar(PickPlayerButton2));
+        closeBtn.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
+
+        function openSidebar(button) {
+            activeBtn = button;
+            document.getElementById('sidebar').classList.add('open');
+            overlay.classList.add('show');
+            results.innerHTML = '';
+            searchInput.value = '';
+            searchInput.focus();
+        }
+
+        function closeSidebar() {
+            document.getElementById('sidebar').classList.remove('open');
+            overlay.classList.remove('show');
+            results.innerHTML = '';
+            searchInput.value = '';
+        }
+
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.toLowerCase();
+            results.innerHTML = '';
+
+            const filtered = players.filter(player =>
+                player.name.toLowerCase().includes(query)
+            );
+
+            if (filtered.length === 0) {
+                results.innerHTML = '<p>No players found</p>';
+                return;
+            }
+
+            filtered.forEach(player => {
+                const item = document.createElement('div');
+                item.classList.add('player-option');
+                item.innerHTML = `
+                    <strong>${player.name}</strong>
+                    <button class="add-btn">Add</button>
+                `;
+                results.appendChild(item);
+                item.querySelector('.add-btn').addEventListener('click', () => {
+                    addPlayerToButton(player.id, player.name, player.country);
+                });
+            });
+        });
+
+        searchInput.addEventListener('click', () => {
+            searchInput.value = '';
+        });
+
+        function addPlayerToButton(playerID, playerName, countryCode) {
+            if (!activeBtn) return;
+
+            activeBtn.innerHTML = `<span>${playerName}</span>`;
+            activeBtn.classList.add('selected-player');
+            activeBtn.classList.add('PlayerButton');
+            if (countryColors[countryCode]) {
+                activeBtn.style.backgroundColor = countryColors[countryCode];
+            } else {
+                activeBtn.style.backgroundColor = '#06a2aa';
+            }
+            activeBtn.style.backgroundImage = 'none';
+
+            closeSidebar();
+
+            if (activeBtn.id === 'PickPlayerButton1') {
+                selectedPlayers.player1 = { id: playerID, name: playerName, country: countryCode };
+            } else {
+                selectedPlayers.player2 = { id: playerID, name: playerName, country: countryCode };
+            }
+
+            if (selectedPlayers.player1 && selectedPlayers.player2) {
+                renderChart(selectedPlayers.player1, selectedPlayers.player2);
+            }
+        }
+
+        function renderChart(player1, player2) {
+            const combined = eloData
+                .filter(record => record.player_id === player1.id || record.player_id === player2.id)
+                .map(record => ({
+                    year: new Date(record.year, 0, 1),
+                    elo: record.elo,
+                    name: record.name,
+                }))
+                .sort((a, b) => a.year - b.year);
+
+            if (combined.length === 0) {
+                chartPlaceholder.textContent = 'No ELO data found for the selected players.';
+                chartPlaceholder.style.display = 'block';
+                chartContainer.innerHTML = '';
+                return;
+            }
+
+            chartPlaceholder.style.display = 'none';
+
+            const spec = {
+                $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+                description: 'ELO comparison for two players',
+                data: { values: combined },
+                mark: { type: 'line', point: true },
+                width: 'container',
+                height: 380,
+                encoding: {
+                    x: { field: 'year', type: 'temporal', title: 'Year' },
+                    y: { field: 'elo', type: 'quantitative', title: 'ELO Rating' },
+                    color: { field: 'name', type: 'nominal', legend: { title: 'Player' } },
+                    tooltip: [
+                        { field: 'name', type: 'nominal', title: 'Player' },
+                        { field: 'year', type: 'temporal', title: 'Year' },
+                        { field: 'elo', type: 'quantitative', title: 'ELO' }
+                    ]
+                },
+                autosize: { type: 'fit', contains: 'padding' }
+            };
+
+            vegaEmbed('#chart', spec, {
+                actions: false,
+                renderer: 'canvas'
+            }).catch(err => console.error('Error rendering chart:', err));
+        }
+
+        window.addEventListener('resize', () => {
+            if (selectedPlayers.player1 && selectedPlayers.player2) {
+                renderChart(selectedPlayers.player1, selectedPlayers.player2);
+            }
+        });
+    </script>
+</body>
+</html>
