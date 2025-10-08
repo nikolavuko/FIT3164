@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Player Metric Radar</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-image: linear-gradient(to right, #000000, #1a0527);
+            color: #ffffff;
+            min-height: 100vh;
+        }
+        .TopButtons {
+            display: flex;
+            margin: 20px 0 0 100px;
+            gap: 20px;
+        }
+        .HomeButton,
+        .PlayerRankingsButton {
+            background-color: #353333b8;
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            height: 30px;
+            transition: background-color 0.2s ease;
+        }
+        .HomeButton {
+            width: 100px;
+        }
+        .PlayerRankingsButton {
+            width: 200px;
+        }
+        .HomeButton:hover,
+        .PlayerRankingsButton:hover {
+            cursor: pointer;
+            background-color: #4c4c4cbc;
+        }
+        .HomeBtn,
+        .PlayerRankingsBtn {
+            text-decoration: none;
+        }
+        h1 {
+            margin: 20px 0 40px 100px;
+            font-size: 26px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #c4ff21;
+            width: clamp(260px, 60vw, 580px);
+            min-height: 110px;
+            border-radius: 8px;
+            color: #000000;
+            font-weight: 600;
+            text-align: center;
+            padding: 16px;
+        }
+        .PickPlayerButtons {
+            margin-left: 102px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+        .PlayerButton {
+            width: 260px;
+            min-height: 150px;
+            border-radius: 20px;
+            background-image: linear-gradient(to right, #009bc6cd, #00cf45e3);
+            font-size: 19px;
+            color: #ffffff;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            transition: transform 0.2s ease, background-image 0.2s ease;
+            text-align: center;
+            padding: 12px;
+        }
+        .PlayerButton:hover {
+            cursor: pointer;
+            transform: translateY(-4px);
+            background-image: linear-gradient(to right, #02acdbcd, #03e04de3);
+        }
+        .PlayerButton .plus {
+            font-size: 62px;
+            font-weight: bold;
+            line-height: 1;
+        }
+        .PlayerButton.selected-player {
+            background-image: none;
+            background-color: #06a2aa;
+            font-weight: 600;
+        }
+        .chart-section {
+            margin: 40px auto 60px;
+            width: min(92vw, 900px);
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(4px);
+        }
+        .chart-header {
+            margin-bottom: 16px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: 600;
+        }
+        #chartPlaceholder {
+            text-align: center;
+            font-size: 18px;
+            color: #d0d0d0;
+            margin-top: 30px;
+        }
+        #chart {
+            width: 100%;
+            min-height: 360px;
+        }
+        .sidebar {
+            position: fixed;
+            border-radius: 20px;
+            top: 2%;
+            right: -100%;
+            width: 350px;
+            max-width: 90%;
+            height: 90%;
+            background: #e6fff5;
+            color: #222;
+            box-shadow: -3px 0 8px rgba(0, 0, 0, 0.3);
+            transition: right 0.3s ease;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            z-index: 1000;
+        }
+        .sidebar.open {
+            right: 1%;
+        }
+        .sidebar h2 {
+            margin: 0 0 15px;
+            font-size: 22px;
+            font-weight: 600;
+        }
+        .sidebar input {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+        }
+        .close-btn {
+            align-self: flex-end;
+            background: #06a2aa;
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 999;
+        }
+        .overlay.show {
+            display: block;
+        }
+        .player-option {
+            padding: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background: #e2f5ed;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .add-btn {
+            background-color: #000000;
+            width: 70px;
+            height: 30px;
+            border-radius: 10px;
+            color: whitesmoke;
+            border: none;
+            cursor: pointer;
+        }
+        .add-btn:hover {
+            background-color: #252525;
+        }
+        #results {
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+        @media (max-width: 768px) {
+            .TopButtons {
+                margin-left: 20px;
+            }
+            h1 {
+                margin-left: 20px;
+                width: 80vw;
+                min-height: 90px;
+            }
+            .PickPlayerButtons {
+                margin-left: 20px;
+                gap: 18px;
+            }
+            .chart-section {
+                width: 92vw;
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="TopButtons">
+        <a href="Homepage.html" class="HomeBtn">
+            <button class="HomeButton">HOME</button>
+        </a>
+        <a href="PlayerRankings.html" class="PlayerRankingsBtn">
+            <button class="PlayerRankingsButton">PLAYER RANKINGS</button>
+        </a>
+    </div>
+
+    <h1>PLAYER RADAR COMPARISON</h1>
+
+    <div class="PickPlayerButtons">
+        <button class="PlayerButton" id="PickPlayerButton1">
+            <div class="plus">+</div>
+            Click To Add Player
+        </button>
+        <button class="PlayerButton" id="PickPlayerButton2">
+            <div class="plus">+</div>
+            Click To Add Player
+        </button>
+    </div>
+
+    <section class="chart-section">
+        <div class="chart-header">Performance Profile (scaled 0–100)</div>
+        <div id="chartPlaceholder">Select two players to compare their careers.</div>
+        <div id="chart"></div>
+    </section>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeBtn">X</button>
+        <h2>Search Player</h2>
+        <input type="text" placeholder="Search" />
+        <div id="results">Player results will show here...</div>
+    </div>
+
+    <script>
+        const PickPlayerButton1 = document.getElementById('PickPlayerButton1');
+        const PickPlayerButton2 = document.getElementById('PickPlayerButton2');
+        const overlay = document.getElementById('overlay');
+        const searchInput = document.querySelector('.sidebar input');
+        const results = document.getElementById('results');
+        const closeBtn = document.getElementById('closeBtn');
+        const chartPlaceholder = document.getElementById('chartPlaceholder');
+        const chartContainer = document.getElementById('chart');
+
+        const metricsOrder = [
+            'Current ELO',
+            'Highest ELO',
+            'Titles Won',
+            'Head-to-Head Win %',
+            'Preferred Surface Score',
+            'Win Percentage',
+            'Avg Match Duration'
+        ];
+
+        const surfaceScoreMap = {
+            Hard: 95,
+            Clay: 85,
+            Grass: 75,
+            Carpet: 65,
+            Unknown: 55,
+            Other: 55
+        };
+
+        const selectedPlayers = {
+            player1: null,
+            player2: null
+        };
+
+        let activeBtn = null;
+        let players = [];
+        let eloData = [];
+        let matches = [];
+        let countryColors = {};
+        const dataReady = {
+            countryColors: false,
+            players: false,
+            elo: false,
+            matches: false
+        };
+
+        function maybeRenderRadar() {
+            if (
+                selectedPlayers.player1 &&
+                selectedPlayers.player2 &&
+                dataReady.elo &&
+                dataReady.matches
+            ) {
+                renderRadar(selectedPlayers.player1, selectedPlayers.player2);
+            }
+        }
+
+        fetch("public/countryColors.json")
+            .then(response => response.json())
+            .then(data => {
+                countryColors = data;
+                dataReady.countryColors = true;
+            })
+            .catch(error => console.error('Error loading CountryColors.json:', error));
+
+        fetch("public/players.csv")
+            .then(response => response.text())
+            .then(data => {
+                const rows = data.trim().split("\n").slice(1);
+                players = rows.map(row => {
+                    const cols = row.split(',');
+                    return {
+                        id: cols[0].trim(),
+                        name: cols[1].trim(),
+                        country: cols[3].trim()
+                    };
+                });
+                dataReady.players = true;
+            })
+            .catch(error => console.error('Error loading players.csv:', error));
+
+        fetch("public/elo_rankings.json")
+            .then(response => response.json())
+            .then(data => {
+                eloData = data;
+                dataReady.elo = true;
+                maybeRenderRadar();
+            })
+            .catch(err => console.error('Error loading ELO rankings:', err));
+
+        fetch("public/matches.csv")
+            .then(response => response.text())
+            .then(data => {
+                const rows = data.trim().split("\n").slice(1);
+                matches = rows.map(row => {
+                    const cols = row.split(',');
+                    return {
+                        surface: cols[2].trim(),
+                        round: cols[8].trim(),
+                        minutes: cols[9].trim(),
+                        winner_player_id: cols[31].trim(),
+                        loser_player_id: cols[32].trim()
+                    };
+                });
+                dataReady.matches = true;
+                maybeRenderRadar();
+            })
+            .catch(err => console.error('Error loading matches:', err));
+
+        PickPlayerButton1.addEventListener('click', () => {
+            sidebar.classList.add("open");
+            overlay.classList.add("show");
+            results.innerHTML = "";
+            searchInput.value = "";
+            activeBtn = PickPlayerButton1
+        })
+
+        PickPlayerButton2.addEventListener('click', () => {
+            sidebar.classList.add("open");
+            overlay.classList.add("show");
+            results.innerHTML = "";
+            searchInput.value = "";
+            activeBtn = PickPlayerButton2
+        })
+
+        closeBtn.addEventListener('click', () => {
+            sidebar.classList.remove("open");
+            overlay.classList.remove("show");
+            results.innerHTML = "";
+            searchInput.value = "";
+        })
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.remove("open");
+            overlay.classList.remove("show");
+            results.innerHTML = "";
+            searchInput.value = "";
+        })
+
+    searchInput.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase();
+    results.innerHTML = ""; // clear old results
+
+    const filtered = players.filter(player =>
+        player.name.toLowerCase().includes(query)
+    );
+
+    if (filtered.length === 0) {
+        results.innerHTML = "<p>No players found</p>";
+        return;
+    }
+
+    filtered.forEach(player => {
+        const item = document.createElement("div");
+        item.classList.add("player-option");
+        item.innerHTML = `
+            <strong>${player.name}</strong>
+            <button class="add-btn">Add</button>
+        `;
+        results.appendChild(item);
+        item.querySelector(".add-btn").addEventListener("click", () => {
+        addPlayerToButton(player.id, player.name, player.country);
+            });
+        });
+        
+    });
+
+    searchInput.addEventListener('click', () => {
+        searchInput.value = "";
+    })
+
+    function addPlayerToButton(playerID, playerName, countryCode) {
+        if (!activeBtn) return;
+
+        activeBtn.innerHTML = `${playerName}`;
+        activeBtn.classList.add('selected-player');
+        if (countryColors[countryCode]) {
+            activeBtn.style.backgroundColor = countryColors[countryCode];
+            activeBtn.style.backgroundImage = 'none';
+        }
+        const container = document.querySelector('.PickPlayerButtons');
+        container.style.gap = '300px';
+        // Close sidebar
+        sidebar.classList.remove("open");
+        overlay.classList.remove("show");
+        results.innerHTML = "";
+        searchInput.value = "";
+        if (activeBtn.id === 'PickPlayerButton1') {
+            selectedPlayers.player1 = { id: playerID, name: playerName, country: countryCode };
+        } 
+        else { 
+            selectedPlayers.player2 = { id: playerID ,name: playerName, country: countryCode };
+        }
+        if (selectedPlayers.player1 && selectedPlayers.player2) {
+            if (dataReady.elo && dataReady.matches) {
+                renderRadar(selectedPlayers.player1, selectedPlayers.player2);
+            } else {
+                chartPlaceholder.textContent = 'Loading player metrics...';
+                chartPlaceholder.style.display = 'block';
+            }
+        }
+    }
+
+        function getCurrentElo(playerID) {
+            const current = eloData.find(p => p.player_id === playerID && Number(p.year) === 2025);
+            return current ? Math.round(current.elo) : null;
+        }
+
+        function getHighestElo(playerID) {
+            const elos = eloData.filter(p => p.player_id === playerID).map(p => p.elo);
+            return elos.length > 0 ? Math.round(Math.max(...elos)) : null;
+        }
+
+        function getTitles(playerID) {
+            return matches.filter(m => m.winner_player_id === playerID && m.round === 'F').length;
+        }
+
+        function getHeadToHeadPercent(playerID, opponentID) {
+            const relevant = matches.filter(m =>
+                (m.winner_player_id === playerID && m.loser_player_id === opponentID) ||
+                (m.winner_player_id === opponentID && m.loser_player_id === playerID)
+            );
+            if (relevant.length === 0) {
+                return { percent: 0, label: 'No matches' };
+            }
+            const wins = relevant.filter(m => m.winner_player_id === playerID).length;
+            const pct = (wins / relevant.length) * 100;
+            return {
+                percent: Number(pct.toFixed(2)),
+                label: `${wins}-${relevant.length - wins} (${pct.toFixed(1)}%)`
+            };
+        }
+
+        function getPreferredSurface(playerID) {
+            const surfaces = ['Hard', 'Clay', 'Grass', 'Carpet'];
+            let bestSurface = 'Unknown';
+            let bestPct = -1;
+
+            for (const s of surfaces) {
+                const wins = matches.filter(m => m.winner_player_id === playerID && m.surface === s).length;
+                const losses = matches.filter(m => m.loser_player_id === playerID && m.surface === s).length;
+                const total = wins + losses;
+                const pct = total > 0 ? wins / total : -1;
+                if (pct > bestPct && total > 0) {
+                    bestPct = pct;
+                    bestSurface = s;
+                }
+            }
+
+            return bestSurface;
+        }
+
+        function getWinPct(playerID) {
+            const wins = matches.filter(m => m.winner_player_id === playerID).length;
+            const losses = matches.filter(m => m.loser_player_id === playerID).length;
+            const total = wins + losses;
+            if (total === 0) return { percent: 0, label: 'No matches' };
+            const pct = (wins / total) * 100;
+            return { percent: Number(pct.toFixed(2)), label: `${pct.toFixed(1)}% (${wins}-${losses})` };
+        }
+
+        function getAverageDuration(playerID) {
+            const playerMatches = matches.filter(m => m.winner_player_id === playerID || m.loser_player_id === playerID);
+            if (playerMatches.length === 0) return 0;
+            const totalMinutes = playerMatches.reduce((sum, m) => {
+                const mins = Number(m.minutes);
+                return sum + (isNaN(mins) ? 0 : mins);
+            }, 0);
+            return Number((totalMinutes / playerMatches.length).toFixed(2));
+        }
+
+        function mapSurfaceScore(surface) {
+            if (!surface) return { score: surfaceScoreMap.Unknown, label: 'Unknown' };
+            const score = surfaceScoreMap[surface] ?? surfaceScoreMap.Other;
+            return { score, label: surface };
+        }
+
+        function scaleMetric(metricName, rawValue) {
+            if (rawValue == null || Number.isNaN(rawValue)) return 0;
+            switch (metricName) {
+                case 'Current ELO':
+                case 'Highest ELO':
+                    return Math.min((rawValue / 2800) * 100, 100);
+                case 'Titles Won':
+                    return Math.min((rawValue / 100) * 100, 100);
+                case 'Avg Match Duration':
+                    return Math.min((rawValue / 240) * 100, 100);
+                default:
+                    return Math.min(rawValue, 100);
+            }
+        }
+
+        function compileMetrics(player, opponent) {
+            const currentElo = getCurrentElo(player.id);
+            const highestElo = getHighestElo(player.id);
+            const titles = getTitles(player.id);
+            const h2h = getHeadToHeadPercent(player.id, opponent.id);
+            const preferredSurface = getPreferredSurface(player.id);
+            const surfaceScore = mapSurfaceScore(preferredSurface);
+            const winPct = getWinPct(player.id);
+            const avgDuration = getAverageDuration(player.id);
+
+            return [
+                {
+                    metric: 'Current ELO',
+                    player: player.name,
+                    value: scaleMetric('Current ELO', currentElo),
+                    rawDisplay: currentElo !== null ? `${currentElo}` : 'Not ranked'
+                },
+                {
+                    metric: 'Highest ELO',
+                    player: player.name,
+                    value: scaleMetric('Highest ELO', highestElo),
+                    rawDisplay: highestElo !== null ? `${highestElo}` : 'Not available'
+                },
+                {
+                    metric: 'Titles Won',
+                    player: player.name,
+                    value: scaleMetric('Titles Won', titles),
+                    rawDisplay: `${titles}`
+                },
+                {
+                    metric: 'Head-to-Head Win %',
+                    player: player.name,
+                    value: scaleMetric('Head-to-Head Win %', h2h.percent),
+                    rawDisplay: h2h.label
+                },
+                {
+                    metric: 'Preferred Surface Score',
+                    player: player.name,
+                    value: surfaceScore.score,
+                    rawDisplay: surfaceScore.label
+                },
+                {
+                    metric: 'Win Percentage',
+                    player: player.name,
+                    value: scaleMetric('Win Percentage', winPct.percent),
+                    rawDisplay: winPct.label
+                },
+                {
+                    metric: 'Avg Match Duration',
+                    player: player.name,
+                    value: scaleMetric('Avg Match Duration', avgDuration),
+                    rawDisplay: `${avgDuration || 0} mins`
+                }
+            ];
+        }
+
+        function renderRadar(player1, player2) {
+            if (!dataReady.elo || !dataReady.matches) {
+                chartPlaceholder.textContent = 'Loading player metrics...';
+                chartPlaceholder.style.display = 'block';
+                chartContainer.innerHTML = '';
+                return;
+            }
+
+            const sortByMetricOrder = (a, b) => metricsOrder.indexOf(a.metric) - metricsOrder.indexOf(b.metric);
+            const metricsPlayer1 = compileMetrics(player1, player2).sort(sortByMetricOrder);
+            const metricsPlayer2 = compileMetrics(player2, player1).sort(sortByMetricOrder);
+            const combined = [...metricsPlayer1, ...metricsPlayer2];
+
+            const hasData = combined.some(d => d.value > 0);
+            if (!hasData) {
+                chartPlaceholder.textContent = 'Insufficient data for the selected players.';
+                chartPlaceholder.style.display = 'block';
+                chartContainer.innerHTML = '';
+                return;
+            }
+
+            chartPlaceholder.style.display = 'none';
+            chartContainer.innerHTML = '';
+
+            const playersSet = [player1.name, player2.name];
+            const colorRange = ['#1f77b4', '#ff7f0e'];
+            const colorScale = {
+                domain: playersSet,
+                range: colorRange.slice(0, playersSet.length)
+            };
+            const metricsByPlayer = {
+                [player1.name]: metricsPlayer1,
+                [player2.name]: metricsPlayer2
+            };
+            const metricCount = metricsOrder.length;
+            const toRadians = (index) => (index / metricCount) * Math.PI * 2 - Math.PI / 2;
+            const scaleLimit = 110;
+
+            const chartValues = [];
+            playersSet.forEach(playerName => {
+                const metrics = metricsByPlayer[playerName];
+                metricsOrder.forEach((metricName, idx) => {
+                    const entry = metrics.find(m => m.metric === metricName) || { value: 0, rawDisplay: 'N/A' };
+                    const angle = toRadians(idx);
+                    const radius = entry.value;
+                    chartValues.push({
+                        player: playerName,
+                        metric: metricName,
+                        metricIndex: idx,
+                        value: radius,
+                        rawDisplay: entry.rawDisplay,
+                        x: radius * Math.cos(angle),
+                        y: radius * Math.sin(angle)
+                    });
+                });
+            });
+
+            const labelOffset = 95;
+            const axisGuides = metricsOrder.map((metricName, idx) => {
+                const angle = toRadians(idx);
+                return {
+                    metric: metricName,
+                    x: 100 * Math.cos(angle),
+                    y: 100 * Math.sin(angle),
+                    labelX: labelOffset * Math.cos(angle),
+                    labelY: labelOffset * Math.sin(angle)
+                };
+            });
+
+            const gridRings = [25, 50, 75, 100].flatMap(radius => {
+                return metricsOrder.map((metricName, idx) => {
+                    const angle = toRadians(idx);
+                    return {
+                        radius,
+                        metric: metricName,
+                        metricIndex: idx,
+                        x: radius * Math.cos(angle),
+                        y: radius * Math.sin(angle)
+                    };
+                });
+            });
+
+            const baseScale = {
+                domain: [-scaleLimit, scaleLimit],
+                nice: false,
+                zero: false
+            };
+
+            const playerEncoding = {
+                x: { field: 'x', type: 'quantitative', scale: baseScale, axis: null },
+                y: { field: 'y', type: 'quantitative', scale: baseScale, axis: null },
+                color: { field: 'player', type: 'nominal', legend: { title: 'Player' } },
+                order: { field: 'metricIndex', type: 'quantitative' },
+                color: { field: 'player', type: 'nominal', legend: { title: 'Player' }, scale: colorScale },
+                detail: { field: 'player' }
+            };
+
+            const spec = {
+                $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+                description: 'Radar chart comparing two players across career metrics',
+                width: 500,
+                height: 350,
+                layer: [
+                    {
+                        data: { values: gridRings },
+                        mark: {
+                            type: 'line',
+                            color: '#666',
+                            opacity: 0.25,
+                            interpolate: 'linear-closed'
+                        },
+                        encoding: {
+                            x: { field: 'x', type: 'quantitative', scale: baseScale, axis: null },
+                            y: { field: 'y', type: 'quantitative', scale: baseScale, axis: null },
+                            detail: { field: 'radius' },
+                            order: { field: 'metricIndex', type: 'ordinal' }
+                        }
+                    },
+                    {
+                        data: { values: axisGuides },
+                        mark: { type: 'rule', color: '#777', opacity: 0.4 },
+                        encoding: {
+                            x: { field: 'x', type: 'quantitative', scale: baseScale, axis: null },
+                            y: { field: 'y', type: 'quantitative', scale: baseScale, axis: null },
+                            x2: { value: 0 },
+                            y2: { value: 0 },
+                            detail: { field: 'metric' }
+                        }
+                    },
+                    {
+                        data: { values: axisGuides },
+                        mark: { type: 'text', color: '#000000', fontSize: 11, fontWeight: 600 },
+                        encoding: {
+                            x: { field: 'labelX', type: 'quantitative', scale: baseScale, axis: null },
+                            y: { field: 'labelY', type: 'quantitative', scale: baseScale, axis: null },
+                            text: { field: 'metric', type: 'nominal' }
+                        }
+                    },
+                        {
+                            data: { values: chartValues },
+                            mark: { type: 'area', interpolate: 'linear-closed', opacity: 0.12 },
+                            encoding: playerEncoding
+                        },
+                        {
+                            data: { values: chartValues },
+                            mark: { type: 'line', interpolate: 'linear-closed', strokeWidth: 3 },
+                            encoding: playerEncoding
+                        },
+                        {
+                            data: { values: chartValues },
+                            mark: { type: 'point', filled: true, size: 80 },
+                            encoding: {
+                                ...playerEncoding,
+                                tooltip: [
+                                    { field: 'player', type: 'nominal', title: 'Player' },
+                                    { field: 'metric', type: 'nominal', title: 'Metric' },
+                                    { field: 'rawDisplay', type: 'nominal', title: 'Actual' },
+                                    { field: 'value', type: 'quantitative', title: 'Scaled (0-100)', format: '.1f' }
+                                ]
+                            }
+                        }
+                ],
+                view: { stroke: null }
+            };
+
+            vegaEmbed('#chart', spec, { actions: false, renderer: 'canvas' })
+                .catch(err => console.error('Error rendering radar chart:', err));
+        }
+
+        window.addEventListener('resize', () => {
+            if (selectedPlayers.player1 && selectedPlayers.player2) {
+                renderRadar(selectedPlayers.player1, selectedPlayers.player2);
+            }
+        });
+    </script>
+</body>
+</html>
