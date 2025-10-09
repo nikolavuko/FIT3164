@@ -24,6 +24,15 @@ type MatchRow = {
   round?: string;
 };
 
+type LastFiveResult = {
+  res: "W" | "L" | "NA";
+  round?: string;
+  opponent?: string;
+  tourney?: string;
+  surface?: string;
+  date?: string;
+};
+
 /* =======================
    Helpers
 ======================= */
@@ -89,6 +98,30 @@ function tidyRound(s: string | undefined): string | undefined {
   if (/^R?\s?6\s?4$/i.test(r)) return "R64";
   if (/^R?\s?1\s?2\s?8$/i.test(r)) return "R128";
   return r || undefined;
+}
+
+const tournamentShortNames: { match: RegExp; label: string }[] = [
+  { match: /australian\s+open/i, label: "Aus Open" },
+  { match: /\bus\s+open/i, label: "US Open" },
+  { match: /roland\s+garros|french\s+open/i, label: "Roland Garros" },
+  { match: /wimbledon/i, label: "Wimbledon" },
+];
+
+function shortenTournamentName(name: string) {
+  for (const entry of tournamentShortNames) {
+    if (entry.match.test(name)) return entry.label;
+  }
+  return name;
+}
+
+function formatEventLabel(tourney: string | undefined, dateISO?: string) {
+  const raw = (tourney ?? "").trim();
+  if (!raw) return undefined;
+  const base = shortenTournamentName(raw);
+  if (!dateISO) return base;
+  const dt = new Date(dateISO);
+  if (Number.isNaN(dt.getTime())) return base;
+  return `${base} ${dt.getFullYear()}`;
 }
 
 function expectedScore(Ra: number, Rb: number, s = 400) {
@@ -230,7 +263,10 @@ const loserIdKey  =
   const winnerNameKey= rows.columns.find(c => /winner.*name|^winner$/i.test(c));
   const loserNameKey = rows.columns.find(c => /loser.*name|^loser$/i.test(c));
 
-  const tourneyKey = rows.columns.find(c => /tourn|event|slam|name/i.test(c)) ?? "tourney";
+  const tourneyNameKey =
+    rows.columns.find(c => /(tourn|tournament|event|slam).*name/i.test(c)) ||
+    rows.columns.find(c => /name/i.test(c) && /(tourn|event|slam)/i.test(c));
+  const tourneyKey = tourneyNameKey ?? rows.columns.find(c => /(tourn|tournament|event|slam)/i.test(c)) ?? "tourney";
   const roundKey = rows.columns.find(c => /^round$/i.test(c)) ?? "round";
 
   const out: MatchRow[] = [];
@@ -261,7 +297,7 @@ const loserIdKey  =
 
     out.push({
       date: d.toISOString(),
-      tourney: String(r[tourneyKey] ?? ""),
+      tourney: String(r[tourneyKey] ?? "").trim(),
       surface: tidySurface(String(r[surfaceKey] ?? "")),
       winner_id: w,
       loser_id: l,
@@ -322,17 +358,36 @@ const loserIdKey  =
   }, [surfaceStats]);
 
   // Last 5 match results for selected player (oldest to newest)
-  const lastFiveResults = useMemo(() => {
+  const lastFiveResults = useMemo<LastFiveResult[]>(() => {
     const pid = nameToId.get(selectedPlayerName.toLowerCase());
-    if (!pid || matches.length === 0) return Array(5).fill({ res: "NA", round: undefined });
+    if (!pid || matches.length === 0) {
+      return Array.from({ length: 5 }, () => ({ res: "NA" as const }));
+    }
+
     const mine = matches
       .filter(m => m.winner_id === pid || m.loser_id === pid)
       .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
     const recent = mine.slice(-5); // keep chronological order
-    const mapped = recent.map(m => ({ res: (m.winner_id === pid ? "W" : "L") as ("W" | "L"), round: m.round }));
-    while (mapped.length < 5) mapped.unshift({ res: "NA" as const, round: undefined });
-    return mapped as { res: "W" | "L" | "NA"; round?: string }[];
-  }, [matches, nameToId, selectedPlayerName]);
+    const mapped = recent.map((m): LastFiveResult => {
+      const isWin = m.winner_id === pid;
+      const opponentId = isWin ? m.loser_id : m.winner_id;
+      return {
+        res: isWin ? "W" : "L",
+        round: m.round,
+        opponent: idToName.get(opponentId) ?? opponentId,
+        tourney: m.tourney,
+        surface: m.surface,
+        date: m.date,
+      };
+    });
+
+    while (mapped.length < 5) {
+      mapped.unshift({ res: "NA" });
+    }
+
+    return mapped;
+  }, [matches, nameToId, selectedPlayerName, idToName]);
 
   // Compute Elo rankings for ALL players by year
 function computeEloRankings(matches: MatchRow[], kFactor: number, base = 1500) {
@@ -560,23 +615,50 @@ useEffect(() => {
           <h3 style={{ margin: "8px 0 6px" }}>Last 5 match results</h3>
           <div style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
             {lastFiveResults.map((item, i) => {
-              const color = item.res === "W" ? "#2e7d32" : item.res === "L" ? "#c62828" : "#000000";
-              const label = item.res === "W" ? "Win" : item.res === "L" ? "Loss" : "Unavailable";
+              const color = item.res === "W" ? "#1b9e77" : item.res === "L" ? "#d95f02" : "#5f6368";
+              const label = item.res === "W" ? "Win" : item.res === "L" ? "Loss" : "No match data";
               const round = item.round ?? "";
+              const circleLetter = item.res === "NA" ? "?" : item.res;
+              const parsedDate = item.date ? new Date(item.date) : null;
+              const dateLabel = parsedDate && !isNaN(parsedDate.getTime())
+                ? parsedDate.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
+                : undefined;
+              const eventLabel = formatEventLabel(item.tourney, item.date);
+              const tooltip = item.res === "NA"
+                ? label
+                : [
+                    label,
+                    item.opponent ? `vs ${item.opponent}` : undefined,
+                    round ? `Round: ${round}` : undefined,
+                    eventLabel ? `Event: ${eventLabel}` : undefined,
+                    item.surface ? `Surface: ${item.surface}` : undefined,
+                    dateLabel ? `Date: ${dateLabel}` : undefined,
+                  ]
+                    .filter(Boolean)
+                    .join(" | ");
               return (
-                <div key={`last5-${i}`} style={{ display: "flex", flexDirection: "column", alignItems: "center", minWidth: 24 }}>
+                <div key={`last5-${i}`} style={{ display: "flex", flexDirection: "column", alignItems: "center", minWidth: 28 }}>
                   <div
-                    title={round ? `${label} • ${round}` : label}
-                    aria-label={round ? `${label} ${round}` : label}
+                    title={tooltip}
+                    aria-label={tooltip}
                     style={{
-                      width: 18,
-                      height: 18,
+                      width: 26,
+                      height: 26,
                       borderRadius: "50%",
                       background: color,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontWeight: 600,
+                      fontSize: 12,
+                      color: item.res === "NA" ? "#1a1a1a" : "#ffffff",
+                      opacity: item.res === "NA" ? 0.5 : 1,
                       border: "1px solid #444",
                     }}
-                  />
-                  <div style={{ fontSize: 12, marginTop: 4, color: "#ddd" }}>{round || "—"}</div>
+                  >
+                    {circleLetter}
+                  </div>
+                  <div style={{ fontSize: 12, marginTop: 4, color: "#ddd", textAlign: "center" }}>{round || "--"}</div>
                 </div>
               );
             })}
