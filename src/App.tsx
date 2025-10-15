@@ -574,42 +574,6 @@ useEffect(() => {
           </div>
         </div>
 
-        {topYearlyElo.length > 0 && (
-          <div style={{ marginTop: 24, background: "transparent", padding: 16, borderRadius: 12 }}>
-            <h3>Yearly Top ELO</h3>
-            <div style={{ height: 360 }}>
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={topYearlyElo} margin={{ right: 24 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
-                  <XAxis
-                    dataKey="year"
-                    ticks={yearlyXAxisTicks}
-                    interval={0}
-                    padding={{ left: 0, right: 16 }}
-                    tickMargin={8}
-                  />
-                  <YAxis
-                    domain={topEloYAxisConfig?.domain ?? [1600, 2400]}
-                    ticks={topEloYAxisConfig?.ticks}
-                    allowDecimals={false}
-                    tickFormatter={(value) => Number(value).toFixed(0)}
-                  />
-                  <Tooltip
-                    labelFormatter={(label) => `Season ${label}`}
-                    formatter={(value: number | string, _name: string, entry: any) => {
-                      const val = typeof value === 'number' ? Math.round(value) : value;
-                      const playerName = entry?.payload?.name ? String(entry.payload.name) : 'Top ELO';
-                      return [String(val), playerName];
-                    }}
-                    contentStyle={{ background: '#1a1a1a', border: '1px solid #333' }}
-                  />
-                  <Line type="monotone" dataKey="elo" stroke="#c4ff21" dot={{ r: 5, stroke: '#101010', strokeWidth: 1 }} activeDot={{ r: 6 }} />
-                </LineChart>
-              </ResponsiveContainer>
-            </div>
-          </div>
-        )}
-
         {/* Last 5 match results */}
         <div style={{ marginTop: 16, padding: "8px 0" }}>
           <h3 style={{ margin: "8px 0 6px" }}>Last 5 match results</h3>
@@ -664,6 +628,42 @@ useEffect(() => {
             })}
           </div>
         </div>
+
+        {topYearlyElo.length > 0 && (
+          <div style={{ marginTop: 24, background: "transparent", padding: 16, borderRadius: 12 }}>
+            <h3>Yearly Top ELO</h3>
+            <div style={{ height: 360 }}>
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={topYearlyElo} margin={{ right: 24 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
+                  <XAxis
+                    dataKey="year"
+                    ticks={yearlyXAxisTicks}
+                    interval={0}
+                    padding={{ left: 0, right: 16 }}
+                    tickMargin={8}
+                  />
+                  <YAxis
+                    domain={topEloYAxisConfig?.domain ?? [1600, 2400]}
+                    ticks={topEloYAxisConfig?.ticks}
+                    allowDecimals={false}
+                    tickFormatter={(value) => Number(value).toFixed(0)}
+                  />
+                  <Tooltip
+                    labelFormatter={(label) => `Season ${label}`}
+                    formatter={(value: number | string, _name: string, entry: any) => {
+                      const val = typeof value === 'number' ? Math.round(value) : value;
+                      const playerName = entry?.payload?.name ? String(entry.payload.name) : 'Top ELO';
+                      return [String(val), playerName];
+                    }}
+                    contentStyle={{ background: '#1a1a1a', border: '1px solid #333' }}
+                  />
+                  <Line type="monotone" dataKey="elo" stroke="#c4ff21" dot={{ r: 5, stroke: '#101010', strokeWidth: 1 }} activeDot={{ r: 6 }} />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
