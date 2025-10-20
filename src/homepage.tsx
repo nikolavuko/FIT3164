@@ -26,14 +26,17 @@ const GrandSlamCountryTreemap = React.lazy(() => import("./components/GrandSlamC
 
 const rootEl = document.getElementById("chart-root");
 if (rootEl) {
+  const worldStatsTreemap = (
+    <ErrorBoundary fallback={<div style={{ color: "#f77", padding: "12px 0" }}>Treemap failed to load.</div>}>
+      <Suspense fallback={<div style={{ color: "#bbb", padding: "12px 0" }}>Loading country treemap...</div>}>
+        <GrandSlamCountryTreemap />
+      </Suspense>
+    </ErrorBoundary>
+  );
+
   ReactDOM.createRoot(rootEl).render(
     <React.StrictMode>
-      <TennisDashboard />
-      <ErrorBoundary fallback={<div style={{ color: "#f77", padding: "12px 0" }}>Treemap failed to load.</div>}>
-        <Suspense fallback={<div style={{ color: "#bbb", padding: "12px 0" }}>Loading country treemap...</div>}>
-          <GrandSlamCountryTreemap />
-        </Suspense>
-      </ErrorBoundary>
+      <TennisDashboard worldStatsExtra={worldStatsTreemap} />
     </React.StrictMode>
   );
 } else {

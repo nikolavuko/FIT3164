@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { csvParse, dsvFormat } from "d3-dsv";
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
@@ -33,6 +34,10 @@ type LastFiveResult = {
   date?: string;
 };
 
+type AppProps = {
+  worldStatsExtra?: ReactNode;
+};
+
 /* =======================
    Helpers
 ======================= */
@@ -57,6 +62,46 @@ const surfaceColorMap: Record<string, string> = {
   Hard: "#1976d2",
   Clay: "#ef6c00",
   Grass: "#2e7d32",
+};
+
+const rootStyle: CSSProperties = {
+  minHeight: "100vh",
+  background: "transparent",
+  color: "#f1f1f1",
+  padding: "32px 0 64px",
+};
+
+const containerStyle: CSSProperties = {
+  maxWidth: "min(1600px, 95vw)",
+  margin: "0 auto",
+  padding: "0 24px",
+  display: "flex",
+  flexDirection: "column",
+  gap: 32,
+};
+
+const sectionStyle: CSSProperties = {
+  background: "rgba(10, 10, 20, 0.72)",
+  border: "1px solid rgba(196, 255, 33, 0.15)",
+  borderRadius: 18,
+  padding: "28px 32px",
+  boxShadow: "0 24px 60px rgba(0, 0, 0, 0.35)",
+  backdropFilter: "blur(6px)",
+};
+
+const sectionHeadingStyle: CSSProperties = {
+  margin: 0,
+  fontSize: 28,
+  fontWeight: 700,
+  fontFamily: "'Inter', 'Poppins', sans-serif",
+};
+
+const sectionSubheadingStyle: CSSProperties = {
+  marginTop: 8,
+  marginBottom: 24,
+  color: "#b5b5c3",
+  maxWidth: 640,
+  lineHeight: 1.4,
 };
 
 const SurfaceTooltip: React.FC<TooltipProps<number, string>> = ({ active, payload }) => {
@@ -169,7 +214,7 @@ function parseDateFlexible(raw: string): Date | null {
 /* =======================
    App
 ======================= */
-export default function App() {
+export default function App({ worldStatsExtra }: AppProps = {}) {
   const [playersCsvText, setPlayersCsvText] = useState<string>("");
   const [matchesCsvText, setMatchesCsvText] = useState<string>("");
   const [selectedPlayerName, setSelectedPlayerName] = useState<string>("Novak Djokovic"); // prefill
@@ -484,191 +529,312 @@ useEffect(() => {
      UI
   ======================= */
   return (
-    
-    <div style={{ minHeight: "100vh", background: "transparent", color: "#f1f1f1", padding: 24 }}>
-      <div style={{ maxWidth: "min(1600px, 95vw)", margin: "0 auto" }}>
-        <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>Tennis ELO Demo</h1>
-        {/* Removed verbose data-source blurb for a cleaner look */}
-
-        {/* Debug info removed */}
-        {false && (
-        <div style={{fontSize:12, opacity:0.7, margin:"6px 0 12px"}}>
-          Parsed players: {players.length} · Parsed matches: {matches.length}
-          {selectedPlayerName && (() => {
-            const pid = nameToId.get(selectedPlayerName.toLowerCase());
-            const played = pid ? matches.filter(m => m.winner_id === pid || m.loser_id === pid).length : 0;
-            return <> · {selectedPlayerName} matches found: {played}</>;
-          })()}
-        </div>
-        )}
-
-        {loading === "loading" && <div>Loading CSVs…</div>}
-        {loading === "error" && <div style={{ color: "#ff7b7b" }}>Error: {errorMsg}</div>}
-
-        {/* Controls */}
-        <div style={{ marginBottom: 16 }}>
-          <label>Select player: </label>
-          <input
-            list="players-list"
-            value={selectedPlayerName}
-            onChange={(e) => setSelectedPlayerName(e.target.value)}
-            placeholder="Type a name"
-          />
-          <datalist id="players-list">
-            {playerNames.map(n => <option key={n} value={n} />)}
-          </datalist>
-        </div>
-
-        {/* Charts */
-        }
-        <div style={{ display: "grid", gap: 24, gridTemplateColumns: "3fr 2fr" }}>
-          <div style={{ background: "transparent", padding: 16, borderRadius: 12 }}>
-            <h3>ELO over time</h3>
-            <div style={{ height: 350 }}>
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={eloSeries}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
-                  <XAxis dataKey="date" tickFormatter={(d) => new Date(d).getFullYear().toString()} />
-                  <YAxis
-                    domain={eloYAxisConfig?.domain ?? [1200, 2300]}
-                    ticks={eloYAxisConfig?.ticks}
-                    allowDecimals={false}
-                    tickFormatter={(value) => Number(value).toFixed(0)}
-                  />
-                  <Tooltip
-                    labelFormatter={(d) => new Date(d as string).toDateString()}
-                    formatter={(value: number | string) => [Number(value).toFixed(0), "elo"]}
-                    labelStyle={{ color: "#000" }}
-                    itemStyle={{ color: "#000" }}
-                    contentStyle={{ background: "#fefefe", border: "1px solid #333", color: "#000" }}
-                  />
-                  <Line type="monotone" dataKey="elo" dot={false} stroke="#82ca9d" />
-                </LineChart>
-              </ResponsiveContainer>
+    <div style={rootStyle}>
+      <div style={containerStyle}>
+        <section style={sectionStyle}>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "space-between",
+              alignItems: "flex-end",
+              gap: 24,
+            }}
+          >
+            <div style={{ flex: "1 1 320px", minWidth: 280 }}>
+              <h2 style={sectionHeadingStyle}>Individual Player Stats</h2>
+              <p style={sectionSubheadingStyle}>
+                Choose a player to explore their ELO trajectory, surface strengths, and most recent Grand Slam results.
+              </p>
+            </div>
+            <div style={{ flex: "0 0 260px", minWidth: 220, display: "flex", flexDirection: "column", gap: 8 }}>
+              <label
+                htmlFor="player-search"
+                style={{
+                  fontWeight: 600,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  fontSize: 12,
+                  color: "#a0a8c3",
+                }}
+              >
+                Select Player
+              </label>
+              <input
+                id="player-search"
+                list="players-list"
+                value={selectedPlayerName}
+                onChange={(e) => setSelectedPlayerName(e.target.value)}
+                placeholder="Start typing a name"
+                style={{
+                  background: "rgba(255, 255, 255, 0.08)",
+                  border: "1px solid rgba(196, 255, 33, 0.35)",
+                  borderRadius: 10,
+                  padding: "12px 14px",
+                  color: "#f7f7fb",
+                  fontSize: 16,
+                  fontFamily: "'Inter', 'Poppins', sans-serif",
+                  outline: "none",
+                  transition: "border 0.2s ease, box-shadow 0.2s ease",
+                  boxShadow: "0 8px 18px rgba(0, 0, 0, 0.35)",
+                }}
+                onFocus={(e) => {
+                  e.currentTarget.style.border = "1px solid #c4ff21";
+                  e.currentTarget.style.boxShadow = "0 0 0 3px rgba(196, 255, 33, 0.25)";
+                }}
+                onBlur={(e) => {
+                  e.currentTarget.style.border = "1px solid rgba(196, 255, 33, 0.35)";
+                  e.currentTarget.style.boxShadow = "0 8px 18px rgba(0, 0, 0, 0.35)";
+                }}
+              />
+              <datalist id="players-list">
+                {playerNames.map((n) => (
+                  <option key={n} value={n} />
+                ))}
+              </datalist>
             </div>
           </div>
 
-          <div style={{ background: "transparent", padding: 16, borderRadius: 12 }}>
-            <h3>Surface Win %</h3>
-            <div style={{ height: 350 }}>
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={surfaceWinData}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
-                  <XAxis dataKey="surface" />
-                  <YAxis domain={[0, 100]} />
-                  <Tooltip content={<SurfaceTooltip />} />
-                  <Legend />
-                  <Bar dataKey="winPct" name="Win Percentage">
-                    {surfaceWinData.map((entry) => {
-                      const s = (entry.surface || "").toString();
-                      const color = s === "Hard" ? "#1976d2" // blue
-                                   : s === "Clay" ? "#ef6c00" // orange
-                                   : s === "Grass" ? "#2e7d32" // green
-                                   : "#8884d8"; // fallback
-                      return <Cell key={`cell-${s}`} fill={color} />;
-                    })}
-                  </Bar>
-                </BarChart>
-              </ResponsiveContainer>
+          {loading === "loading" && (
+            <div
+              style={{
+                marginTop: 16,
+                padding: "12px 16px",
+                borderRadius: 12,
+                background: "rgba(196, 255, 33, 0.12)",
+                color: "#e9ffd0",
+              }}
+            >
+              Loading player and match data...
+            </div>
+          )}
+          {loading === "error" && (
+            <div
+              style={{
+                marginTop: 16,
+                padding: "12px 16px",
+                borderRadius: 12,
+                background: "rgba(255, 123, 123, 0.15)",
+                color: "#ff9b9b",
+                border: "1px solid rgba(255, 123, 123, 0.35)",
+              }}
+            >
+              Error: {errorMsg}
+            </div>
+          )}
+
+          <div
+            style={{
+              marginTop: 24,
+              display: "grid",
+              gap: 24,
+              gridTemplateColumns: "minmax(0, 7fr) minmax(0, 5fr)",
+            }}
+          >
+            <div
+              style={{
+                background: "rgba(14, 14, 36, 0.7)",
+                padding: 20,
+                borderRadius: 14,
+                border: "1px solid rgba(255, 255, 255, 0.05)",
+                boxShadow: "0 18px 40px rgba(0, 0, 0, 0.45)",
+              }}
+            >
+              <h3 style={{ marginTop: 0, marginBottom: 12 }}>ELO over time</h3>
+              <div style={{ height: 350 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={eloSeries}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
+                    <XAxis dataKey="date" tickFormatter={(d) => new Date(d).getFullYear().toString()} />
+                    <YAxis
+                      domain={eloYAxisConfig?.domain ?? [1200, 2300]}
+                      ticks={eloYAxisConfig?.ticks}
+                      allowDecimals={false}
+                      tickFormatter={(value) => Number(value).toFixed(0)}
+                    />
+                    <Tooltip
+                      labelFormatter={(d) => new Date(d as string).toDateString()}
+                      formatter={(value: number | string) => [Number(value).toFixed(0), "elo"]}
+                      labelStyle={{ color: "#000" }}
+                      itemStyle={{ color: "#000" }}
+                      contentStyle={{ background: "#fefefe", border: "1px solid #333", color: "#000" }}
+                    />
+                    <Line type="monotone" dataKey="elo" dot={false} stroke="#82ca9d" strokeWidth={2} />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+
+            <div
+              style={{
+                background: "rgba(14, 14, 36, 0.7)",
+                padding: 20,
+                borderRadius: 14,
+                border: "1px solid rgba(255, 255, 255, 0.05)",
+                boxShadow: "0 18px 40px rgba(0, 0, 0, 0.45)",
+              }}
+            >
+              <h3 style={{ marginTop: 0, marginBottom: 12 }}>Surface Win %</h3>
+              <div style={{ height: 350 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart data={surfaceWinData}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
+                    <XAxis dataKey="surface" />
+                    <YAxis domain={[0, 100]} />
+                    <Tooltip content={<SurfaceTooltip />} />
+                    <Legend />
+                    <Bar dataKey="winPct" name="Win Percentage">
+                      {surfaceWinData.map((entry) => {
+                        const s = (entry.surface || "").toString();
+                        const color =
+                          s === "Hard"
+                            ? "#1976d2"
+                            : s === "Clay"
+                            ? "#ef6c00"
+                            : s === "Grass"
+                            ? "#2e7d32"
+                            : "#8884d8";
+                        return <Cell key={`cell-${s}`} fill={color} />;
+                      })}
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Last 5 match results */}
-        <div style={{ marginTop: 16, padding: "8px 0" }}>
-          <h3 style={{ margin: "8px 0 6px" }}>Last 5 match results</h3>
-          <div style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
-            {lastFiveResults.map((item, i) => {
-              const color = item.res === "W" ? "#1b9e77" : item.res === "L" ? "#d95f02" : "#5f6368";
-              const label = item.res === "W" ? "Win" : item.res === "L" ? "Loss" : "No match data";
-              const round = item.round ?? "";
-              const circleLetter = item.res === "NA" ? "?" : item.res;
-              const parsedDate = item.date ? new Date(item.date) : null;
-              const dateLabel = parsedDate && !isNaN(parsedDate.getTime())
-                ? parsedDate.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
-                : undefined;
-              const eventLabel = formatEventLabel(item.tourney, item.date);
-              const tooltip = item.res === "NA"
-                ? label
-                : [
-                    label,
-                    item.opponent ? `vs ${item.opponent}` : undefined,
-                    round ? `Round: ${round}` : undefined,
-                    eventLabel ? `Event: ${eventLabel}` : undefined,
-                    item.surface ? `Surface: ${item.surface}` : undefined,
-                    dateLabel ? `Date: ${dateLabel}` : undefined,
-                  ]
-                    .filter(Boolean)
-                    .join(" | ");
-              return (
-                <div key={`last5-${i}`} style={{ display: "flex", flexDirection: "column", alignItems: "center", minWidth: 28 }}>
-                  <div
-                    title={tooltip}
-                    aria-label={tooltip}
-                    style={{
-                      width: 26,
-                      height: 26,
-                      borderRadius: "50%",
-                      background: color,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontWeight: 600,
-                      fontSize: 12,
-                      color: item.res === "NA" ? "#1a1a1a" : "#ffffff",
-                      opacity: item.res === "NA" ? 0.5 : 1,
-                      border: "1px solid #444",
-                    }}
-                  >
-                    {circleLetter}
+          <div
+            style={{
+              marginTop: 32,
+              padding: 20,
+              borderRadius: 14,
+              background: "rgba(14, 14, 36, 0.7)",
+              border: "1px solid rgba(255, 255, 255, 0.05)",
+              boxShadow: "0 18px 40px rgba(0, 0, 0, 0.45)",
+            }}
+          >
+            <h3 style={{ marginTop: 0, marginBottom: 12 }}>Last 5 match results</h3>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 20, alignItems: "flex-start" }}>
+              {lastFiveResults.map((item, i) => {
+                const color = item.res === "W" ? "#1b9e77" : item.res === "L" ? "#d95f02" : "#5f6368";
+                const label = item.res === "W" ? "Win" : item.res === "L" ? "Loss" : "No match data";
+                const round = item.round ?? "";
+                const circleLetter = item.res === "NA" ? "?" : item.res;
+                const parsedDate = item.date ? new Date(item.date) : null;
+                const dateLabel =
+                  parsedDate && !isNaN(parsedDate.getTime())
+                    ? parsedDate.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
+                    : undefined;
+                const eventLabel = formatEventLabel(item.tourney, item.date);
+                const tooltip =
+                  item.res === "NA"
+                    ? label
+                    : [
+                        label,
+                        item.opponent ? `vs ${item.opponent}` : undefined,
+                        round ? `Round: ${round}` : undefined,
+                        eventLabel ? `Event: ${eventLabel}` : undefined,
+                        item.surface ? `Surface: ${item.surface}` : undefined,
+                        dateLabel ? `Date: ${dateLabel}` : undefined,
+                      ]
+                        .filter(Boolean)
+                        .join(" | ");
+                return (
+                  <div key={`last5-${i}`} style={{ display: "flex", flexDirection: "column", alignItems: "center", minWidth: 32 }}>
+                    <div
+                      title={tooltip}
+                      aria-label={tooltip}
+                      style={{
+                        width: 34,
+                        height: 34,
+                        borderRadius: "50%",
+                        background: color,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontWeight: 600,
+                        fontSize: 14,
+                        color: item.res === "NA" ? "#1a1a1a" : "#ffffff",
+                        opacity: item.res === "NA" ? 0.5 : 1,
+                        border: "2px solid rgba(255, 255, 255, 0.4)",
+                      }}
+                    >
+                      {circleLetter}
+                    </div>
+                    <div style={{ fontSize: 12, marginTop: 6, color: "#c0c0d8", textAlign: "center" }}>{round || "--"}</div>
                   </div>
-                  <div style={{ fontSize: 12, marginTop: 4, color: "#ddd", textAlign: "center" }}>{round || "--"}</div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {topYearlyElo.length > 0 && (
-          <div style={{ marginTop: 24, background: "transparent", padding: 16, borderRadius: 12 }}>
-            <h3>Yearly Top ELO</h3>
-            <div style={{ height: 360 }}>
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={topYearlyElo} margin={{ right: 24 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
-                  <XAxis
-                    dataKey="year"
-                    ticks={yearlyXAxisTicks}
-                    interval={0}
-                    padding={{ left: 0, right: 16 }}
-                    tickMargin={8}
-                  />
-                  <YAxis
-                    domain={topEloYAxisConfig?.domain ?? [1600, 2400]}
-                    ticks={topEloYAxisConfig?.ticks}
-                    allowDecimals={false}
-                    tickFormatter={(value) => Number(value).toFixed(0)}
-                  />
-                  <Tooltip
-                    labelFormatter={(label) => `Season ${label}`}
-                    formatter={(value: number | string, _name: string, entry: any) => {
-                      const val = typeof value === 'number' ? Math.round(value) : value;
-                      const playerName = entry?.payload?.name ? String(entry.payload.name) : 'Top ELO';
-                      return [String(val), playerName];
-                    }}
-                    contentStyle={{ background: '#1a1a1a', border: '1px solid #333' }}
-                  />
-                  <Line type="monotone" dataKey="elo" stroke="#c4ff21" dot={{ r: 5, stroke: '#101010', strokeWidth: 1 }} activeDot={{ r: 6 }} />
-                </LineChart>
-              </ResponsiveContainer>
+                );
+              })}
             </div>
           </div>
-        )}
+        </section>
+
+        <section style={sectionStyle}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            <h2 style={sectionHeadingStyle}>World Stats</h2>
+            <p style={sectionSubheadingStyle}>
+              Track the highest annual ELO peaks across the Tour and see which countries dominate the Grand Slam stage.
+            </p>
+          </div>
+
+          {topYearlyElo.length > 0 && (
+            <div
+              style={{
+                marginTop: 8,
+                background: "rgba(14, 14, 36, 0.7)",
+                padding: 20,
+                borderRadius: 14,
+                border: "1px solid rgba(255, 255, 255, 0.05)",
+                boxShadow: "0 18px 40px rgba(0, 0, 0, 0.45)",
+              }}
+            >
+              <h3 style={{ marginTop: 0, marginBottom: 12 }}>Yearly Top ELO</h3>
+              <div style={{ height: 360 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={topYearlyElo} margin={{ right: 24 }}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
+                    <XAxis
+                      dataKey="year"
+                      ticks={yearlyXAxisTicks}
+                      interval={0}
+                      padding={{ left: 0, right: 16 }}
+                      tickMargin={8}
+                    />
+                    <YAxis
+                      domain={topEloYAxisConfig?.domain ?? [1600, 2400]}
+                      ticks={topEloYAxisConfig?.ticks}
+                      allowDecimals={false}
+                      tickFormatter={(value) => Number(value).toFixed(0)}
+                    />
+                    <Tooltip
+                      labelFormatter={(label) => `Season ${label}`}
+                      formatter={(value: number | string, _name: string, entry: any) => {
+                        const val = typeof value === "number" ? Math.round(value) : value;
+                        const playerName = entry?.payload?.name ? String(entry.payload.name) : "Top ELO";
+                        return [String(val), playerName];
+                      }}
+                      contentStyle={{ background: "#1a1a1a", border: "1px solid #333" }}
+                    />
+                    <Line
+                      type="monotone"
+                      dataKey="elo"
+                      stroke="#c4ff21"
+                      strokeWidth={2}
+                      dot={{ r: 5, stroke: "#101010", strokeWidth: 1 }}
+                      activeDot={{ r: 6 }}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+          )}
+
+          {worldStatsExtra && <div style={{ marginTop: 28 }}>{worldStatsExtra}</div>}
+        </section>
       </div>
     </div>
   );
 }
-
 
 
 

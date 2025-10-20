@@ -164,7 +164,16 @@ export default function GrandSlamCountryTreemap() {
   }
 
   return (
-    <div className="treemap-root" style={{ background: "transparent", borderRadius: 12, padding: 16, margin: "24px auto", maxWidth: 1200 }}>
+    <div
+      className="treemap-root"
+      style={{
+        background: "rgba(14, 14, 36, 0.7)",
+        borderRadius: 14,
+        padding: 20,
+        border: "1px solid rgba(255, 255, 255, 0.05)",
+        boxShadow: "0 18px 40px rgba(0, 0, 0, 0.45)",
+      }}
+    >
       <h2 style={{ color: "#eaeaea", fontFamily: "Inter, system-ui, sans-serif", fontWeight: 600, margin: 0, marginBottom: 8 }}>
         Grand Slam Titles by Country
       </h2>
