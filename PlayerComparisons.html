@@ -394,6 +394,13 @@
     const radarPlaceholder = document.getElementById('radarChartPlaceholder');
     const radarCanvas = document.getElementById('overviewRadarChart');
     let radarChart = null;
+    const radarMetrics = [
+        { key: 'currentElo', label: 'Current Elo', min: 0, max: 3200, formatter: value => Number.isFinite(value) ? Math.round(value).toString() : 'N/A' },
+        { key: 'highestElo', label: 'Highest Elo', min: 0, max: 3200, formatter: value => Number.isFinite(value) ? Math.round(value).toString() : 'N/A' },
+        { key: 'titlesWon', label: 'Titles Won', min: 0, max: 150, formatter: value => Number.isFinite(value) ? Math.round(value).toString() : 'N/A' },
+        { key: 'winPct', label: 'Win Percentage', min: 0, max: 100, formatter: value => Number.isFinite(value) ? value.toFixed(1) + '%' : 'N/A' },
+        { key: 'avgMatchDurationMins', label: 'Average Match Duration (mins)', min: 0, max: 400, formatter: value => Number.isFinite(value) ? value.toFixed(1) + ' mins' : 'N/A' }
+    ];
     let activeBtn = null;
     let selectedPlayers = {
     player1: null,
@@ -652,6 +659,8 @@
         document.getElementById('matchTime2').textContent = getAverageDuration(player2.id);
     }
 
+    const clampValue = (value, min, max) => Math.min(Math.max(value, min), max);
+
     function getNumericOverviewStats(playerID) {
         const sanitizeValue = (value) => {
             if (typeof value === 'number') {
@@ -677,19 +686,43 @@
         };
     }
 
+    function normalizeMetricPair(values, metric) {
+        const clamped = values.map(value => clampValue(Number.isFinite(value) ? value : 0, metric.min, metric.max));
+        const localMin = Math.min(...clamped);
+        const localMax = Math.max(...clamped);
+
+        if (!Number.isFinite(localMin) || !Number.isFinite(localMax)) {
+            return clamped.map(() => 0);
+        }
+
+        if (Math.abs(localMax - localMin) < 1e-6) {
+            return clamped.map(() => 0.5);
+        }
+
+        const range = localMax - localMin;
+        return clamped.map(value => (value - localMin) / range);
+    }
+
+    function formatMetricValue(metric, value) {
+        if (!Number.isFinite(value)) return 'N/A';
+        return metric.formatter ? metric.formatter(value) : value.toString();
+    }
+
     function renderRadarChart(player1, player2) {
         if (!radarCanvas) return;
 
         const stats1 = getNumericOverviewStats(player1.id);
         const stats2 = getNumericOverviewStats(player2.id);
 
-        const labels = [
-            'Current Elo',
-            'Highest Elo',
-            'Titles Won',
-            'Win Percentage',
-            'Average Match Duration (mins)'
-        ];
+        const metricSummaries = radarMetrics.map(metric => {
+            const rawValues = [stats1[metric.key], stats2[metric.key]];
+            const normalizedValues = normalizeMetricPair(rawValues, metric);
+            return { metric, rawValues, normalizedValues };
+        });
+
+        const labels = metricSummaries.map(summary => summary.metric.label);
+        const player1Data = metricSummaries.map(summary => summary.normalizedValues[0]);
+        const player2Data = metricSummaries.map(summary => summary.normalizedValues[1]);
 
         if (radarChart) {
             radarChart.destroy();
@@ -702,37 +735,37 @@
                 datasets: [
                     {
                         label: player1.name,
-                        data: [
-                            stats1.currentElo,
-                            stats1.highestElo,
-                            stats1.titlesWon,
-                            stats1.winPct,
-                            stats1.avgMatchDurationMins
-                        ],
+                        data: player1Data,
                         fill: true,
                         backgroundColor: 'rgba(196, 255, 33, 0.18)',
-                        borderColor: 'rgba(196, 255, 33, 0.85)',
-                        pointBackgroundColor: 'rgba(196, 255, 33, 1)',
-                        pointBorderColor: '#ffffff',
+                        borderColor: 'rgba(196, 255, 33, 0.95)',
+                        borderWidth: 3,
+                        borderDash: [3, 2],
+                        pointBackgroundColor: 'rgba(196, 255, 33, 0.95)',
+                        pointBorderColor: '#161616',
+                        pointBorderWidth: 2,
+                        pointRadius: 5,
+                        pointHoverRadius: 7,
                         pointHoverBackgroundColor: '#ffffff',
-                        pointHoverBorderColor: 'rgba(196, 255, 33, 1)'
+                        pointHoverBorderColor: 'rgba(196, 255, 33, 1)',
+                        pointStyle: 'triangle'
                     },
                     {
                         label: player2.name,
-                        data: [
-                            stats2.currentElo,
-                            stats2.highestElo,
-                            stats2.titlesWon,
-                            stats2.winPct,
-                            stats2.avgMatchDurationMins
-                        ],
+                        data: player2Data,
                         fill: true,
-                        backgroundColor: 'rgba(0, 155, 198, 0.18)',
-                        borderColor: 'rgba(0, 155, 198, 0.85)',
-                        pointBackgroundColor: 'rgba(0, 155, 198, 1)',
-                        pointBorderColor: '#ffffff',
+                        backgroundColor: 'rgba(0, 155, 198, 0.14)',
+                        borderColor: 'rgba(0, 155, 198, 0.92)',
+                        borderWidth: 3,
+                        borderDash: [6, 4],
+                        pointBackgroundColor: 'rgba(0, 155, 198, 0.92)',
+                        pointBorderColor: '#161616',
+                        pointBorderWidth: 2,
+                        pointRadius: 5,
+                        pointHoverRadius: 7,
                         pointHoverBackgroundColor: '#ffffff',
-                        pointHoverBorderColor: 'rgba(0, 155, 198, 1)'
+                        pointHoverBorderColor: 'rgba(0, 155, 198, 1)',
+                        pointStyle: 'rectRot'
                     }
                 ]
             },
@@ -741,7 +774,11 @@
                 maintainAspectRatio: false,
                 scales: {
                     r: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 1,
                         suggestedMin: 0,
+                        suggestedMax: 1,
                         angleLines: {
                             color: 'rgba(255, 255, 255, 0.2)'
                         },
@@ -758,6 +795,8 @@
                         ticks: {
                             showLabelBackdrop: false,
                             color: '#f5f5f5',
+                            stepSize: 0.25,
+                            callback: (value) => `${Math.round(value * 100)}%`,
                             font: {
                                 family: 'Poppins'
                             }
@@ -773,6 +812,20 @@
                     legend: {
                         labels: {
                             color: '#ffffff',
+                            usePointStyle: true,
+                            boxWidth: 18,
+                            boxHeight: 18,
+                            padding: 16,
+                            generateLabels: (chart) => chart.data.datasets.map((dataset, index) => ({
+                                text: dataset.label,
+                                fillStyle: dataset.backgroundColor,
+                                strokeStyle: dataset.borderColor,
+                                lineWidth: dataset.borderWidth,
+                                lineDash: dataset.borderDash,
+                                pointStyle: dataset.pointStyle,
+                                hidden: !chart.isDatasetVisible(index),
+                                index
+                            })),
                             font: {
                                 family: 'Poppins'
                             }
@@ -781,12 +834,12 @@
                     tooltip: {
                         callbacks: {
                             label: function(context) {
-                                let label = context.dataset.label ? context.dataset.label + ': ' : '';
-                                label += context.formattedValue;
-                                if (context.label === 'Win Percentage') {
-                                    label += '%';
-                                }
-                                return label;
+                                const summary = metricSummaries[context.dataIndex];
+                                const rawValue = context.datasetIndex === 0 ? summary.rawValues[0] : summary.rawValues[1];
+                                const formattedRaw = formatMetricValue(summary.metric, rawValue);
+                                const normalized = Number.parseFloat(context.formattedValue);
+                                const normalizedText = Number.isFinite(normalized) ? ` (${(normalized * 100).toFixed(0)}% of range)` : '';
+                                return `${context.dataset.label}: ${formattedRaw}${normalizedText}`;
                             }
                         }
                     }
