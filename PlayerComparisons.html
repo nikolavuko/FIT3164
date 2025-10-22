@@ -275,6 +275,50 @@
             min-height: 380px;
             margin-top: 30px;
         }
+        .radar-title {
+            margin-top: 36px;
+            font-size: 22px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #ffffff;
+            text-align: center;
+            letter-spacing: 0.4px;
+        }
+        .radar-legend {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+        .radar-legend button {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(22, 22, 22, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 14px;
+            border-radius: 18px;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+        .radar-legend button:hover {
+            background: rgba(22, 22, 22, 0.6);
+            transform: translateY(-1px);
+        }
+        .radar-legend button.is-hidden {
+            opacity: 0.45;
+        }
+        .radar-legend .legend-symbol {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         .radar-chart-container canvas {
             width: 100% !important;
             height: 100% !important;
@@ -289,6 +333,9 @@
             }
             #chart {
                 min-height: 320px;
+            }
+            .radar-title {
+                font-size: 20px;
             }
             .radar-chart-container {
                 min-height: 320px;
@@ -323,6 +370,15 @@
             Click To Add Player
         </button>
     </Div>
+
+    <section class="chart-section" id="radarChartSection" style="display:none;">
+        <div class="radar-title" id="radarChartTitle">Key Player Statistic Overview</div>
+        <div class="radar-legend" id="radarLegend"></div>
+        <div id="radarChartPlaceholder" role="status" aria-live="polite">Select two players to compare their overview statistics.</div>
+        <div class="radar-chart-container" id="radarChartContainer">
+            <canvas id="overviewRadarChart" aria-label="Player overview radar chart" role="img"></canvas>
+        </div>
+    </section>
 
     <div class="overview-container" id="playerOverview" style="display:none;">
         <div class="overview-row">
@@ -366,10 +422,6 @@
         <div class="chart-header">Elo  Comparision Over Players' Careers</div>
         <div id="chartPlaceholder">Select two players to compare their ELO trends.</div>
         <div id="chart"></div>
-        <div id="radarChartPlaceholder" role="status" aria-live="polite">Select two players to compare their overview statistics.</div>
-        <div class="radar-chart-container" id="radarChartContainer" style="display:none;">
-            <canvas id="overviewRadarChart" aria-label="Player overview radar chart" role="img"></canvas>
-        </div>
     </section>
 
     <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
@@ -388,18 +440,25 @@
     const results = document.getElementById('results');
     const closeBtn = document.getElementById("closeBtn");
     const chartSection = document.getElementById('eloChartSection');
+    const radarSection = document.getElementById('radarChartSection');
     const chartPlaceholder = document.getElementById('chartPlaceholder');
     const chartContainer = document.getElementById('chart');
     const radarContainer = document.getElementById('radarChartContainer');
     const radarPlaceholder = document.getElementById('radarChartPlaceholder');
     const radarCanvas = document.getElementById('overviewRadarChart');
+    const radarLegendContainer = document.getElementById('radarLegend');
+    const radarTitle = document.getElementById('radarChartTitle');
     let radarChart = null;
+    const formatWholeNumber = value => Number.isFinite(value) ? Math.round(value).toString() : 'N/A';
+    const formatPercent = value => Number.isFinite(value) ? value.toFixed(1) + '%' : 'N/A';
+    const formatMinutes = value => Number.isFinite(value) ? value.toFixed(1) + ' mins' : 'N/A';
+
     const radarMetrics = [
-        { key: 'currentElo', label: 'Current Elo', min: 0, max: 3200, formatter: value => Number.isFinite(value) ? Math.round(value).toString() : 'N/A' },
-        { key: 'highestElo', label: 'Highest Elo', min: 0, max: 3200, formatter: value => Number.isFinite(value) ? Math.round(value).toString() : 'N/A' },
-        { key: 'titlesWon', label: 'Titles Won', min: 0, max: 150, formatter: value => Number.isFinite(value) ? Math.round(value).toString() : 'N/A' },
-        { key: 'winPct', label: 'Win Percentage', min: 0, max: 100, formatter: value => Number.isFinite(value) ? value.toFixed(1) + '%' : 'N/A' },
-        { key: 'avgMatchDurationMins', label: 'Average Match Duration (mins)', min: 0, max: 400, formatter: value => Number.isFinite(value) ? value.toFixed(1) + ' mins' : 'N/A' }
+        { key: 'currentElo', label: 'Current Elo', format: formatWholeNumber },
+        { key: 'highestElo', label: 'Highest Elo', format: formatWholeNumber },
+        { key: 'titlesWon', label: 'Titles Won', format: formatWholeNumber },
+        { key: 'winPct', label: 'Win Percentage', format: formatPercent },
+        { key: 'avgMatchDurationMins', label: 'Average Match Duration (mins)', format: formatMinutes }
     ];
     let activeBtn = null;
     let selectedPlayers = {
@@ -565,15 +624,20 @@
         if (selectedPlayers.player1 && selectedPlayers.player2) {
             showOverview(selectedPlayers.player1, selectedPlayers.player2);
             chartSection.style.display = 'block';
+            radarSection.style.display = 'block';
             renderChart(selectedPlayers.player1, selectedPlayers.player2);
             renderRadarChart(selectedPlayers.player1, selectedPlayers.player2);
         } else {
             chartSection.style.display = 'none';
+            radarSection.style.display = 'none';
             chartContainer.innerHTML = '';
             chartPlaceholder.style.display = 'block';
             chartPlaceholder.textContent = 'Select two players to compare their ELO trends.';
             radarPlaceholder.style.display = 'block';
             radarContainer.style.display = 'none';
+            radarTitle.style.display = 'none';
+            radarLegendContainer.style.display = 'none';
+            radarLegendContainer.innerHTML = '';
             if (radarChart) {
                 radarChart.destroy();
                 radarChart = null;
@@ -659,8 +723,6 @@
         document.getElementById('matchTime2').textContent = getAverageDuration(player2.id);
     }
 
-    const clampValue = (value, min, max) => Math.min(Math.max(value, min), max);
-
     function getNumericOverviewStats(playerID) {
         const sanitizeValue = (value) => {
             if (typeof value === 'number') {
@@ -686,26 +748,74 @@
         };
     }
 
-    function normalizeMetricPair(values, metric) {
-        const clamped = values.map(value => clampValue(Number.isFinite(value) ? value : 0, metric.min, metric.max));
-        const localMin = Math.min(...clamped);
-        const localMax = Math.max(...clamped);
-
-        if (!Number.isFinite(localMin) || !Number.isFinite(localMax)) {
-            return clamped.map(() => 0);
+    function normalizeMetricPair(values) {
+        const sanitized = values.map(value => {
+            if (!Number.isFinite(value)) return 0;
+            return value < 0 ? 0 : value;
+        });
+        const maxValue = Math.max(...sanitized);
+        if (!Number.isFinite(maxValue) || maxValue <= 0) {
+            return sanitized.map(() => 0);
         }
-
-        if (Math.abs(localMax - localMin) < 1e-6) {
-            return clamped.map(() => 0.5);
-        }
-
-        const range = localMax - localMin;
-        return clamped.map(value => (value - localMin) / range);
+        return sanitized.map(value => value / maxValue);
     }
 
     function formatMetricValue(metric, value) {
-        if (!Number.isFinite(value)) return 'N/A';
-        return metric.formatter ? metric.formatter(value) : value.toString();
+        const formatter = metric && typeof metric.format === 'function' ? metric.format : formatWholeNumber;
+        return formatter(value);
+    }
+
+    function updateRadarLegend(chart) {
+        if (!radarLegendContainer || !chart || !chart.options?.plugins?.legend?.labels) return;
+        const labelGenerator = chart.options.plugins.legend.labels.generateLabels;
+        const items = typeof labelGenerator === 'function' ? labelGenerator(chart) : [];
+        radarLegendContainer.innerHTML = '';
+
+        const buildLegendSymbol = (item) => {
+            const strokeDashAttr = item.lineDash && item.lineDash.length ? ` stroke-dasharray="${item.lineDash.join(',')}"` : '';
+            if (item.pointStyle === 'rectRot') {
+                return `
+                    <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
+                        <polygon points="11,2 20,11 11,20 2,11" fill="${item.fillStyle}" stroke="${item.strokeStyle}" stroke-width="2"${strokeDashAttr}></polygon>
+                    </svg>
+                `;
+            }
+            if (item.pointStyle === 'triangle') {
+                return `
+                    <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
+                        <polygon points="11,2 20,20 2,20" fill="${item.fillStyle}" stroke="${item.strokeStyle}" stroke-width="2"${strokeDashAttr}></polygon>
+                    </svg>
+                `;
+            }
+            return `
+                <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8" fill="${item.fillStyle}" stroke="${item.strokeStyle}" stroke-width="2"${strokeDashAttr}></circle>
+                </svg>
+            `;
+        };
+
+        items.forEach(item => {
+            const button = document.createElement('button');
+            button.className = `radar-legend-item${item.hidden ? ' is-hidden' : ''}`;
+            button.setAttribute('type', 'button');
+
+            const symbol = document.createElement('span');
+            symbol.className = 'legend-symbol';
+            symbol.innerHTML = buildLegendSymbol(item);
+
+            const label = document.createElement('span');
+            label.textContent = item.text;
+
+            button.appendChild(symbol);
+            button.appendChild(label);
+            button.addEventListener('click', () => {
+                chart.toggleDataVisibility(item.index);
+                chart.update();
+                updateRadarLegend(chart);
+            });
+            radarLegendContainer.appendChild(button);
+        });
+        radarLegendContainer.style.display = items.length ? 'flex' : 'none';
     }
 
     function renderRadarChart(player1, player2) {
@@ -716,7 +826,7 @@
 
         const metricSummaries = radarMetrics.map(metric => {
             const rawValues = [stats1[metric.key], stats2[metric.key]];
-            const normalizedValues = normalizeMetricPair(rawValues, metric);
+            const normalizedValues = normalizeMetricPair(rawValues);
             return { metric, rawValues, normalizedValues };
         });
 
@@ -744,8 +854,8 @@
                         pointBackgroundColor: 'rgba(196, 255, 33, 0.95)',
                         pointBorderColor: '#161616',
                         pointBorderWidth: 2,
-                        pointRadius: 5,
-                        pointHoverRadius: 7,
+                        pointRadius: 12,
+                        pointHoverRadius: 14,
                         pointHoverBackgroundColor: '#ffffff',
                         pointHoverBorderColor: 'rgba(196, 255, 33, 1)',
                         pointStyle: 'triangle'
@@ -754,17 +864,17 @@
                         label: player2.name,
                         data: player2Data,
                         fill: true,
-                        backgroundColor: 'rgba(0, 155, 198, 0.14)',
-                        borderColor: 'rgba(0, 155, 198, 0.92)',
+                        backgroundColor: 'rgba(255, 102, 204, 0.14)',
+                        borderColor: 'rgba(255, 102, 204, 0.92)',
                         borderWidth: 3,
                         borderDash: [6, 4],
-                        pointBackgroundColor: 'rgba(0, 155, 198, 0.92)',
+                        pointBackgroundColor: 'rgba(255, 102, 204, 0.92)',
                         pointBorderColor: '#161616',
                         pointBorderWidth: 2,
-                        pointRadius: 5,
-                        pointHoverRadius: 7,
+                        pointRadius: 8,
+                        pointHoverRadius: 10,
                         pointHoverBackgroundColor: '#ffffff',
-                        pointHoverBorderColor: 'rgba(0, 155, 198, 1)',
+                        pointHoverBorderColor: 'rgba(255, 102, 204, 1)',
                         pointStyle: 'rectRot'
                     }
                 ]
@@ -772,6 +882,14 @@
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                layout: {
+                    padding: {
+                        top: 0,
+                        bottom: 8,
+                        left: 0,
+                        right: 0
+                    }
+                },
                 scales: {
                     r: {
                         beginAtZero: true,
@@ -810,6 +928,7 @@
                 },
                 plugins: {
                     legend: {
+                        display: false,
                         labels: {
                             color: '#ffffff',
                             usePointStyle: true,
@@ -837,8 +956,8 @@
                                 const summary = metricSummaries[context.dataIndex];
                                 const rawValue = context.datasetIndex === 0 ? summary.rawValues[0] : summary.rawValues[1];
                                 const formattedRaw = formatMetricValue(summary.metric, rawValue);
-                                const normalized = Number.parseFloat(context.formattedValue);
-                                const normalizedText = Number.isFinite(normalized) ? ` (${(normalized * 100).toFixed(0)}% of range)` : '';
+                                const normalized = summary.normalizedValues[context.datasetIndex];
+                                const normalizedText = Number.isFinite(normalized) ? ` (${(normalized * 100).toFixed(0)}% of leader)` : '';
                                 return `${context.dataset.label}: ${formattedRaw}${normalizedText}`;
                             }
                         }
@@ -849,6 +968,8 @@
 
         radarPlaceholder.style.display = 'none';
         radarContainer.style.display = 'block';
+        radarTitle.style.display = 'block';
+        updateRadarLegend(radarChart);
     }
 
     function renderChart(player1, player2) {
