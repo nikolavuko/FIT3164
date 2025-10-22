@@ -7,6 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
     <style>
         .TopButtons{
             display: flex;
@@ -260,6 +261,24 @@
             width: 100%;
             min-height: 380px;
         }
+        #radarChartPlaceholder {
+            text-align: center;
+            font-size: 18px;
+            color: #f0f0f0;
+            margin-top: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+        }
+        .radar-chart-container {
+            position: relative;
+            width: 100%;
+            min-height: 380px;
+            margin-top: 30px;
+        }
+        .radar-chart-container canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
         @media (max-width: 720px) {
             .chart-section {
                 padding: 24px;
@@ -269,6 +288,9 @@
                 font-size: 22px;
             }
             #chart {
+                min-height: 320px;
+            }
+            .radar-chart-container {
                 min-height: 320px;
             }
         }
@@ -344,6 +366,10 @@
         <div class="chart-header">Elo  Comparision Over Players' Careers</div>
         <div id="chartPlaceholder">Select two players to compare their ELO trends.</div>
         <div id="chart"></div>
+        <div id="radarChartPlaceholder" role="status" aria-live="polite">Select two players to compare their overview statistics.</div>
+        <div class="radar-chart-container" id="radarChartContainer" style="display:none;">
+            <canvas id="overviewRadarChart" aria-label="Player overview radar chart" role="img"></canvas>
+        </div>
     </section>
 
     <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
@@ -364,6 +390,10 @@
     const chartSection = document.getElementById('eloChartSection');
     const chartPlaceholder = document.getElementById('chartPlaceholder');
     const chartContainer = document.getElementById('chart');
+    const radarContainer = document.getElementById('radarChartContainer');
+    const radarPlaceholder = document.getElementById('radarChartPlaceholder');
+    const radarCanvas = document.getElementById('overviewRadarChart');
+    let radarChart = null;
     let activeBtn = null;
     let selectedPlayers = {
     player1: null,
@@ -529,11 +559,18 @@
             showOverview(selectedPlayers.player1, selectedPlayers.player2);
             chartSection.style.display = 'block';
             renderChart(selectedPlayers.player1, selectedPlayers.player2);
+            renderRadarChart(selectedPlayers.player1, selectedPlayers.player2);
         } else {
             chartSection.style.display = 'none';
             chartContainer.innerHTML = '';
             chartPlaceholder.style.display = 'block';
             chartPlaceholder.textContent = 'Select two players to compare their ELO trends.';
+            radarPlaceholder.style.display = 'block';
+            radarContainer.style.display = 'none';
+            if (radarChart) {
+                radarChart.destroy();
+                radarChart = null;
+            }
         }
     }
 
@@ -615,6 +652,152 @@
         document.getElementById('matchTime2').textContent = getAverageDuration(player2.id);
     }
 
+    function getNumericOverviewStats(playerID) {
+        const sanitizeValue = (value) => {
+            if (typeof value === 'number') {
+                return Number.isFinite(value) ? value : 0;
+            }
+            if (typeof value === 'string') {
+                const parsed = parseFloat(value.replace(/[^\d.-]/g, ''));
+                return Number.isFinite(parsed) ? parsed : 0;
+            }
+            if (typeof value === 'boolean' || value === null || value === undefined) {
+                return 0;
+            }
+            const numeric = Number(value);
+            return Number.isFinite(numeric) ? numeric : 0;
+        };
+
+        return {
+            currentElo: sanitizeValue(getCurrentElo(playerID)),
+            highestElo: sanitizeValue(getHighestElo(playerID)),
+            titlesWon: sanitizeValue(getTitles(playerID)),
+            winPct: sanitizeValue(getWinPct(playerID)),
+            avgMatchDurationMins: sanitizeValue(getAverageDuration(playerID))
+        };
+    }
+
+    function renderRadarChart(player1, player2) {
+        if (!radarCanvas) return;
+
+        const stats1 = getNumericOverviewStats(player1.id);
+        const stats2 = getNumericOverviewStats(player2.id);
+
+        const labels = [
+            'Current Elo',
+            'Highest Elo',
+            'Titles Won',
+            'Win Percentage',
+            'Average Match Duration (mins)'
+        ];
+
+        if (radarChart) {
+            radarChart.destroy();
+        }
+
+        radarChart = new Chart(radarCanvas, {
+            type: 'radar',
+            data: {
+                labels,
+                datasets: [
+                    {
+                        label: player1.name,
+                        data: [
+                            stats1.currentElo,
+                            stats1.highestElo,
+                            stats1.titlesWon,
+                            stats1.winPct,
+                            stats1.avgMatchDurationMins
+                        ],
+                        fill: true,
+                        backgroundColor: 'rgba(196, 255, 33, 0.18)',
+                        borderColor: 'rgba(196, 255, 33, 0.85)',
+                        pointBackgroundColor: 'rgba(196, 255, 33, 1)',
+                        pointBorderColor: '#ffffff',
+                        pointHoverBackgroundColor: '#ffffff',
+                        pointHoverBorderColor: 'rgba(196, 255, 33, 1)'
+                    },
+                    {
+                        label: player2.name,
+                        data: [
+                            stats2.currentElo,
+                            stats2.highestElo,
+                            stats2.titlesWon,
+                            stats2.winPct,
+                            stats2.avgMatchDurationMins
+                        ],
+                        fill: true,
+                        backgroundColor: 'rgba(0, 155, 198, 0.18)',
+                        borderColor: 'rgba(0, 155, 198, 0.85)',
+                        pointBackgroundColor: 'rgba(0, 155, 198, 1)',
+                        pointBorderColor: '#ffffff',
+                        pointHoverBackgroundColor: '#ffffff',
+                        pointHoverBorderColor: 'rgba(0, 155, 198, 1)'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        suggestedMin: 0,
+                        angleLines: {
+                            color: 'rgba(255, 255, 255, 0.2)'
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.2)'
+                        },
+                        pointLabels: {
+                            color: '#ffffff',
+                            font: {
+                                family: 'Poppins',
+                                size: 14
+                            }
+                        },
+                        ticks: {
+                            showLabelBackdrop: false,
+                            color: '#f5f5f5',
+                            font: {
+                                family: 'Poppins'
+                            }
+                        }
+                    }
+                },
+                elements: {
+                    line: {
+                        borderWidth: 2
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#ffffff',
+                            font: {
+                                family: 'Poppins'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label ? context.dataset.label + ': ' : '';
+                                label += context.formattedValue;
+                                if (context.label === 'Win Percentage') {
+                                    label += '%';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        radarPlaceholder.style.display = 'none';
+        radarContainer.style.display = 'block';
+    }
+
     function renderChart(player1, player2) {
         const combined = eloData
             .filter(record => record.player_id === player1.id || record.player_id === player2.id)
@@ -689,6 +872,9 @@
     window.addEventListener('resize', () => {
         if (selectedPlayers.player1 && selectedPlayers.player2) {
             renderChart(selectedPlayers.player1, selectedPlayers.player2);
+            if (radarChart) {
+                radarChart.resize();
+            }
         }
     });
 
