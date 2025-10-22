@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player Comparisons</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     <style>
         .TopButtons{
             display: flex;
@@ -225,6 +228,31 @@
             width: 15%;
             text-align: center;
         }
+        .chart-section {
+            margin: 40px auto 60px;
+            width: min(90vw, 900px);
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(4px);
+        }
+        .chart-header {
+            margin-bottom: 16px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: 600;
+        }
+        #chartPlaceholder {
+            text-align: center;
+            font-size: 18px;
+            color: #d0d0d0;
+            margin-top: 30px;
+        }
+        #chart {
+            width: 100%;
+            min-height: 360px;
+        }
 
     </style>
 </head>
@@ -286,12 +314,18 @@
             <span class="metric">WIN PERCENTAGE</span>
             <span id="winPct2"></span>
         </div>
-                <div class="overview-row">
+        <div class="overview-row">
             <span id="matchTime1"></span>
             <span class="metric">AVERAGE MATCH DURATION (MINS)</span>
             <span id="matchTime2"></span>
         </div>
     </div>
+
+    <section class="chart-section" id="eloChartSection" style="display:none;">
+        <div class="chart-header">Elo  Comparision Over Players' Careers</div>
+        <div id="chartPlaceholder">Select two players to compare their ELO trends.</div>
+        <div id="chart"></div>
+    </section>
 
     <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
     <div class="sidebar" id="sidebar">
@@ -308,6 +342,9 @@
     const searchInput = document.querySelector('.sidebar input');
     const results = document.getElementById('results');
     const closeBtn = document.getElementById("closeBtn");
+    const chartSection = document.getElementById('eloChartSection');
+    const chartPlaceholder = document.getElementById('chartPlaceholder');
+    const chartContainer = document.getElementById('chart');
     let activeBtn = null;
     let selectedPlayers = {
     player1: null,
@@ -471,6 +508,13 @@
         }
         if (selectedPlayers.player1 && selectedPlayers.player2) {
             showOverview(selectedPlayers.player1, selectedPlayers.player2);
+            chartSection.style.display = 'block';
+            renderChart(selectedPlayers.player1, selectedPlayers.player2);
+        } else {
+            chartSection.style.display = 'none';
+            chartContainer.innerHTML = '';
+            chartPlaceholder.style.display = 'block';
+            chartPlaceholder.textContent = 'Select two players to compare their ELO trends.';
         }
     }
 
@@ -551,6 +595,58 @@
         document.getElementById('matchTime1').textContent = getAverageDuration(player1.id);
         document.getElementById('matchTime2').textContent = getAverageDuration(player2.id);
     }
+
+    function renderChart(player1, player2) {
+        const combined = eloData
+            .filter(record => record.player_id === player1.id || record.player_id === player2.id)
+            .map(record => ({
+                year: new Date(record.year, 0, 1),
+                elo: record.elo,
+                name: record.name,
+            }))
+            .sort((a, b) => a.year - b.year);
+
+        if (combined.length === 0) {
+            chartPlaceholder.textContent = 'No ELO data found for the selected players.';
+            chartPlaceholder.style.display = 'block';
+            chartContainer.innerHTML = '';
+            return;
+        }
+
+        chartPlaceholder.style.display = 'none';
+        chartContainer.innerHTML = '';
+
+        const spec = {
+            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            description: "ELO comparison for two players",
+            data: { values: combined },
+            mark: { type: 'line', point: true },
+            width: 'container',
+            height: 380,
+            encoding: {
+                x: { field: 'year', type: 'temporal', title: 'Year' },
+                y: { field: 'elo', type: 'quantitative', title: 'ELO Rating' },
+                color: { field: 'name', type: 'nominal', legend: { title: 'Player' } },
+                tooltip: [
+                    { field: 'name', type: 'nominal', title: 'Player' },
+                    { field: 'year', type: 'temporal', title: 'Year' },
+                    { field: 'elo', type: 'quantitative', title: 'ELO' }
+                ]
+            },
+            autosize: { type: 'fit', contains: 'padding' }
+        };
+
+        vegaEmbed('#chart', spec, {
+            actions: false,
+            renderer: 'canvas'
+        }).catch(err => console.error('Error rendering chart:', err));
+    }
+
+    window.addEventListener('resize', () => {
+        if (selectedPlayers.player1 && selectedPlayers.player2) {
+            renderChart(selectedPlayers.player1, selectedPlayers.player2);
+        }
+    });
 
     </script>
 
