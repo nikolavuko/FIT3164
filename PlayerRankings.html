@@ -7,39 +7,38 @@
     <!-- CSV parser for browser (UMD) -->
     <script src="https://cdn.jsdelivr.net/npm/d3-dsv@3"></script>
     <style>
-        .TopButtons{
-            display: flex;
-            margin-left: 7%;
-            gap: 1%;
-            margin-top: 1.5%;
+      .TopButtons {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 1%;
+          margin-left: 7%;
+          margin-top: 1.5%;
         }
-        .HomeButton{
-            background-color: #353333b8;
-            color: #ffffff;
-            width: 100px;
-            height: 30px;
-            border-radius: 10px;
+
+      .HomeButton,
+      .PlayerComparisonsButton {
+          background-color: #353333b8;
+          color: #ffffff;
+          border: none;
+          padding: 8px 16px;
+          border-radius: 10px;
+          font-weight: 500;
+          transition: background 0.3s ease, transform 0.2s ease;
+      }
+
+      .HomeButton:hover,
+      .PlayerComparisonsButton:hover {
+          cursor: pointer;
+          background-color: #4b4b4bc9;
+          transform: scale(1.05);
         }
-        .HomeBtn{
-            text-decoration: none;
-        }
-        .HomeButton:hover{
-            cursor: pointer;
-        }
-        .PlayerComparisonsButton{
-            position: absolute;
-            background-color: #353333b8;
-            color: #ffffff;
-            width: 200px;
-            height: 30px;
-            border-radius: 10px;
-        }
-        .PlayerComparisonsBtn{
-            text-decoration: none;
-        }
-        .PlayerComparisonsButton:hover{
-            cursor: pointer;
-        }
+
+      .HomeBtn,
+      .PlayerComparisonsBtn {
+          text-decoration: none;
+      }
+
         body{
             background-image: linear-gradient(to right, #000000, #1a0527);
 
